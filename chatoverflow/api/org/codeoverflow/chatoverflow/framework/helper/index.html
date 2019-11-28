@@ -167,12 +167,16 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="org.codeoverflow.chatoverflow.framework">framework</a></dd></dl></div>
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="class" href="PluggableLoader.html" title=""></a>
-                        <a href="PluggableLoader.html" title="">PluggableLoader</a>
+                        <a class="object" href="CoursierUtils$.html" title="A utility object containing some common code for use with Coursier."></a>
+                        <a href="CoursierUtils$.html" title="A utility object containing some common code for use with Coursier.">CoursierUtils</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="class" href="PluginClassLoader.html" title="This plugin class loader does only exist for plugin security policy checks."></a>
-                        <a href="PluginClassLoader.html" title="This plugin class loader does only exist for plugin security policy checks.">PluginClassLoader</a>
+                        <a class="class" href="PluginClassLoader.html" title="This plugin class loader is used for plugin security policy checks, to expose the addURL method to the package inorder to add all required dependencies after dependency resolution and most importantly to isolate the plugin from the normal classpath and only access the classpath if it needs to load the ChatOverflow api."></a>
+                        <a href="PluginClassLoader.html" title="This plugin class loader is used for plugin security policy checks, to expose the addURL method to the package inorder to add all required dependencies after dependency resolution and most importantly to isolate the plugin from the normal classpath and only access the classpath if it needs to load the ChatOverflow api.">PluginClassLoader</a>
+                      </li><li class="current-entities indented5">
+                        <span class="separator"></span>
+                        <a class="class" href="PluginLoader.html" title="PluginLoader contains all logic to load plugins from their .jar files."></a>
+                        <a href="PluginLoader.html" title="PluginLoader contains all logic to load plugins from their .jar files.">PluginLoader</a>
                       </li><li name="org.codeoverflow.chatoverflow.framework.manager" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="manager"></a><a id="manager:manager"></a>
       <span class="permalink">
@@ -236,7 +240,31 @@
           <div id="comment" class="fullcommenttop"></div>
         
 
-      
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              
+            </ol>
+          </div>
+          
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
 
       <div id="template">
         <div id="allMembers">
@@ -244,23 +272,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="org.codeoverflow.chatoverflow.framework.helper.PluggableLoader" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="PluggableLoaderextendsWithLogger"></a><a id="PluggableLoader:PluggableLoader"></a>
-      <span class="permalink">
-      <a href="../../../../../org/codeoverflow/chatoverflow/framework/helper/index.html#PluggableLoaderextendsWithLogger" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="PluggableLoader.html"><span class="name">PluggableLoader</span></a><span class="result"> extends <a href="../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.framework.helper.PluginClassLoader" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.codeoverflow.chatoverflow.framework.helper.PluginClassLoader" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="PluginClassLoaderextendsURLClassLoader"></a><a id="PluginClassLoader:PluginClassLoader"></a>
       <span class="permalink">
       <a href="../../../../../org/codeoverflow/chatoverflow/framework/helper/index.html#PluginClassLoaderextendsURLClassLoader" title="Permalink">
@@ -272,16 +284,64 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="This plugin class loader does only exist for plugin security policy checks." href="PluginClassLoader.html"><span class="name">PluginClassLoader</span></a><span class="result"> extends <span class="extype" name="java.net.URLClassLoader">URLClassLoader</span></span>
+        <a title="This plugin class loader is used for plugin security policy checks, to expose the addURL method to the package inorder to add all required dependencies after dependency resolution and most importantly to isolate the plugin from the normal classpath and only access the classpath if it needs to load the ChatOverflow api." href="PluginClassLoader.html"><span class="name">PluginClassLoader</span></a><span class="result"> extends <span class="extype" name="java.net.URLClassLoader">URLClassLoader</span></span>
       </span>
       
-      <p class="shortcomment cmt">This plugin class loader does only exist for plugin security policy checks.</p>
+      <p class="shortcomment cmt">This plugin class loader is used for plugin security policy checks,
+to expose the addURL method to the package inorder to add all required dependencies after dependency resolution
+and most importantly to isolate the plugin from the normal classpath and only access the classpath if it needs to load the ChatOverflow api.</p><div class="fullcomment"><div class="comment cmt"><p>This plugin class loader is used for plugin security policy checks,
+to expose the addURL method to the package inorder to add all required dependencies after dependency resolution
+and most importantly to isolate the plugin from the normal classpath and only access the classpath if it needs to load the ChatOverflow api.
+Also if this PluginClassLoader had access to the classpath the same classes of the classpath would have
+higher priority over the classes in this classloader which could be a problem  if a plugin uses a newer version
+of a dependency that the framework.
+</p></div></div>
+    </li><li name="org.codeoverflow.chatoverflow.framework.helper.PluginLoader" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PluginLoaderextendsWithLogger"></a><a id="PluginLoader:PluginLoader"></a>
+      <span class="permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/framework/helper/index.html#PluginLoaderextendsWithLogger" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="PluginLoader contains all logic to load plugins from their .jar files." href="PluginLoader.html"><span class="name">PluginLoader</span></a><span class="result"> extends <a href="../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">PluginLoader contains all logic to load plugins from their .jar files.</p><div class="fullcomment"><div class="comment cmt"><p>PluginLoader contains all logic to load plugins from their .jar files.
+This includes parsing of the 'plugin.xml' file in their resources and
+loading the main class of the plugin using a classloader.
+</p></div></div>
     </li></ol>
             </div>
 
         
 
-        
+        <div class="values members">
+              <h3>Value Members</h3>
+              <ol>
+                <li name="org.codeoverflow.chatoverflow.framework.helper.CoursierUtils" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CoursierUtils"></a><a id="CoursierUtils:CoursierUtils"></a>
+      <span class="permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/framework/helper/index.html#CoursierUtils" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="A utility object containing some common code for use with Coursier." href="CoursierUtils$.html"><span class="name">CoursierUtils</span></a><span class="result"> extends <a href="../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">A utility object containing some common code for use with Coursier.</p>
+    </li>
+              </ol>
+            </div>
 
         
 

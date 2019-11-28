@@ -195,6 +195,10 @@
                         <a href="DTOs$$ConnectorDetails.html" title="">ConnectorDetails</a>
                       </li><li class="current-entities indented7">
                         <span class="separator"></span>
+                        <a class="class" href="DTOs$$ConnectorMetadata.html" title=""></a>
+                        <a href="DTOs$$ConnectorMetadata.html" title="">ConnectorMetadata</a>
+                      </li><li class="current-entities indented7">
+                        <span class="separator"></span>
                         <a class="class" href="DTOs$$ConnectorRef.html" title=""></a>
                         <a href="DTOs$$ConnectorRef.html" title="">ConnectorRef</a>
                       </li><li class="current-entities indented7">
@@ -229,6 +233,10 @@
                         <span class="separator"></span>
                         <a class="class" href="DTOs$$PluginLogMessageDTO.html" title=""></a>
                         <a href="DTOs$$PluginLogMessageDTO.html" title="">PluginLogMessageDTO</a>
+                      </li><li class="current-entities indented7">
+                        <span class="separator"></span>
+                        <a class="class" href="DTOs$$PluginMetadata.html" title=""></a>
+                        <a href="DTOs$$PluginMetadata.html" title="">PluginMetadata</a>
                       </li><li class="current-entities indented7">
                         <span class="separator"></span>
                         <a class="class" href="" title=""></a>
@@ -280,7 +288,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">PluginType</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="author">author: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="description">description: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="majorAPIVersion">majorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="minorAPIVersion">minorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">PluginType</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="author">author: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="majorAPIVersion">majorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="minorAPIVersion">minorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="metadata">metadata: <a href="DTOs$$PluginMetadata.html" class="extype" name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginMetadata">PluginMetadata</a></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -336,9 +344,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginType#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(name:String,author:String,description:String,majorAPIVersion:Int,minorAPIVersion:Int,state:String):org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginType"></a><a id="&lt;init&gt;:PluginType"></a>
+      <a id="&lt;init&gt;(name:String,author:String,version:String,majorAPIVersion:Int,minorAPIVersion:Int,metadata:org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginMetadata,state:String):org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginType"></a><a id="&lt;init&gt;:PluginType"></a>
       <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/ui/web/rest/DTOs$$PluginType.html#&lt;init&gt;(name:String,author:String,description:String,majorAPIVersion:Int,minorAPIVersion:Int,state:String):org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginType" title="Permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/ui/web/rest/DTOs$$PluginType.html#&lt;init&gt;(name:String,author:String,version:String,majorAPIVersion:Int,minorAPIVersion:Int,metadata:org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginMetadata,state:String):org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginType" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -347,7 +355,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">PluginType</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="author">author: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="description">description: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="majorAPIVersion">majorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="minorAPIVersion">minorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+        <span class="name">PluginType</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="author">author: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="majorAPIVersion">majorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="minorAPIVersion">minorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="metadata">metadata: <a href="DTOs$$PluginMetadata.html" class="extype" name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginMetadata">PluginMetadata</a></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
       </span>
       
       
@@ -465,22 +473,6 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginType#description" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="description:String"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/ui/web/rest/DTOs$$PluginType.html#description:String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">description</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -567,6 +559,22 @@
       </span>
       <span class="symbol">
         <span class="name">majorAPIVersion</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      
+    </li><li name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginType#metadata" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="metadata:org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginMetadata"></a><a id="metadata:PluginMetadata"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/ui/web/rest/DTOs$$PluginType.html#metadata:org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginMetadata" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">metadata</span><span class="result">: <a href="DTOs$$PluginMetadata.html" class="extype" name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginMetadata">PluginMetadata</a></span>
       </span>
       
       
@@ -688,6 +696,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginType#version" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="version:String"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/ui/web/rest/DTOs$$PluginType.html#version:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">version</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">

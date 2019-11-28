@@ -155,6 +155,10 @@
                         <a href="EventInputImpl.html" title="Default implementation for all inputs that provide events.">EventInputImpl</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
+                        <a class="trait" href="EventManager.html" title="A class with common methods for event managing like register methods and a protected method to fire events."></a>
+                        <a href="EventManager.html" title="A class with common methods for event managing like register methods and a protected method to fire events.">EventManager</a>
+                      </li><li class="current-entities indented5">
+                        <span class="separator"></span>
                         <a class="class" href="InputImpl.html" title=""></a>
                         <a href="InputImpl.html" title="">InputImpl</a>
                       </li><li class="current-entities indented5">
@@ -233,9 +237,9 @@
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="EventInputImpl[T&lt;:org.codeoverflow.chatoverflow.api.io.event.Event,C&lt;:org.codeoverflow.chatoverflow.connector.Connector]extendsInputImpl[C]withEventInput[T]"></a><a id="EventInputImpl[T&lt;:Event,C&lt;:Connector]:EventInputImpl[T,C]"></a>
+      <a id="EventInputImpl[T&lt;:org.codeoverflow.chatoverflow.api.io.event.Event,C&lt;:org.codeoverflow.chatoverflow.connector.Connector]extendsInputImpl[C]withEventInput[T]withEventManager"></a><a id="EventInputImpl[T&lt;:Event,C&lt;:Connector]:EventInputImpl[T,C]"></a>
       <span class="permalink">
-      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/index.html#EventInputImpl[T&lt;:org.codeoverflow.chatoverflow.api.io.event.Event,C&lt;:org.codeoverflow.chatoverflow.connector.Connector]extendsInputImpl[C]withEventInput[T]" title="Permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/index.html#EventInputImpl[T&lt;:org.codeoverflow.chatoverflow.api.io.event.Event,C&lt;:org.codeoverflow.chatoverflow.connector.Connector]extendsInputImpl[C]withEventInput[T]withEventManager" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -244,10 +248,26 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Default implementation for all inputs that provide events." href="EventInputImpl.html"><span class="name">EventInputImpl</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.codeoverflow.chatoverflow.api.io.event.Event">Event</span></span>, <span name="C">C &lt;: <a href="../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></span>]</span><span class="result"> extends <a href="InputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">InputImpl</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>] with <span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">EventInput</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span>]</span>
+        <a title="Default implementation for all inputs that provide events." href="EventInputImpl.html"><span class="name">EventInputImpl</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.codeoverflow.chatoverflow.api.io.event.Event">Event</span></span>, <span name="C">C &lt;: <a href="../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></span>]</span><span class="result"> extends <a href="InputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">InputImpl</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>] with <span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">EventInput</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span>] with <a href="EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></span>
       </span>
       
       <p class="shortcomment cmt">Default implementation for all inputs that provide events.</p><div class="fullcomment"><div class="comment cmt"><p>Default implementation for all inputs that provide events.</p><p>The integrated event registry allows registering new Event handlers at any time.</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the event interface that all events for this EventInput share</p></dd><dt class="tparam">C</dt><dd class="cmt"><p>the connector to which this input belongs</p></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="EventManagerextendsAnyRef"></a><a id="EventManager:EventManager"></a>
+      <span class="permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/index.html#EventManagerextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="A class with common methods for event managing like register methods and a protected method to fire events." href="EventManager.html"><span class="name">EventManager</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">A class with common methods for event managing like register methods and a protected method to fire events.</p>
     </li><li name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="InputImpl[C&lt;:org.codeoverflow.chatoverflow.connector.Connector]extendsConnection[C]withInputwithWithLogger"></a><a id="InputImpl[C&lt;:Connector]:InputImpl[C]"></a>
       <span class="permalink">

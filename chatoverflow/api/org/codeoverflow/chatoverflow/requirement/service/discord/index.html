@@ -205,10 +205,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service">service</a></dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.mockup" visbl="pub" class="indented6 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="mockup"></a><a id="mockup:mockup"></a>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.service.rcon" visbl="pub" class="indented6 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rcon"></a><a id="rcon:rcon"></a>
       <span class="permalink">
-      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/service/index.html#mockup" title="Permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/service/index.html#rcon" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -217,7 +217,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../mockup/index.html"><span class="name">mockup</span></a>
+        <a title="" href="../rcon/index.html"><span class="name">rcon</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service">service</a></dd></dl></div>
@@ -250,6 +250,22 @@
       </span>
       <span class="symbol">
         <a title="" href="../serial/index.html"><span class="name">serial</span></a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service">service</a></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.service.streamelements" visbl="pub" class="indented6 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="streamelements"></a><a id="streamelements:streamelements"></a>
+      <span class="permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/service/index.html#streamelements" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../streamelements/index.html"><span class="name">streamelements</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service">service</a></dd></dl></div>
@@ -325,9 +341,9 @@
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatConnector" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DiscordChatConnectorextendsConnectorwithWithLogger"></a><a id="DiscordChatConnector:DiscordChatConnector"></a>
+      <a id="DiscordChatConnectorextendsEventConnectorwithWithLogger"></a><a id="DiscordChatConnector:DiscordChatConnector"></a>
       <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/index.html#DiscordChatConnectorextendsConnectorwithWithLogger" title="Permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/index.html#DiscordChatConnectorextendsEventConnectorwithWithLogger" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -336,15 +352,15 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="The discord connector connects to the discord REST API" href="DiscordChatConnector.html"><span class="name">DiscordChatConnector</span></a><span class="result"> extends <a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a> with <a href="../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
+        <a title="The discord connector connects to the discord REST API" href="DiscordChatConnector.html"><span class="name">DiscordChatConnector</span></a><span class="result"> extends <a href="../../../connector/EventConnector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.EventConnector">EventConnector</a> with <a href="../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
       </span>
       
       <p class="shortcomment cmt">The discord connector connects to the discord REST API
 </p>
     </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DiscordChatListenerextendsEventListener"></a><a id="DiscordChatListener:DiscordChatListener"></a>
+      <a id="DiscordChatListenerextendsEventListenerwithEventManager"></a><a id="DiscordChatListener:DiscordChatListener"></a>
       <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/index.html#DiscordChatListenerextendsEventListener" title="Permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/index.html#DiscordChatListenerextendsEventListenerwithEventManager" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -353,7 +369,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="The discord chat listener class holds the handler to react to creation, edits and removal of messages using the rest api" href="DiscordChatListener.html"><span class="name">DiscordChatListener</span></a><span class="result"> extends <span class="extype" name="net.dv8tion.jda.core.hooks.EventListener">EventListener</span></span>
+        <a title="The discord chat listener class holds the handler to react to creation, edits and removal of messages using the rest api" href="DiscordChatListener.html"><span class="name">DiscordChatListener</span></a><span class="result"> extends <span class="extype" name="net.dv8tion.jda.core.hooks.EventListener">EventListener</span> with <a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></span>
       </span>
       
       <p class="shortcomment cmt">The discord chat listener class holds the handler to react to creation, edits and removal of messages using the rest api

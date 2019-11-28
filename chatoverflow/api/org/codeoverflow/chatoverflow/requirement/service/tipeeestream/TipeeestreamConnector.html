@@ -182,7 +182,7 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream">tipeeestream</a></dd></dl></div>
     </li><li class="current-entities indented6">
-                        <span class="separator"></span>
+                        <a class="object" href="TipeeestreamConnector$.html" title=""></a>
                         <a class="class" href="" title="The tipeeestream connector connects to the socket.io service to work with incoming events."></a>
                         <a href="" title="The tipeeestream connector connects to the socket.io service to work with incoming events.">TipeeestreamConnector</a>
                       </li><li class="current-entities indented6">
@@ -196,14 +196,16 @@
           <div id="content">
             <body class="class type">
       <div id="definition">
-        <div class="big-circle class">c</div>
+        <a href="TipeeestreamConnector$.html" title="See companion object"><div class="big-circle class-companion-object">c</div></a>
         <p id="owner"><a href="../../../../../index.html" class="extype" name="org">org</a>.<a href="../../../../index.html" class="extype" name="org.codeoverflow">codeoverflow</a>.<a href="../../../index.html" class="extype" name="org.codeoverflow.chatoverflow">chatoverflow</a>.<a href="../../index.html" class="extype" name="org.codeoverflow.chatoverflow.requirement">requirement</a>.<a href="../index.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service">service</a>.<a href="index.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream">tipeeestream</a></p>
-        <h1>TipeeestreamConnector<span class="permalink">
+        <h1><a href="TipeeestreamConnector$.html" title="See companion object">TipeeestreamConnector</a><span class="permalink">
       <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"></span></h3>
+        <h3><span class="morelinks"><div>
+            Companion <a href="TipeeestreamConnector$.html" title="See companion object">object TipeeestreamConnector</a>
+          </div></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
@@ -212,7 +214,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">TipeeestreamConnector</span><span class="result"> extends <a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a> with <a href="../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
+        <span class="name">TipeeestreamConnector</span><span class="result"> extends <a href="../../../connector/EventConnector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.EventConnector">EventConnector</a> with <a href="../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
       </span>
       </h4>
 
@@ -222,7 +224,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a>, <a href="../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../../../connector/EventConnector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.EventConnector">EventConnector</a>, <a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a>, <a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a>, <a href="../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -248,7 +250,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector"><span>TipeeestreamConnector</span></li><li class="in" name="org.codeoverflow.chatoverflow.connector.Connector"><span>Connector</span></li><li class="in" name="org.codeoverflow.chatoverflow.WithLogger"><span>WithLogger</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector"><span>TipeeestreamConnector</span></li><li class="in" name="org.codeoverflow.chatoverflow.connector.EventConnector"><span>EventConnector</span></li><li class="in" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager"><span>EventManager</span></li><li class="in" name="org.codeoverflow.chatoverflow.connector.Connector"><span>Connector</span></li><li class="in" name="org.codeoverflow.chatoverflow.WithLogger"><span>WithLogger</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -361,54 +363,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector#addDonationEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addDonationEventListener(listener:org.json.JSONObject=&gt;Unit):Unit"></a><a id="addDonationEventListener((JSONObject)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#addDonationEventListener(listener:org.json.JSONObject=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addDonationEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.json.JSONObject">JSONObject</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector#addFollowEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addFollowEventListener(listener:org.json.JSONObject=&gt;Unit):Unit"></a><a id="addFollowEventListener((JSONObject)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#addFollowEventListener(listener:org.json.JSONObject=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addFollowEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.json.JSONObject">JSONObject</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector#addSubscriptionEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addSubscriptionEventListener(listener:org.json.JSONObject=&gt;Unit):Unit"></a><a id="addSubscriptionEventListener((JSONObject)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#addSubscriptionEventListener(listener:org.json.JSONObject=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addSubscriptionEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.json.JSONObject">JSONObject</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
     </li><li name="org.codeoverflow.chatoverflow.connector.Connector#areCredentialsSet" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="areCredentialsSet:Boolean"></a>
       <span class="permalink">
@@ -459,6 +413,23 @@
       
       <p class="shortcomment cmt">This method can be used to ask an actor for an result, using the akka system as a black box.</p><div class="fullcomment"><div class="comment cmt"><p>This method can be used to ask an actor for an result, using the akka system as a black box.
 </p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>result type of the actor answer</p></dd><dt class="param">actor</dt><dd class="cmt"><p>the specific actor to ask. Use <code>createActor()</code> to create your actor.</p></dd><dt class="param">timeOutInSeconds</dt><dd class="cmt"><p>the timeout to calculate, request, ... for the actor</p></dd><dt class="param">message</dt><dd class="cmt"><p>some message to pass to the actor. Can be anything.</p></dd><dt>returns</dt><dd class="cmt"><p>the answer of the actor if he answers in time. else: None</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#call" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="call[T](eventValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Unit"></a><a id="call[T](T)(ClassTag[T]):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#call[T](eventValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">call</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="eventValue">eventValue: <span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.call.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.call.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Fires a event and calls all registered handlers.</p><div class="fullcomment"><div class="comment cmt"><p>Fires a event and calls all registered handlers.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type/class of the event</p></dd><dt class="param">eventValue</dt><dd class="cmt"><p>the actual value of the event.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -677,6 +648,22 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.connector.Connector#identifier" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="identifier:String"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#identifier:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">identifier</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></dd></dl></div>
     </li><li name="org.codeoverflow.chatoverflow.connector.Connector#init" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="init():Boolean"></a>
       <span class="permalink">
@@ -814,6 +801,41 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector">TipeeestreamConnector</a> → <a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#registerEventHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="registerEventHandler(handler:(Any,scala.reflect.ClassTag[Any])=&gt;Unit)(implicitidentifier:String):Unit"></a><a id="registerEventHandler((Any,ClassTag[Any])⇒Unit)(String):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#registerEventHandler(handler:(Any,scala.reflect.ClassTag[Any])=&gt;Unit)(implicitidentifier:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">registerEventHandler</span><span class="params">(<span name="handler">handler: (<span class="extype" name="scala.Any">Any</span>, <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Registers a event handler that will receive all events.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a event handler that will receive all events.
+</p></div><dl class="paramcmts block"><dt class="param">handler</dt><dd class="cmt"><p>the handler that will be called if a event gets fired, includes a class tag to be able
+                  to get the class of the event.</p></dd><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, used by the unregister method to identify who registered what.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#registerEventHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="registerEventHandler[T](handler:T=&gt;Unit)(implicitevidence$2:scala.reflect.ClassTag[T],implicitidentifier:String):Unit"></a><a id="registerEventHandler[T]((T)⇒Unit)(ClassTag[T],String):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#registerEventHandler[T](handler:T=&gt;Unit)(implicitevidence$2:scala.reflect.ClassTag[T],implicitidentifier:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">registerEventHandler</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="handler">handler: (<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.registerEventHandler.T">T</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.registerEventHandler.T">T</span>]</span>, <span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Registers a event handler for the given type and sub-types.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a event handler for the given type and sub-types.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type for which you want to</p></dd><dt class="param">handler</dt><dd class="cmt"><p>the handler that will be called if this type of event gets fired</p></dd><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, used by the unregister method to identify who registered what.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="org.codeoverflow.chatoverflow.connector.Connector#removeCredentials" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="removeCredentials():Unit"></a>
       <span class="permalink">
@@ -831,54 +853,6 @@
       
       <p class="shortcomment cmt">Removes the entire credentials object from the connector.</p><div class="fullcomment"><div class="comment cmt"><p>Removes the entire credentials object from the connector.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector#removeDonationEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeDonationEventListener(listener:org.json.JSONObject=&gt;Unit):Unit"></a><a id="removeDonationEventListener((JSONObject)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#removeDonationEventListener(listener:org.json.JSONObject=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">removeDonationEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.json.JSONObject">JSONObject</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector#removeFollowEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeFollowEventListener(listener:org.json.JSONObject=&gt;Unit):Unit"></a><a id="removeFollowEventListener((JSONObject)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#removeFollowEventListener(listener:org.json.JSONObject=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">removeFollowEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.json.JSONObject">JSONObject</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector#removeSubscriptionEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeSubscriptionEventListener(listener:org.json.JSONObject=&gt;Unit):Unit"></a><a id="removeSubscriptionEventListener((JSONObject)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#removeSubscriptionEventListener(listener:org.json.JSONObject=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">removeSubscriptionEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.json.JSONObject">JSONObject</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
     </li><li name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.TipeeestreamConnector#requiredCredentialKeys" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="requiredCredentialKeys:List[String]"></a>
       <span class="permalink">
@@ -1060,6 +1034,23 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#unregisterAllEventListeners" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unregisterAllEventListeners(implicitidentifier:String):Unit"></a><a id="unregisterAllEventListeners(String):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/tipeeestream/TipeeestreamConnector.html#unregisterAllEventListeners(implicitidentifier:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unregisterAllEventListeners</span><span class="params">(<span class="implicit">implicit </span><span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Unregisters all handlers that were registered by the passed identifier.</p><div class="fullcomment"><div class="comment cmt"><p>Unregisters all handlers that were registered by the passed identifier.
+</p></div><dl class="paramcmts block"><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, anything registered with this identifier will be unregistered.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
@@ -1138,7 +1129,11 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="org.codeoverflow.chatoverflow.connector.Connector">
+        <div class="parent" name="org.codeoverflow.chatoverflow.connector.EventConnector">
+              <h3>Inherited from <a href="../../../connector/EventConnector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.EventConnector">EventConnector</a></h3>
+            </div><div class="parent" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">
+              <h3>Inherited from <a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></h3>
+            </div><div class="parent" name="org.codeoverflow.chatoverflow.connector.Connector">
               <h3>Inherited from <a href="../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></h3>
             </div><div class="parent" name="org.codeoverflow.chatoverflow.WithLogger">
               <h3>Inherited from <a href="../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></h3>

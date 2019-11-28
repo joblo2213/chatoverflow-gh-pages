@@ -155,6 +155,10 @@
                         <a href="" title="Default implementation for all inputs that provide events.">EventInputImpl</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
+                        <a class="trait" href="EventManager.html" title="A class with common methods for event managing like register methods and a protected method to fire events."></a>
+                        <a href="EventManager.html" title="A class with common methods for event managing like register methods and a protected method to fire events.">EventManager</a>
+                      </li><li class="current-entities indented5">
+                        <span class="separator"></span>
                         <a class="class" href="InputImpl.html" title=""></a>
                         <a href="InputImpl.html" title="">InputImpl</a>
                       </li><li class="current-entities indented5">
@@ -184,7 +188,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">EventInputImpl</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.codeoverflow.chatoverflow.api.io.event.Event">Event</span></span>, <span name="C">C &lt;: <a href="../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></span>]</span><span class="result"> extends <a href="InputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">InputImpl</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>] with <span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">EventInput</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span>]</span>
+        <span class="name">EventInputImpl</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.codeoverflow.chatoverflow.api.io.event.Event">Event</span></span>, <span name="C">C &lt;: <a href="../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a></span>]</span><span class="result"> extends <a href="InputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">InputImpl</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>] with <span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">EventInput</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span>] with <a href="EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></span>
       </span>
       </h4>
 
@@ -193,12 +197,12 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">EventInput</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span>], <a href="InputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">InputImpl</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>], <span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.Input">Input</span>, <span class="extype" name="org.codeoverflow.chatoverflow.api.io.Serializable">Serializable</span>, <a href="../Connection.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.Connection">Connection</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>], <a href="../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a>, <span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">EventInput</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span>], <a href="InputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">InputImpl</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>], <span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.Input">Input</span>, <span class="extype" name="org.codeoverflow.chatoverflow.api.io.Serializable">Serializable</span>, <a href="../Connection.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.Connection">Connection</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>], <a href="../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
             <span class="toggle">
               Known Subclasses
             </span>
-            <div class="subClasses hiddenContent"><a href="../service/discord/impl/DiscordChatInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.discord.impl.DiscordChatInputImpl">DiscordChatInputImpl</a>, <a href="../service/mockup/impl/MockUpChatInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.mockup.impl.MockUpChatInputImpl">MockUpChatInputImpl</a>, <a href="../service/serial/impl/SerialInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.serial.impl.SerialInputImpl">SerialInputImpl</a>, <a href="../service/tipeeestream/impl/TipeestreamEventInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.impl.TipeestreamEventInputImpl">TipeestreamEventInputImpl</a>, <a href="../service/twitch/chat/impl/TwitchChatInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.impl.TwitchChatInputImpl">TwitchChatInputImpl</a></div>
+            <div class="subClasses hiddenContent"><a href="../service/discord/impl/DiscordChatInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.discord.impl.DiscordChatInputImpl">DiscordChatInputImpl</a>, <a href="../service/serial/impl/SerialInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.serial.impl.SerialInputImpl">SerialInputImpl</a>, <a href="../service/streamelements/impl/StreamElementsEventInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.streamelements.impl.StreamElementsEventInputImpl">StreamElementsEventInputImpl</a>, <a href="../service/tipeeestream/impl/TipeeestreamEventInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.tipeeestream.impl.TipeeestreamEventInputImpl">TipeeestreamEventInputImpl</a>, <a href="../service/twitch/chat/impl/TwitchChatInputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.impl.TwitchChatInputImpl">TwitchChatInputImpl</a></div>
           </div></div>
         
 
@@ -224,7 +228,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl"><span>EventInputImpl</span></li><li class="in" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput"><span>EventInput</span></li><li class="in" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl"><span>InputImpl</span></li><li class="in" name="org.codeoverflow.chatoverflow.api.io.input.Input"><span>Input</span></li><li class="in" name="org.codeoverflow.chatoverflow.api.io.Serializable"><span>Serializable</span></li><li class="in" name="org.codeoverflow.chatoverflow.requirement.Connection"><span>Connection</span></li><li class="in" name="org.codeoverflow.chatoverflow.WithLogger"><span>WithLogger</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl"><span>EventInputImpl</span></li><li class="in" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager"><span>EventManager</span></li><li class="in" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput"><span>EventInput</span></li><li class="in" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl"><span>InputImpl</span></li><li class="in" name="org.codeoverflow.chatoverflow.api.io.input.Input"><span>Input</span></li><li class="in" name="org.codeoverflow.chatoverflow.api.io.Serializable"><span>Serializable</span></li><li class="in" name="org.codeoverflow.chatoverflow.requirement.Connection"><span>Connection</span></li><li class="in" name="org.codeoverflow.chatoverflow.WithLogger"><span>WithLogger</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -373,10 +377,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl#call" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="call[S&lt;:T](event:S)(implicitcts:scala.reflect.ClassTag[S]):Unit"></a><a id="call[S&lt;:T](S)(ClassTag[S]):Unit"></a>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#call" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="call[T](eventValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Unit"></a><a id="call[T](T)(ClassTag[T]):Unit"></a>
       <span class="permalink">
-      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/EventInputImpl.html#call[S&lt;:T](event:S)(implicitcts:scala.reflect.ClassTag[S]):Unit" title="Permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/EventInputImpl.html#call[T](eventValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -385,11 +389,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">call</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span></span>]</span><span class="params">(<span name="event">event: <span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.call.S">S</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="cts">cts: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.call.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">call</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="eventValue">eventValue: <span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.call.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.call.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt">Use this methods to fire an event.</p><div class="fullcomment"><div class="comment cmt"><p>Use this methods to fire an event.
-All eventHandlers listening for that event will be triggered.</p></div><dl class="paramcmts block"><dt class="param">event</dt><dd class="cmt"><p>the event that should be fired</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+      <p class="shortcomment cmt">Fires a event and calls all registered handlers.</p><div class="fullcomment"><div class="comment cmt"><p>Fires a event and calls all registered handlers.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type/class of the event</p></dd><dt class="param">eventValue</dt><dd class="cmt"><p>the actual value of the event.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -522,22 +526,6 @@ All eventHandlers listening for that event will be triggered.</p></div><dl class
       
       <p class="shortcomment cmt">Returns the source identifier.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the source identifier.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a unique identifier of the connection and connector</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Connection.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.Connection">Connection</a></dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl#handlers" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="handlers:scala.collection.mutable.ListBuffer[org.codeoverflow.chatoverflow.requirement.impl.EventHandler[_&lt;:T]]"></a><a id="handlers:ListBuffer[EventHandler[_&lt;:T]]"></a>
-      <span class="permalink">
-      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/EventInputImpl.html#handlers:scala.collection.mutable.ListBuffer[org.codeoverflow.chatoverflow.requirement.impl.EventHandler[_&lt;:T]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">handlers</span><span class="result">: <span class="extype" name="scala.collection.mutable.ListBuffer">ListBuffer</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventHandler">EventHandler</span>[_ &lt;: <span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span>]]</span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
@@ -557,6 +545,22 @@ All eventHandlers listening for that event will be triggered.</p></div><dl class
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl#identifier" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="identifier:String"></a>
+      <span class="permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/EventInputImpl.html#identifier:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">identifier</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="InputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">InputImpl</a></dd></dl></div>
     </li><li name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl#init" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="init():Boolean"></a>
       <span class="permalink">
@@ -680,6 +684,41 @@ All eventHandlers listening for that event will be triggered.</p></div><dl class
       <p class="shortcomment cmt">Register a new event handler that listens for a specific event
 </p><div class="fullcomment"><div class="comment cmt"><p>Register a new event handler that listens for a specific event
 </p></div><dl class="paramcmts block"><dt class="param">eventHandler</dt><dd class="cmt"><p>consumer for which <code>accept()</code> is called if the event is fired</p></dd><dt class="param">eventClass</dt><dd class="cmt"><p>class of the events for which this listener should listen</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl">EventInputImpl</a> → EventInput</dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#registerEventHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="registerEventHandler(handler:(Any,scala.reflect.ClassTag[Any])=&gt;Unit)(implicitidentifier:String):Unit"></a><a id="registerEventHandler((Any,ClassTag[Any])⇒Unit)(String):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/EventInputImpl.html#registerEventHandler(handler:(Any,scala.reflect.ClassTag[Any])=&gt;Unit)(implicitidentifier:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">registerEventHandler</span><span class="params">(<span name="handler">handler: (<span class="extype" name="scala.Any">Any</span>, <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Registers a event handler that will receive all events.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a event handler that will receive all events.
+</p></div><dl class="paramcmts block"><dt class="param">handler</dt><dd class="cmt"><p>the handler that will be called if a event gets fired, includes a class tag to be able
+                  to get the class of the event.</p></dd><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, used by the unregister method to identify who registered what.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#registerEventHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="registerEventHandler[T](handler:T=&gt;Unit)(implicitevidence$2:scala.reflect.ClassTag[T],implicitidentifier:String):Unit"></a><a id="registerEventHandler[T]((T)⇒Unit)(ClassTag[T],String):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/EventInputImpl.html#registerEventHandler[T](handler:T=&gt;Unit)(implicitevidence$2:scala.reflect.ClassTag[T],implicitidentifier:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">registerEventHandler</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="handler">handler: (<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.registerEventHandler.T">T</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.registerEventHandler.T">T</span>]</span>, <span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Registers a event handler for the given type and sub-types.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a event handler for the given type and sub-types.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type for which you want to</p></dd><dt class="param">handler</dt><dd class="cmt"><p>the handler that will be called if this type of event gets fired</p></dd><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, used by the unregister method to identify who registered what.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl#serialize" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="serialize():String"></a>
       <span class="permalink">
@@ -783,6 +822,23 @@ All eventHandlers listening for that event will be triggered.</p></div><dl class
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#unregisterAllEventListeners" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unregisterAllEventListeners(implicitidentifier:String):Unit"></a><a id="unregisterAllEventListeners(String):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/requirement/impl/EventInputImpl.html#unregisterAllEventListeners(implicitidentifier:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unregisterAllEventListeners</span><span class="params">(<span class="implicit">implicit </span><span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Unregisters all handlers that were registered by the passed identifier.</p><div class="fullcomment"><div class="comment cmt"><p>Unregisters all handlers that were registered by the passed identifier.
+</p></div><dl class="paramcmts block"><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, anything registered with this identifier will be unregistered.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
@@ -861,7 +917,9 @@ All eventHandlers listening for that event will be triggered.</p></div><dl class
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">
+        <div class="parent" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">
+              <h3>Inherited from <a href="EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></h3>
+            </div><div class="parent" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">
               <h3>Inherited from <span class="extype" name="org.codeoverflow.chatoverflow.api.io.input.event.EventInput">EventInput</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.T">T</span>]</h3>
             </div><div class="parent" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">
               <h3>Inherited from <a href="InputImpl.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.InputImpl">InputImpl</a>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventInputImpl.C">C</span>]</h3>

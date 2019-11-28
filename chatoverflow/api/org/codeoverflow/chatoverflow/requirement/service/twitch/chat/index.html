@@ -290,9 +290,9 @@
       <p class="shortcomment cmt">Handles connection events for the TwitchChatConnector.</p><div class="fullcomment"><div class="comment cmt"><p>Handles connection events for the TwitchChatConnector.
 Calls the callback function once the bot connected and reports connection errors.</p></div></div>
     </li><li name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.TwitchChatConnector" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="TwitchChatConnectorextendsConnectorwithWithLogger"></a><a id="TwitchChatConnector:TwitchChatConnector"></a>
+      <a id="TwitchChatConnectorextendsEventConnectorwithWithLogger"></a><a id="TwitchChatConnector:TwitchChatConnector"></a>
       <span class="permalink">
-      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/index.html#TwitchChatConnectorextendsConnectorwithWithLogger" title="Permalink">
+      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/index.html#TwitchChatConnectorextendsEventConnectorwithWithLogger" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -301,14 +301,14 @@ Calls the callback function once the bot connected and reports connection errors
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="The twitch connector connects to the irc service to work with chat messages." href="TwitchChatConnector.html"><span class="name">TwitchChatConnector</span></a><span class="result"> extends <a href="../../../../connector/Connector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.Connector">Connector</a> with <a href="../../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
+        <a title="The twitch connector connects to the irc service to work with chat messages." href="TwitchChatConnector.html"><span class="name">TwitchChatConnector</span></a><span class="result"> extends <a href="../../../../connector/EventConnector.html" class="extype" name="org.codeoverflow.chatoverflow.connector.EventConnector">EventConnector</a> with <a href="../../../../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
       </span>
       
       <p class="shortcomment cmt">The twitch connector connects to the irc service to work with chat messages.</p>
     </li><li name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.TwitchChatListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="TwitchChatListenerextendsListenerAdapter"></a><a id="TwitchChatListener:TwitchChatListener"></a>
+      <a id="TwitchChatListenerextendsListenerAdapterwithEventManager"></a><a id="TwitchChatListener:TwitchChatListener"></a>
       <span class="permalink">
-      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/index.html#TwitchChatListenerextendsListenerAdapter" title="Permalink">
+      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/index.html#TwitchChatListenerextendsListenerAdapterwithEventManager" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -317,7 +317,7 @@ Calls the callback function once the bot connected and reports connection errors
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="The twitch chat listener class holds the handlers to react to messages using the IRC bot." href="TwitchChatListener.html"><span class="name">TwitchChatListener</span></a><span class="result"> extends <span class="extype" name="org.pircbotx.hooks.ListenerAdapter">ListenerAdapter</span></span>
+        <a title="The twitch chat listener class holds the handlers to react to messages using the IRC bot." href="TwitchChatListener.html"><span class="name">TwitchChatListener</span></a><span class="result"> extends <span class="extype" name="org.pircbotx.hooks.ListenerAdapter">ListenerAdapter</span> with <a href="../../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></span>
       </span>
       
       <p class="shortcomment cmt">The twitch chat listener class holds the handlers to react to messages using the IRC bot.</p>

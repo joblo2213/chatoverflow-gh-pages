@@ -6,14 +6,15 @@ org.codeoverflow.chatoverflow.api.io.dto.chat.discord
 org.codeoverflow.chatoverflow.api.io.dto.chat.twitch
 org.codeoverflow.chatoverflow.api.io.dto.stat
 org.codeoverflow.chatoverflow.api.io.dto.stat.stream
+org.codeoverflow.chatoverflow.api.io.dto.stat.stream.streamelements
 org.codeoverflow.chatoverflow.api.io.dto.stat.stream.tipeeestream
 org.codeoverflow.chatoverflow.api.io.event
 org.codeoverflow.chatoverflow.api.io.event.chat
 org.codeoverflow.chatoverflow.api.io.event.chat.discord
-org.codeoverflow.chatoverflow.api.io.event.chat.mockup
 org.codeoverflow.chatoverflow.api.io.event.chat.twitch
 org.codeoverflow.chatoverflow.api.io.event.serial
 org.codeoverflow.chatoverflow.api.io.event.stream
+org.codeoverflow.chatoverflow.api.io.event.stream.streamelements
 org.codeoverflow.chatoverflow.api.io.event.stream.tipeeestream
 org.codeoverflow.chatoverflow.api.io.input
 org.codeoverflow.chatoverflow.api.io.input.chat

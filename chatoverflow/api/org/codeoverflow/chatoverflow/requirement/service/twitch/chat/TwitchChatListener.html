@@ -232,7 +232,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">TwitchChatListener</span><span class="result"> extends <span class="extype" name="org.pircbotx.hooks.ListenerAdapter">ListenerAdapter</span></span>
+        <span class="name">TwitchChatListener</span><span class="result"> extends <span class="extype" name="org.pircbotx.hooks.ListenerAdapter">ListenerAdapter</span> with <a href="../../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></span>
       </span>
       </h4>
 
@@ -242,7 +242,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="org.pircbotx.hooks.ListenerAdapter">ListenerAdapter</span>, <span class="extype" name="org.pircbotx.hooks.Listener">Listener</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a>, <span class="extype" name="org.pircbotx.hooks.ListenerAdapter">ListenerAdapter</span>, <span class="extype" name="org.pircbotx.hooks.Listener">Listener</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -268,7 +268,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.TwitchChatListener"><span>TwitchChatListener</span></li><li class="in" name="org.pircbotx.hooks.ListenerAdapter"><span>ListenerAdapter</span></li><li class="in" name="org.pircbotx.hooks.Listener"><span>Listener</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.TwitchChatListener"><span>TwitchChatListener</span></li><li class="in" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager"><span>EventManager</span></li><li class="in" name="org.pircbotx.hooks.ListenerAdapter"><span>ListenerAdapter</span></li><li class="in" name="org.pircbotx.hooks.Listener"><span>Listener</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -362,38 +362,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.TwitchChatListener#addMessageEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addMessageEventListener(listener:org.pircbotx.hooks.events.MessageEvent=&gt;Unit):Unit"></a><a id="addMessageEventListener((MessageEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/TwitchChatListener.html#addMessageEventListener(listener:org.pircbotx.hooks.events.MessageEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addMessageEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.pircbotx.hooks.events.MessageEvent">MessageEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.TwitchChatListener#addUnknownEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addUnknownEventListener(listener:org.pircbotx.hooks.events.UnknownEvent=&gt;Unit):Unit"></a><a id="addUnknownEventListener((UnknownEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/TwitchChatListener.html#addUnknownEventListener(listener:org.pircbotx.hooks.events.UnknownEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addUnknownEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.pircbotx.hooks.events.UnknownEvent">UnknownEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -410,6 +378,23 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#call" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="call[T](eventValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Unit"></a><a id="call[T](T)(ClassTag[T]):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/TwitchChatListener.html#call[T](eventValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">call</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="eventValue">eventValue: <span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.call.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.call.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Fires a event and calls all registered handlers.</p><div class="fullcomment"><div class="comment cmt"><p>Fires a event and calls all registered handlers.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type/class of the event</p></dd><dt class="param">eventValue</dt><dd class="cmt"><p>the actual value of the event.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="../../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -2080,10 +2065,10 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.TwitchChatListener#removeMessageEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeMessageEventListener(listener:org.pircbotx.hooks.events.MessageEvent=&gt;Unit):Unit"></a><a id="removeMessageEventListener((MessageEvent)⇒Unit):Unit"></a>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#registerEventHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="registerEventHandler(handler:(Any,scala.reflect.ClassTag[Any])=&gt;Unit)(implicitidentifier:String):Unit"></a><a id="registerEventHandler((Any,ClassTag[Any])⇒Unit)(String):Unit"></a>
       <span class="permalink">
-      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/TwitchChatListener.html#removeMessageEventListener(listener:org.pircbotx.hooks.events.MessageEvent=&gt;Unit):Unit" title="Permalink">
+      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/TwitchChatListener.html#registerEventHandler(handler:(Any,scala.reflect.ClassTag[Any])=&gt;Unit)(implicitidentifier:String):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -2092,14 +2077,16 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">removeMessageEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.pircbotx.hooks.events.MessageEvent">MessageEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">registerEventHandler</span><span class="params">(<span name="handler">handler: (<span class="extype" name="scala.Any">Any</span>, <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.twitch.chat.TwitchChatListener#removeUnknownEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeUnknownEventListener(listener:org.pircbotx.hooks.events.UnknownEvent=&gt;Unit):Unit"></a><a id="removeUnknownEventListener((UnknownEvent)⇒Unit):Unit"></a>
+      <p class="shortcomment cmt">Registers a event handler that will receive all events.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a event handler that will receive all events.
+</p></div><dl class="paramcmts block"><dt class="param">handler</dt><dd class="cmt"><p>the handler that will be called if a event gets fired, includes a class tag to be able
+                  to get the class of the event.</p></dd><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, used by the unregister method to identify who registered what.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#registerEventHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="registerEventHandler[T](handler:T=&gt;Unit)(implicitevidence$2:scala.reflect.ClassTag[T],implicitidentifier:String):Unit"></a><a id="registerEventHandler[T]((T)⇒Unit)(ClassTag[T],String):Unit"></a>
       <span class="permalink">
-      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/TwitchChatListener.html#removeUnknownEventListener(listener:org.pircbotx.hooks.events.UnknownEvent=&gt;Unit):Unit" title="Permalink">
+      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/TwitchChatListener.html#registerEventHandler[T](handler:T=&gt;Unit)(implicitevidence$2:scala.reflect.ClassTag[T],implicitidentifier:String):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -2108,10 +2095,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">removeUnknownEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="org.pircbotx.hooks.events.UnknownEvent">UnknownEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">registerEventHandler</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="handler">handler: (<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.registerEventHandler.T">T</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.registerEventHandler.T">T</span>]</span>, <span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Registers a event handler for the given type and sub-types.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a event handler for the given type and sub-types.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type for which you want to</p></dd><dt class="param">handler</dt><dd class="cmt"><p>the handler that will be called if this type of event gets fired</p></dd><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, used by the unregister method to identify who registered what.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -2144,6 +2132,23 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#unregisterAllEventListeners" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unregisterAllEventListeners(implicitidentifier:String):Unit"></a><a id="unregisterAllEventListeners(String):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../../../org/codeoverflow/chatoverflow/requirement/service/twitch/chat/TwitchChatListener.html#unregisterAllEventListeners(implicitidentifier:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unregisterAllEventListeners</span><span class="params">(<span class="implicit">implicit </span><span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Unregisters all handlers that were registered by the passed identifier.</p><div class="fullcomment"><div class="comment cmt"><p>Unregisters all handlers that were registered by the passed identifier.
+</p></div><dl class="paramcmts block"><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, anything registered with this identifier will be unregistered.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
@@ -2222,7 +2227,9 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="org.pircbotx.hooks.ListenerAdapter">
+        <div class="parent" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">
+              <h3>Inherited from <a href="../../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></h3>
+            </div><div class="parent" name="org.pircbotx.hooks.ListenerAdapter">
               <h3>Inherited from <span class="extype" name="org.pircbotx.hooks.ListenerAdapter">ListenerAdapter</span></h3>
             </div><div class="parent" name="org.pircbotx.hooks.Listener">
               <h3>Inherited from <span class="extype" name="org.pircbotx.hooks.Listener">Listener</span></h3>

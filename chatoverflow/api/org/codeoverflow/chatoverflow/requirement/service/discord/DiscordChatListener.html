@@ -212,7 +212,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">DiscordChatListener</span><span class="result"> extends <span class="extype" name="net.dv8tion.jda.core.hooks.EventListener">EventListener</span></span>
+        <span class="name">DiscordChatListener</span><span class="result"> extends <span class="extype" name="net.dv8tion.jda.core.hooks.EventListener">EventListener</span> with <a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></span>
       </span>
       </h4>
 
@@ -222,7 +222,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="net.dv8tion.jda.core.hooks.EventListener">EventListener</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a>, <span class="extype" name="net.dv8tion.jda.core.hooks.EventListener">EventListener</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -248,7 +248,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener"><span>DiscordChatListener</span></li><li class="in" name="net.dv8tion.jda.core.hooks.EventListener"><span>EventListener</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener"><span>DiscordChatListener</span></li><li class="in" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager"><span>EventManager</span></li><li class="in" name="net.dv8tion.jda.core.hooks.EventListener"><span>EventListener</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -342,86 +342,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#addMessageDeleteEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addMessageDeleteEventListener(listener:net.dv8tion.jda.core.events.message.MessageDeleteEvent=&gt;Unit):Unit"></a><a id="addMessageDeleteEventListener((MessageDeleteEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#addMessageDeleteEventListener(listener:net.dv8tion.jda.core.events.message.MessageDeleteEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addMessageDeleteEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.MessageDeleteEvent">MessageDeleteEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#addMessageReceivedListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addMessageReceivedListener(listener:net.dv8tion.jda.core.events.message.MessageReceivedEvent=&gt;Unit):Unit"></a><a id="addMessageReceivedListener((MessageReceivedEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#addMessageReceivedListener(listener:net.dv8tion.jda.core.events.message.MessageReceivedEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addMessageReceivedListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.MessageReceivedEvent">MessageReceivedEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#addMessageUpdateEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addMessageUpdateEventListener(listener:net.dv8tion.jda.core.events.message.MessageUpdateEvent=&gt;Unit):Unit"></a><a id="addMessageUpdateEventListener((MessageUpdateEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#addMessageUpdateEventListener(listener:net.dv8tion.jda.core.events.message.MessageUpdateEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addMessageUpdateEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.MessageUpdateEvent">MessageUpdateEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#addReactionAddEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addReactionAddEventListener(listener:net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent=&gt;Unit):Unit"></a><a id="addReactionAddEventListener((MessageReactionAddEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#addReactionAddEventListener(listener:net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addReactionAddEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent">MessageReactionAddEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#addReactionDelEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addReactionDelEventListener(listener:net.dv8tion.jda.core.events.message.react.MessageReactionRemoveEvent=&gt;Unit):Unit"></a><a id="addReactionDelEventListener((MessageReactionRemoveEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#addReactionDelEventListener(listener:net.dv8tion.jda.core.events.message.react.MessageReactionRemoveEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addReactionDelEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.react.MessageReactionRemoveEvent">MessageReactionRemoveEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -438,6 +358,23 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#call" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="call[T](eventValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Unit"></a><a id="call[T](T)(ClassTag[T]):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#call[T](eventValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">call</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="eventValue">eventValue: <span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.call.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.call.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Fires a event and calls all registered handlers.</p><div class="fullcomment"><div class="comment cmt"><p>Fires a event and calls all registered handlers.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type/class of the event</p></dd><dt class="param">eventValue</dt><dd class="cmt"><p>the actual value of the event.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -640,10 +577,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener">DiscordChatListener</a> → EventListener</dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#removeMessageDeleteEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeMessageDeleteEventListener(listener:net.dv8tion.jda.core.events.message.MessageDeleteEvent=&gt;Unit):Unit"></a><a id="removeMessageDeleteEventListener((MessageDeleteEvent)⇒Unit):Unit"></a>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#registerEventHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="registerEventHandler(handler:(Any,scala.reflect.ClassTag[Any])=&gt;Unit)(implicitidentifier:String):Unit"></a><a id="registerEventHandler((Any,ClassTag[Any])⇒Unit)(String):Unit"></a>
       <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#removeMessageDeleteEventListener(listener:net.dv8tion.jda.core.events.message.MessageDeleteEvent=&gt;Unit):Unit" title="Permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#registerEventHandler(handler:(Any,scala.reflect.ClassTag[Any])=&gt;Unit)(implicitidentifier:String):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -652,14 +589,16 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">removeMessageDeleteEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.MessageDeleteEvent">MessageDeleteEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">registerEventHandler</span><span class="params">(<span name="handler">handler: (<span class="extype" name="scala.Any">Any</span>, <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#removeMessageReceivedListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeMessageReceivedListener(listener:net.dv8tion.jda.core.events.message.MessageReceivedEvent=&gt;Unit):Unit"></a><a id="removeMessageReceivedListener((MessageReceivedEvent)⇒Unit):Unit"></a>
+      <p class="shortcomment cmt">Registers a event handler that will receive all events.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a event handler that will receive all events.
+</p></div><dl class="paramcmts block"><dt class="param">handler</dt><dd class="cmt"><p>the handler that will be called if a event gets fired, includes a class tag to be able
+                  to get the class of the event.</p></dd><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, used by the unregister method to identify who registered what.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#registerEventHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="registerEventHandler[T](handler:T=&gt;Unit)(implicitevidence$2:scala.reflect.ClassTag[T],implicitidentifier:String):Unit"></a><a id="registerEventHandler[T]((T)⇒Unit)(ClassTag[T],String):Unit"></a>
       <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#removeMessageReceivedListener(listener:net.dv8tion.jda.core.events.message.MessageReceivedEvent=&gt;Unit):Unit" title="Permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#registerEventHandler[T](handler:T=&gt;Unit)(implicitevidence$2:scala.reflect.ClassTag[T],implicitidentifier:String):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -668,58 +607,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">removeMessageReceivedListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.MessageReceivedEvent">MessageReceivedEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">registerEventHandler</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="handler">handler: (<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.registerEventHandler.T">T</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager.registerEventHandler.T">T</span>]</span>, <span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#removeMessageUpdateEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeMessageUpdateEventListener(listener:net.dv8tion.jda.core.events.message.MessageUpdateEvent=&gt;Unit):Unit"></a><a id="removeMessageUpdateEventListener((MessageUpdateEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#removeMessageUpdateEventListener(listener:net.dv8tion.jda.core.events.message.MessageUpdateEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">removeMessageUpdateEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.MessageUpdateEvent">MessageUpdateEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#removeReactionAddEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeReactionAddEventListener(listener:net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent=&gt;Unit):Unit"></a><a id="removeReactionAddEventListener((MessageReactionAddEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#removeReactionAddEventListener(listener:net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">removeReactionAddEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent">MessageReactionAddEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
-    </li><li name="org.codeoverflow.chatoverflow.requirement.service.discord.DiscordChatListener#removeReactionDelEventListener" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="removeReactionDelEventListener(listener:net.dv8tion.jda.core.events.message.react.MessageReactionRemoveEvent=&gt;Unit):Unit"></a><a id="removeReactionDelEventListener((MessageReactionRemoveEvent)⇒Unit):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#removeReactionDelEventListener(listener:net.dv8tion.jda.core.events.message.react.MessageReactionRemoveEvent=&gt;Unit):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">removeReactionDelEventListener</span><span class="params">(<span name="listener">listener: (<span class="extype" name="net.dv8tion.jda.core.events.message.react.MessageReactionRemoveEvent">MessageReactionRemoveEvent</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      
+      <p class="shortcomment cmt">Registers a event handler for the given type and sub-types.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a event handler for the given type and sub-types.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type for which you want to</p></dd><dt class="param">handler</dt><dd class="cmt"><p>the handler that will be called if this type of event gets fired</p></dd><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, used by the unregister method to identify who registered what.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -752,6 +644,23 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.requirement.impl.EventManager#unregisterAllEventListeners" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unregisterAllEventListeners(implicitidentifier:String):Unit"></a><a id="unregisterAllEventListeners(String):Unit"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/requirement/service/discord/DiscordChatListener.html#unregisterAllEventListeners(implicitidentifier:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unregisterAllEventListeners</span><span class="params">(<span class="implicit">implicit </span><span name="identifier">identifier: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Unregisters all handlers that were registered by the passed identifier.</p><div class="fullcomment"><div class="comment cmt"><p>Unregisters all handlers that were registered by the passed identifier.
+</p></div><dl class="paramcmts block"><dt class="param">identifier</dt><dd class="cmt"><p>a identifier of the registerer, anything registered with this identifier will be unregistered.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
@@ -830,7 +739,9 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="net.dv8tion.jda.core.hooks.EventListener">
+        <div class="parent" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">
+              <h3>Inherited from <a href="../../impl/EventManager.html" class="extype" name="org.codeoverflow.chatoverflow.requirement.impl.EventManager">EventManager</a></h3>
+            </div><div class="parent" name="net.dv8tion.jda.core.hooks.EventListener">
               <h3>Inherited from <span class="extype" name="net.dv8tion.jda.core.hooks.EventListener">EventListener</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>

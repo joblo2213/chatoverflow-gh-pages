@@ -206,9 +206,13 @@
                         <a class="class" href="PluginFramework.html" title="The plugin framework holds all plugin types important from the jar files in the plugin folder."></a>
                         <a href="PluginFramework.html" title="The plugin framework holds all plugin types important from the jar files in the plugin folder.">PluginFramework</a>
                       </li><li class="current-entities indented4">
+                        <a class="object" href="PluginMetadata$.html" title=""></a>
+                        <a class="class" href="PluginMetadata.html" title="Contains optional metadata of plugins that the plugin developer may share to the users."></a>
+                        <a href="PluginMetadata.html" title="Contains optional metadata of plugins that the plugin developer may share to the users.">PluginMetadata</a>
+                      </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="" title="A plugin type is a container for a pluggable definition found in a plugin jar file."></a>
-                        <a href="" title="A plugin type is a container for a pluggable definition found in a plugin jar file.">PluginType</a>
+                        <a class="class" href="" title="A plugin type is a container for all information about a plugin, everything in the 'plugin.xml' and the actual class."></a>
+                        <a href="" title="A plugin type is a container for all information about a plugin, everything in the 'plugin.xml' and the actual class.">PluginType</a>
                       </li>
               </ul>
             </div>
@@ -237,8 +241,8 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A plugin type is a container for a pluggable definition found in a plugin jar file.
-The plugins functionality and meta information can be accessed trough this interface.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A plugin type is a container for all information about a plugin, everything in the 'plugin.xml' and the actual class.
+The plugins functionality and meta information can be accessed through this interface.
 </p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
@@ -290,9 +294,9 @@ The plugins functionality and meta information can be accessed trough this inter
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.codeoverflow.chatoverflow.framework.PluginType#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(pluggable:org.codeoverflow.chatoverflow.api.plugin.Pluggable):org.codeoverflow.chatoverflow.framework.PluginType"></a><a id="&lt;init&gt;:PluginType"></a>
+      <a id="&lt;init&gt;(name:String,author:String,version:String,majorAPIVersion:Int,minorAPIVersion:Int,metadata:org.codeoverflow.chatoverflow.framework.PluginMetadata,pluginClass:Class[_&lt;:org.codeoverflow.chatoverflow.api.plugin.Plugin],pluginDependencies:scala.concurrent.Future[Seq[java.io.File]]):org.codeoverflow.chatoverflow.framework.PluginType"></a><a id="&lt;init&gt;:PluginType"></a>
       <span class="permalink">
-      <a href="../../../../org/codeoverflow/chatoverflow/framework/PluginType.html#&lt;init&gt;(pluggable:org.codeoverflow.chatoverflow.api.plugin.Pluggable):org.codeoverflow.chatoverflow.framework.PluginType" title="Permalink">
+      <a href="../../../../org/codeoverflow/chatoverflow/framework/PluginType.html#&lt;init&gt;(name:String,author:String,version:String,majorAPIVersion:Int,minorAPIVersion:Int,metadata:org.codeoverflow.chatoverflow.framework.PluginMetadata,pluginClass:Class[_&lt;:org.codeoverflow.chatoverflow.api.plugin.Plugin],pluginDependencies:scala.concurrent.Future[Seq[java.io.File]]):org.codeoverflow.chatoverflow.framework.PluginType" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -301,10 +305,13 @@ The plugins functionality and meta information can be accessed trough this inter
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">PluginType</span><span class="params">(<span name="pluggable">pluggable: <span class="extype" name="org.codeoverflow.chatoverflow.api.plugin.Pluggable">Pluggable</span></span>)</span>
+        <span class="name">PluginType</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="author">author: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="majorAPIVersion">majorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="minorAPIVersion">minorAPIVersion: <span class="extype" name="scala.Int">Int</span></span>, <span name="metadata">metadata: <a href="PluginMetadata.html" class="extype" name="org.codeoverflow.chatoverflow.framework.PluginMetadata">PluginMetadata</a></span>, <span name="pluginClass">pluginClass: <span class="extype" name="scala.Predef.Class">Class</span>[_ &lt;: <span class="extype" name="org.codeoverflow.chatoverflow.api.plugin.Plugin">Plugin</span>]</span>, <span name="pluginDependencies">pluginDependencies: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="java.io.File">File</span>]]</span>)</span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">pluggable</dt><dd class="cmt"><p>the original pluggable element, instantiated with the custom class loader</p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>the name of the plugin, used for identifying</p></dd><dt class="param">author</dt><dd class="cmt"><p>the author of the plugin, used for identifying</p></dd><dt class="param">version</dt><dd class="cmt"><p>the version of the plugin</p></dd><dt class="param">majorAPIVersion</dt><dd class="cmt"><p>the major api version, with which the plugin was developed</p></dd><dt class="param">minorAPIVersion</dt><dd class="cmt"><p>the minor api version, with which the plugin was developed</p></dd><dt class="param">pluginClass</dt><dd class="cmt"><p>the class of the plugin, used to create instances of this plugin.
+                          Needs to have a constructor with the signature of one PluginManager,
+                          otherwise instances can't be created from it.</p></dd><dt class="param">pluginDependencies</dt><dd class="cmt"><p>A future that completes when all dependencies, that the plugin has, are available and
+                          that returns a seq of the required dependencies files in the local coursier cache.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -511,10 +518,10 @@ For this, the plugin state is checked or tested.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.codeoverflow.chatoverflow.framework.PluginType#getDescription" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getDescription:String"></a>
+    </li><li name="org.codeoverflow.chatoverflow.framework.PluginType#getDependencyFuture" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getDependencyFuture:scala.concurrent.Future[Seq[java.io.File]]"></a><a id="getDependencyFuture:Future[Seq[File]]"></a>
       <span class="permalink">
-      <a href="../../../../org/codeoverflow/chatoverflow/framework/PluginType.html#getDescription:String" title="Permalink">
+      <a href="../../../../org/codeoverflow/chatoverflow/framework/PluginType.html#getDependencyFuture:scala.concurrent.Future[Seq[java.io.File]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -523,11 +530,13 @@ For this, the plugin state is checked or tested.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getDescription</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">getDependencyFuture</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="java.io.File">File</span>]]</span>
       </span>
       
-      <p class="shortcomment cmt">Returns a description of the plugin.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a description of the plugin.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a simple description of the service</p></dd></dl></div>
+      <p class="shortcomment cmt">Returns the future that will result in a sequence of jar files that represents the dependencies
+of this plugin including all sub-dependencies.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the future that will result in a sequence of jar files that represents the dependencies
+of this plugin including all sub-dependencies.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the dependency future</p></dd></dl></div>
     </li><li name="org.codeoverflow.chatoverflow.framework.PluginType#getMajorAPIVersion" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getMajorAPIVersion:Int"></a>
       <span class="permalink">
@@ -546,6 +555,23 @@ For this, the plugin state is checked or tested.
       <p class="shortcomment cmt">Returns the newest major version of the api, where the plugin was successfully tested!
 </p><div class="fullcomment"><div class="comment cmt"><p>Returns the newest major version of the api, where the plugin was successfully tested!
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a version number</p></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.framework.PluginType#getMetadata" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getMetadata:org.codeoverflow.chatoverflow.framework.PluginMetadata"></a><a id="getMetadata:PluginMetadata"></a>
+      <span class="permalink">
+      <a href="../../../../org/codeoverflow/chatoverflow/framework/PluginType.html#getMetadata:org.codeoverflow.chatoverflow.framework.PluginMetadata" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getMetadata</span><span class="result">: <a href="PluginMetadata.html" class="extype" name="org.codeoverflow.chatoverflow.framework.PluginMetadata">PluginMetadata</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns the metadata instance for this plugin with information about website, description and so on.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the metadata instance for this plugin with information about website, description and so on.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the PluginMetadata instance of this plugin</p></dd></dl></div>
     </li><li name="org.codeoverflow.chatoverflow.framework.PluginType#getMinorAPIVersion" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getMinorAPIVersion:Int"></a>
       <span class="permalink">
@@ -599,6 +625,24 @@ For this, the plugin state is checked or tested.
       <p class="shortcomment cmt">Returns the state of of the plugin (if its API Version is compatible)
 </p><div class="fullcomment"><div class="comment cmt"><p>Returns the state of of the plugin (if its API Version is compatible)
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a plugin version state object filled with the current status information</p></dd></dl></div>
+    </li><li name="org.codeoverflow.chatoverflow.framework.PluginType#getVersion" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getVersion:String"></a>
+      <span class="permalink">
+      <a href="../../../../org/codeoverflow/chatoverflow/framework/PluginType.html#getVersion:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getVersion</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns the version of the plugin
+</p><div class="fullcomment"><div class="comment cmt"><p>Returns the version of the plugin
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the plugin version</p></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">

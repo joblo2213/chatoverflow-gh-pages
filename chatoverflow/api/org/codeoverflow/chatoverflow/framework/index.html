@@ -238,9 +238,13 @@
                         <a class="class" href="PluginFramework.html" title="The plugin framework holds all plugin types important from the jar files in the plugin folder."></a>
                         <a href="PluginFramework.html" title="The plugin framework holds all plugin types important from the jar files in the plugin folder.">PluginFramework</a>
                       </li><li class="current-entities indented4">
+                        <a class="object" href="PluginMetadata$.html" title=""></a>
+                        <a class="class" href="PluginMetadata.html" title="Contains optional metadata of plugins that the plugin developer may share to the users."></a>
+                        <a href="PluginMetadata.html" title="Contains optional metadata of plugins that the plugin developer may share to the users.">PluginMetadata</a>
+                      </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="PluginType.html" title="A plugin type is a container for a pluggable definition found in a plugin jar file."></a>
-                        <a href="PluginType.html" title="A plugin type is a container for a pluggable definition found in a plugin jar file.">PluginType</a>
+                        <a class="class" href="PluginType.html" title="A plugin type is a container for all information about a plugin, everything in the 'plugin.xml' and the actual class."></a>
+                        <a href="PluginType.html" title="A plugin type is a container for all information about a plugin, everything in the 'plugin.xml' and the actual class.">PluginType</a>
                       </li><li name="org.codeoverflow.chatoverflow.instance" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="instance"></a><a id="instance:instance"></a>
       <span class="permalink">
@@ -384,6 +388,24 @@
       </span>
       
       <p class="shortcomment cmt">The plugin framework holds all plugin types important from the jar files in the plugin folder.</p>
+    </li><li name="org.codeoverflow.chatoverflow.framework.PluginMetadata" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PluginMetadataextendsProductwithSerializable"></a><a id="PluginMetadata:PluginMetadata"></a>
+      <span class="permalink">
+      <a href="../../../../org/codeoverflow/chatoverflow/framework/index.html#PluginMetadataextendsProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="Contains optional metadata of plugins that the plugin developer may share to the users." href="PluginMetadata.html"><span class="name">PluginMetadata</span></a><span class="params">(<span name="description">description: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="license">license: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="website">website: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.net.URL">URL</span>]</span>, <span name="sourceRepo">sourceRepo: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.net.URL">URL</span>]</span>, <span name="bugtracker">bugtracker: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.net.URL">URL</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Contains optional metadata of plugins that the plugin developer may share to the users.</p><div class="fullcomment"><div class="comment cmt"><p>Contains optional metadata of plugins that the plugin developer may share to the users.
+</p></div><dl class="paramcmts block"><dt class="param">description</dt><dd class="cmt"><p>a short description of what this plugin does</p></dd><dt class="param">license</dt><dd class="cmt"><p>the licence of the plugin, if it has one. Should be a SPDX short identifier e.g. &quot;MIT&quot;.
+                   Check this url for more information: https://spdx.org/licenses/</p></dd><dt class="param">website</dt><dd class="cmt"><p>a website of the author or plugin</p></dd><dt class="param">sourceRepo</dt><dd class="cmt"><p>the repository on e.g. GitHub, if published.</p></dd><dt class="param">bugtracker</dt><dd class="cmt"><p>a link to a bug tracker where users can report bugs</p></dd></dl></div>
     </li><li name="org.codeoverflow.chatoverflow.framework.PluginType" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="PluginTypeextendsWithLogger"></a><a id="PluginType:PluginType"></a>
       <span class="permalink">
@@ -396,11 +418,11 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="A plugin type is a container for a pluggable definition found in a plugin jar file." href="PluginType.html"><span class="name">PluginType</span></a><span class="result"> extends <a href="../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
+        <a title="A plugin type is a container for all information about a plugin, everything in the 'plugin.xml' and the actual class." href="PluginType.html"><span class="name">PluginType</span></a><span class="result"> extends <a href="../WithLogger.html" class="extype" name="org.codeoverflow.chatoverflow.WithLogger">WithLogger</a></span>
       </span>
       
-      <p class="shortcomment cmt">A plugin type is a container for a pluggable definition found in a plugin jar file.</p><div class="fullcomment"><div class="comment cmt"><p>A plugin type is a container for a pluggable definition found in a plugin jar file.
-The plugins functionality and meta information can be accessed trough this interface.
+      <p class="shortcomment cmt">A plugin type is a container for all information about a plugin, everything in the 'plugin.xml' and the actual class.</p><div class="fullcomment"><div class="comment cmt"><p>A plugin type is a container for all information about a plugin, everything in the 'plugin.xml' and the actual class.
+The plugins functionality and meta information can be accessed through this interface.
 </p></div></div>
     </li></ol>
             </div>
@@ -427,6 +449,22 @@ The plugins functionality and meta information can be accessed trough this inter
       
       <p class="shortcomment cmt">The plugin compatibility state does describe if the API version (Major.Minor) of a plugin is
 compatible with the framework API Version.</p>
+    </li><li name="org.codeoverflow.chatoverflow.framework.PluginMetadata" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PluginMetadata"></a><a id="PluginMetadata:PluginMetadata"></a>
+      <span class="permalink">
+      <a href="../../../../org/codeoverflow/chatoverflow/framework/index.html#PluginMetadata" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="PluginMetadata$.html"><span class="name">PluginMetadata</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
     </li>
               </ol>
             </div>

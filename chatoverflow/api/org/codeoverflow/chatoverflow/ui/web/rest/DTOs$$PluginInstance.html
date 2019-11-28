@@ -195,6 +195,10 @@
                         <a href="DTOs$$ConnectorDetails.html" title="">ConnectorDetails</a>
                       </li><li class="current-entities indented7">
                         <span class="separator"></span>
+                        <a class="class" href="DTOs$$ConnectorMetadata.html" title=""></a>
+                        <a href="DTOs$$ConnectorMetadata.html" title="">ConnectorMetadata</a>
+                      </li><li class="current-entities indented7">
+                        <span class="separator"></span>
                         <a class="class" href="DTOs$$ConnectorRef.html" title=""></a>
                         <a href="DTOs$$ConnectorRef.html" title="">ConnectorRef</a>
                       </li><li class="current-entities indented7">
@@ -229,6 +233,10 @@
                         <span class="separator"></span>
                         <a class="class" href="DTOs$$PluginLogMessageDTO.html" title=""></a>
                         <a href="DTOs$$PluginLogMessageDTO.html" title="">PluginLogMessageDTO</a>
+                      </li><li class="current-entities indented7">
+                        <span class="separator"></span>
+                        <a class="class" href="DTOs$$PluginMetadata.html" title=""></a>
+                        <a href="DTOs$$PluginMetadata.html" title="">PluginMetadata</a>
                       </li><li class="current-entities indented7">
                         <span class="separator"></span>
                         <a class="class" href="DTOs$$PluginType.html" title=""></a>
@@ -280,7 +288,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">PluginInstance</span><span class="params">(<span name="instanceName">instanceName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pluginName">pluginName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pluginAuthor">pluginAuthor: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="isRunning">isRunning: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="requirementIDs">requirementIDs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">PluginInstance</span><span class="params">(<span name="instanceName">instanceName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pluginName">pluginName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pluginAuthor">pluginAuthor: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="isRunning">isRunning: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="requirementIDs">requirementIDs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="log">log: <span class="extype" name="scala.Seq">Seq</span>[<a href="DTOs$$PluginLogMessageDTO.html" class="extype" name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginLogMessageDTO">PluginLogMessageDTO</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -336,9 +344,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginInstance#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(instanceName:String,pluginName:String,pluginAuthor:String,isRunning:Boolean,requirementIDs:Seq[String]):org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginInstance"></a><a id="&lt;init&gt;:PluginInstance"></a>
+      <a id="&lt;init&gt;(instanceName:String,pluginName:String,pluginAuthor:String,isRunning:Boolean,requirementIDs:Seq[String],log:Seq[org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginLogMessageDTO]):org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginInstance"></a><a id="&lt;init&gt;:PluginInstance"></a>
       <span class="permalink">
-      <a href="../../../../../../org/codeoverflow/chatoverflow/ui/web/rest/DTOs$$PluginInstance.html#&lt;init&gt;(instanceName:String,pluginName:String,pluginAuthor:String,isRunning:Boolean,requirementIDs:Seq[String]):org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginInstance" title="Permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/ui/web/rest/DTOs$$PluginInstance.html#&lt;init&gt;(instanceName:String,pluginName:String,pluginAuthor:String,isRunning:Boolean,requirementIDs:Seq[String],log:Seq[org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginLogMessageDTO]):org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginInstance" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -347,7 +355,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">PluginInstance</span><span class="params">(<span name="instanceName">instanceName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pluginName">pluginName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pluginAuthor">pluginAuthor: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="isRunning">isRunning: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="requirementIDs">requirementIDs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span>
+        <span class="name">PluginInstance</span><span class="params">(<span name="instanceName">instanceName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pluginName">pluginName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pluginAuthor">pluginAuthor: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="isRunning">isRunning: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="requirementIDs">requirementIDs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="log">log: <span class="extype" name="scala.Seq">Seq</span>[<a href="DTOs$$PluginLogMessageDTO.html" class="extype" name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginLogMessageDTO">PluginLogMessageDTO</a>]</span>)</span>
       </span>
       
       
@@ -551,6 +559,22 @@
       </span>
       <span class="symbol">
         <span class="name">isRunning</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      
+    </li><li name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginInstance#log" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="log:Seq[org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginLogMessageDTO]"></a><a id="log:Seq[PluginLogMessageDTO]"></a>
+      <span class="permalink">
+      <a href="../../../../../../org/codeoverflow/chatoverflow/ui/web/rest/DTOs$$PluginInstance.html#log:Seq[org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginLogMessageDTO]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="DTOs$$PluginLogMessageDTO.html" class="extype" name="org.codeoverflow.chatoverflow.ui.web.rest.DTOs.PluginLogMessageDTO">PluginLogMessageDTO</a>]</span>
       </span>
       
       

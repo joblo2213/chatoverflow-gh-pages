@@ -151,12 +151,16 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="org.codeoverflow.chatoverflow.framework">framework</a></dd></dl></div>
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="class" href="PluggableLoader.html" title=""></a>
-                        <a href="PluggableLoader.html" title="">PluggableLoader</a>
+                        <a class="object" href="CoursierUtils$.html" title="A utility object containing some common code for use with Coursier."></a>
+                        <a href="CoursierUtils$.html" title="A utility object containing some common code for use with Coursier.">CoursierUtils</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="class" href="" title="This plugin class loader does only exist for plugin security policy checks."></a>
-                        <a href="" title="This plugin class loader does only exist for plugin security policy checks.">PluginClassLoader</a>
+                        <a class="class" href="" title="This plugin class loader is used for plugin security policy checks, to expose the addURL method to the package inorder to add all required dependencies after dependency resolution and most importantly to isolate the plugin from the normal classpath and only access the classpath if it needs to load the ChatOverflow api."></a>
+                        <a href="" title="This plugin class loader is used for plugin security policy checks, to expose the addURL method to the package inorder to add all required dependencies after dependency resolution and most importantly to isolate the plugin from the normal classpath and only access the classpath if it needs to load the ChatOverflow api.">PluginClassLoader</a>
+                      </li><li class="current-entities indented5">
+                        <span class="separator"></span>
+                        <a class="class" href="PluginLoader.html" title="PluginLoader contains all logic to load plugins from their .jar files."></a>
+                        <a href="PluginLoader.html" title="PluginLoader contains all logic to load plugins from their .jar files.">PluginLoader</a>
                       </li>
               </ul>
             </div>
@@ -185,7 +189,12 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This plugin class loader does only exist for plugin security policy checks.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This plugin class loader is used for plugin security policy checks,
+to expose the addURL method to the package inorder to add all required dependencies after dependency resolution
+and most importantly to isolate the plugin from the normal classpath and only access the classpath if it needs to load the ChatOverflow api.
+Also if this PluginClassLoader had access to the classpath the same classes of the classpath would have
+higher priority over the classes in this classloader which could be a problem  if a plugin uses a newer version
+of a dependency that the framework.
 </p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
@@ -310,10 +319,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="java.net.URLClassLoader#addURL" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="addURL(x$1:java.net.URL):Unit"></a><a id="addURL(URL):Unit"></a>
+    </li><li name="org.codeoverflow.chatoverflow.framework.helper.PluginClassLoader#addURL" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addURL(url:java.net.URL):Unit"></a><a id="addURL(URL):Unit"></a>
       <span class="permalink">
-      <a href="../../../../../org/codeoverflow/chatoverflow/framework/helper/PluginClassLoader.html#addURL(x$1:java.net.URL):Unit" title="Permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/framework/helper/PluginClassLoader.html#addURL(url:java.net.URL):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -322,10 +331,10 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">addURL</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.net.URL">URL</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">addURL</span><span class="params">(<span name="url">url: <span class="extype" name="java.net.URL">URL</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java/net/index.html" class="extype" name="java.net">java.net</a>] </dd><dt>Definition Classes</dt><dd>URLClassLoader</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="index.html" class="extype" name="org.codeoverflow.chatoverflow.framework.helper">org.codeoverflow.chatoverflow.framework.helper</a>] </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="org.codeoverflow.chatoverflow.framework.helper.PluginClassLoader">PluginClassLoader</a> → URLClassLoader</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -921,10 +930,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="java.lang.ClassLoader#loadClass" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="loadClass(x$1:String,x$2:Boolean):Class[_]"></a><a id="loadClass(String,Boolean):Class[_]"></a>
+    </li><li name="org.codeoverflow.chatoverflow.framework.helper.PluginClassLoader#loadClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadClass(name:String,resolve:Boolean):Class[_]"></a><a id="loadClass(String,Boolean):Class[_]"></a>
       <span class="permalink">
-      <a href="../../../../../org/codeoverflow/chatoverflow/framework/helper/PluginClassLoader.html#loadClass(x$1:String,x$2:Boolean):Class[_]" title="Permalink">
+      <a href="../../../../../org/codeoverflow/chatoverflow/framework/helper/PluginClassLoader.html#loadClass(name:String,resolve:Boolean):Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -933,16 +942,10 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">loadClass</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.lang.String">String</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+        <span class="name">loadClass</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="resolve">resolve: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.Class">Class</span>[_]</span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>ClassLoader</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="defval" name="classOf[java.lang.ClassNotFoundException]">...</span>
-    </span>)</span>
-              
-        </dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.codeoverflow.chatoverflow.framework.helper.PluginClassLoader">PluginClassLoader</a> → ClassLoader</dd></dl></div>
     </li><li name="java.lang.ClassLoader#loadClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="loadClass(x$1:String):Class[_]"></a><a id="loadClass(String):Class[_]"></a>
       <span class="permalink">
