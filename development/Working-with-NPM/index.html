@@ -40,7 +40,7 @@
     
     
       
-        <title>Working with NPM - Chatoverflow</title>
+        <title>Working with NPM - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -734,21 +734,21 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/development/Working-with-NPM.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/development/Working-with-NPM.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Working with NPM</h1>
                 
                 <p>We use a npm package to connect the REST-API to our web client. The package is generated using <a href="https://swagger.io/">swagger</a> annotations in our scala implementation of the interface. By this approach we ensure maximum reliability while having minimal manual implementation effort. The npm package is hosted with the <a href="https://github.com/features/package-registry">new github package registry</a> and can be found <a href="https://github.com/codeoverflow-org/chatoverflow/packages">here</a>.</p>
 <p>This article describes, how new versions of the package with the client bindings can be generated and published. This is important for team members and everyone interested in (G)UI development.</p>
-<h2 id="prerequisites">Prerequisites</h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>There are three basic steps for settings started with this process.</p>
 <ol>
 <li>Install <a href="https://nodejs.org/">node / npm</a>. If you have it already installed, make sure to update it to the last release using <code>sudo npm install -g npm@latest</code>.</li>
 <li>Login to the github package registry. This is described <a href="https://help.github.com/en/github/managing-packages-with-github-package-registry/configuring-npm-for-use-with-github-package-registry#authenticating-to-github-package-registry">here</a>. Basically, it's one console command using a personal token from your <a href="https://github.com/settings/tokens">github user settings</a>: <code>npm login --registry=https://npm.pkg.github.com</code></li>
 <li>Download the latest <em>2.x</em>-version of <code>swagger-codegen-cli</code>. It can be found on <a href="https://mvnrepository.com/artifact/io.swagger/swagger-codegen-cli">maven</a>. Please make sure, that you do <strong>not</strong> use the <em>3.x</em>.-version, since it is not compatible with your current framework dependencies. At the time of writing this article, the latest <em>2.x</em>-version is <code>2.4.9</code>.</li>
 </ol>
-<h2 id="build">Build</h2>
+<h2 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
 <p>Next up, you can build a new version of the npm package. This is also applicable, if you won't publish the package and just want to test something locally.</p>
 <ol>
 <li>
@@ -761,36 +761,59 @@
 <p>Generate the npm package using <code>swagger-codegen-cli</code>. This can be achieved with the following console command (the backslahes are only needed for *nix-systems):</p>
 </li>
 </ol>
-<p><code>java -jar swagger-codegen-cli-2.4.9.jar generate \
-      -i http://localhost:2400/api-docs/swagger.json \
-      -l typescript-angular \
-      -o ./angular_api_client \
-      --additional-properties npmName=@codeoverflow-org/chatoverflow,snapshot=false,npmVersion=x.x.x-x,ngVersion=7.2.1</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">java -jar swagger-codegen-cli-2.4.9.jar generate \</span>
+<span class="err">   -i http://localhost:2400/api-docs/swagger.json \</span>
+<span class="err">   -l typescript-angular \</span>
+<span class="err">   -o ./angular_api_client \</span>
+<span class="err">   --additional-properties npmName=@codeoverflow-org/chatoverflow,snapshot=false,npmVersion=x.x.x-x,ngVersion=7.2.1</span>
+</pre></div>
+</td></tr></table>
+
 <p>Make sure to replace the <code>npm-version</code> with the version number you have used in the <code>VersionInfo</code>-file, e.g. <code>3.0.0-6</code>.</p>
 <ol>
 <li>Next, some dependencies have to be installed. Navigate into your generated folder by using <code>cd angular_api_client</code>, then execute the following install-commands:</li>
 </ol>
-<p><code>npm install --save-dev typescript@3.2.4
-   npm install --save-dev tsickle@0.35.0</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span><span class="o">-</span><span class="n">dev</span> <span class="n">typescript</span><span class="mf">@3.2.4</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span><span class="o">-</span><span class="n">dev</span> <span class="n">tsickle</span><span class="mf">@0.35.0</span>
+</pre></div>
+</td></tr></table>
+
 <ol>
 <li>After this, you have to update the generated <code>package.json</code>-file to make sure, that the package is published correctly to the github package registry. Add the following lines:</li>
 </ol>
-<p><code>"publishConfig": { "registry": "https://npm.pkg.github.com/" },
-   "repository": "git://github.com/codeoverflow-org/chatoverflow.git",</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">&quot;publishConfig&quot;: { &quot;registry&quot;: &quot;https://npm.pkg.github.com/&quot; },</span>
+<span class="err">&quot;repository&quot;: &quot;git://github.com/codeoverflow-org/chatoverflow.git&quot;,</span>
+</pre></div>
+</td></tr></table>
+
 <ol>
 <li>There is only one configuration step left: Add a new file called <code>.npmrc</code> to the generated folder, containing the following line:</li>
 </ol>
-<p><code>registry=https://npm.pkg.github.com/codeoverflow-org</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">registry=https://npm.pkg.github.com/codeoverflow-org</span>
+</pre></div>
+</td></tr></table>
+
 <ol>
 <li>Now, everything is ready. You can now install and build your generated package:</li>
 </ol>
-<p><code>npm install
-   npm run build</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">npm install</span>
+<span class="err">npm run build</span>
+</pre></div>
+</td></tr></table>
+
 <p>That's it. You have now a ready-to-use npm package with all the bindings for the REST-API, optimized for typescript in angular.</p>
-<h2 id="publish">Publish</h2>
+<h2 id="publish">Publish<a class="headerlink" href="#publish" title="Permanent link">&para;</a></h2>
 <p>To publish your freshly build version of the npm package, use the following command. Make sure, that you have the right to do so; and <em>never</em> forget the <code>dist</code> part.</p>
-<pre><code>npm publish dist
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">npm publish dist</span>
+</pre></div>
+</td></tr></table>
 
 <p>Now, you can open the <code>package.json</code> file of the <a href="https://github.com/codeoverflow-org/chatoverflow-gui">chatoverflow-gui</a> project and update the version of the dependency <code>@codeoverflow-org/chatoverflow</code> to your new version. Simply run <code>npm install</code> afterwards and rebuild the gui.</p>
                 

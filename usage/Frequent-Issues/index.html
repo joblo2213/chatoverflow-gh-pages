@@ -40,7 +40,7 @@
     
     
       
-        <title>Frequent Issues - Chatoverflow</title>
+        <title>Frequent Issues - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -734,22 +734,22 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/usage/Frequent-Issues.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/usage/Frequent-Issues.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Frequent Issues</h1>
                 
-                <h2 id="run-configuration-bug">Run Configuration Bug</h2>
+                <h2 id="run-configuration-bug">Run Configuration Bug<a class="headerlink" href="#run-configuration-bug" title="Permanent link">&para;</a></h2>
 <p>Because of the differences in IntelliJ versions the run configurations could be broken. If they are broken, change the <code>classpath or module</code> setting in <code>Edit configurations...</code> to ChatOverflow root module (<code>chatoverflow</code>). Now everything should be working fine again.</p>
-<h2 id="credentials-value-encrypted-with-wrong-auth-key">Credentials value encrypted with wrong auth key</h2>
-<p><img alt="" src="/img/usage/value-encrypted-wrong-key.png" />  </p>
-<pre><code>ERROR configuration.CryptoUtil$  - Your environment does not work with AES256.Please update your Java runtime version to at least: 1.8.0_161
-</code></pre>
-
-<p>If you see this image or error message you are probably running on an old Java version that doesn't work with AES 256 bit encryption.<br />
+<h2 id="credentials-value-encrypted-with-wrong-auth-key">Credentials value encrypted with wrong auth key<a class="headerlink" href="#credentials-value-encrypted-with-wrong-auth-key" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/img/usage/value-encrypted-wrong-key.png" /><br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">ERROR configuration.CryptoUtil$  - Your environment does not work with AES256.Please update your Java runtime version to at least: 1.8.0_161</span>
+</pre></div>
+</td></tr></table>
+If you see this image or error message you are probably running on an old Java version that doesn't work with AES 256 bit encryption.<br />
 To fix this error you have to update Java to version <code>1.8.0_161</code> or later.<br />
 More information about this issue can be found <a href="https://stackoverflow.com/questions/3862800/invalidkeyexception-illegal-key-size">on stackoverflow.com</a>.</p>
-<h2 id="gui-not-found-error-message">"GUI not found" error message</h2>
+<h2 id="gui-not-found-error-message">"GUI not found" error message<a class="headerlink" href="#gui-not-found-error-message" title="Permanent link">&para;</a></h2>
 <p>A common problem is the message "GUI couldn't be found on the classpath! Has the GUI been built?" when building the gui or everything freshly, using the <code>[Advanced]</code>-configuration. This is due to a IntelliJ bug / problem.</p>
 <p>Solution: Use the <em>Refresh sbt project</em> button, inside IntelliJ. This should make IntelliJ find, load and start the GUI component. It can be found inside the sbt overlay window:</p>
 <p><img alt="" src="/img/usage/refresh-sbt.png" />  </p>

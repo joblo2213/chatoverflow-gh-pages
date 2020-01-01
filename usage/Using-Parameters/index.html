@@ -40,7 +40,7 @@
     
     
       
-        <title>Using Parameters - Chatoverflow</title>
+        <title>Using Parameters - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -846,7 +846,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/usage/Using-Parameters.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/usage/Using-Parameters.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Using Parameters</h1>
@@ -864,147 +864,203 @@
 <li><a href="./#Time-parameter">Time Parameter</a></li>
 <li><a href="./#Date-Time-parameter">Date Time Parameter</a></li>
 </ol>
-<h2 id="string-parameter">String parameter</h2>
+<h2 id="string-parameter">String parameter<a class="headerlink" href="#string-parameter" title="Permanent link">&para;</a></h2>
 <p>The string parameter requires you to enter a string. </p>
 <p>Example: <code>The snow is snowier than before</code></p>
-<p>Example for developers (Java): </p>
-<pre><code class="java">private Requirement&lt;StringParameter&gt; motd = require.parameter.stringParameter(&quot;motd&quot;);
+<p>Example for developers (Java): 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">StringParameter</span><span class="o">&gt;</span> <span class="n">motd</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">stringParameter</span><span class="p">(</span><span class="s">&quot;motd&quot;</span><span class="p">);</span>
 
-@Override
-public void setup() {
-  log(&quot;Message of the day: &quot; + motd.get().get());
-}
-</code></pre>
-
-<h2 id="integer-parameter">Integer parameter</h2>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Message of the day: &quot;</span> <span class="o">+</span> <span class="n">motd</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="integer-parameter">Integer parameter<a class="headerlink" href="#integer-parameter" title="Permanent link">&para;</a></h2>
 <p>The integer parameter requires you to enter an integer number.</p>
 <p>Example: <code>5</code>, <code>7</code>, <code>-10</code></p>
-<p>Example for developers (Java): </p>
-<pre><code class="java">private Requirement&lt;IntegerParameter&gt; age = require.parameter.integerParameter(&quot;age&quot;);
-@Override
-public void setup() {
-  log(&quot;You are &quot; + age.get().get() + &quot; years old.&quot;);
-}
-</code></pre>
-
-<h2 id="double-parameter">Double parameter</h2>
+<p>Example for developers (Java): 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">IntegerParameter</span><span class="o">&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">integerParameter</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;You are &quot;</span> <span class="o">+</span> <span class="n">age</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; years old.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="double-parameter">Double parameter<a class="headerlink" href="#double-parameter" title="Permanent link">&para;</a></h2>
 <p>The double parameter requires you to enter a floating point number.</p>
 <p>Example: <code>3.14159265359</code>, <code>5</code>, <code>-10.5</code></p>
-<p>Example for developers (Java): </p>
-<pre><code class="java">private Requirement&lt;DoubleParameter&gt; size = require.parameter.doubleParameter(&quot;size&quot;);
-@Override
-public void setup() {
-  log(&quot;You are &quot; + size.get().get() + &quot; meters tall.&quot;);
-}
-</code></pre>
-
-<h2 id="boolean-parameter">Boolean parameter</h2>
+<p>Example for developers (Java): 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DoubleParameter</span><span class="o">&gt;</span> <span class="n">size</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">doubleParameter</span><span class="p">(</span><span class="s">&quot;size&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;You are &quot;</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; meters tall.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="boolean-parameter">Boolean parameter<a class="headerlink" href="#boolean-parameter" title="Permanent link">&para;</a></h2>
 <p>The boolean parameter requires you to enter a boolean. Note that any input that isn't <code>true</code> will default to false.</p>
 <p>Example: <code>true</code>, <code>false</code></p>
-<p>Example for developers (Java):</p>
-<pre><code class="java">private Requirement&lt;BooleanParameter&gt; debug = require.parameter.booleanParameter(&quot;debug&quot;);
-@Override
-public void setup() {
-  if(debug.get().get()) {
-    log(&quot;Debug mode has been activated.&quot;);
-  }
-}
-</code></pre>
-
-<h2 id="uri-parameter">URI parameter</h2>
+<p>Example for developers (Java):
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">BooleanParameter</span><span class="o">&gt;</span> <span class="n">debug</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">booleanParameter</span><span class="p">(</span><span class="s">&quot;debug&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">debug</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">log</span><span class="p">(</span><span class="s">&quot;Debug mode has been activated.&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="uri-parameter">URI parameter<a class="headerlink" href="#uri-parameter" title="Permanent link">&para;</a></h2>
 <p>The URI parameter reqires you to enter an <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">Uniform Resource Identifier</a>, most comonly a link to a website.</p>
 <p>Example: <code>donate/to/team.txt</code>, <code>trees.html</code>, <code>org.jpg</code>, <code>http://www.codeoverflow.org/</code></p>
-<p>Example for developers (java): </p>
-<pre><code class="java">private Requirement&lt;UriParameter&gt; twitchURL = require.parameter.uriParameter(&quot;twitchURL&quot;);
-@Override
-public void setup() {
-  log(&quot;Your twitch URL is: &quot; + twitchURL.get().get().toString());
-}
-</code></pre>
-
-<h2 id="color-parameter">Color parameter</h2>
+<p>Example for developers (java): 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">UriParameter</span><span class="o">&gt;</span> <span class="n">twitchURL</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">uriParameter</span><span class="p">(</span><span class="s">&quot;twitchURL&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Your twitch URL is: &quot;</span> <span class="o">+</span> <span class="n">twitchURL</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="color-parameter">Color parameter<a class="headerlink" href="#color-parameter" title="Permanent link">&para;</a></h2>
 <p>The color parameter requires you to enter a Color. The color has to be in one of the following formats:</p>
 <p>(R = Red, G = Green, B = Blue, A = Alpha)</p>
 <p><code>#RRGGBB</code> or <code>#RRGGBBAA</code>: The color in hexadecimal (0-9, A-F).</p>
 <p><code>R,G,B</code> or <code>R,G,B,A</code>: The color in integer numbers (0-255) or floting point numbers (0.0-1.0)</p>
 <p>Example: <code>#FFFFFF</code>, <code>251,121,1</code>, <code>#FFFF00BB</code>, <code>255,255,255,10</code>, <code>1.0,1.0,0.5,1.0</code>, <code>1.0,0.7,0.3</code></p>
-<p>Example for developers:</p>
-<pre><code class="java">private Requirement&lt;ColorParameter&gt; favColor = require.parameter.colorParameter(&quot;favColor&quot;);
-@Override
-public void setup() {
-  log(&quot;Your favorite Color is: &quot; + favColor.get().get().getRed() + &quot; &quot; + favColor.get().get().getGreen() + &quot; &quot; + favColor.get().get().getGreen());
-}
-</code></pre>
-
-<h2 id="list-parameter">List parameter</h2>
+<p>Example for developers:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">ColorParameter</span><span class="o">&gt;</span> <span class="n">favColor</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">colorParameter</span><span class="p">(</span><span class="s">&quot;favColor&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Your favorite Color is: &quot;</span> <span class="o">+</span> <span class="n">favColor</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">getRed</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">favColor</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">getGreen</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">favColor</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">getGreen</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="list-parameter">List parameter<a class="headerlink" href="#list-parameter" title="Permanent link">&para;</a></h2>
 <p>The list parameter requires you to enter a list. You have to seperate entries by using a comma.</p>
 <p>Example: <code>i,like,trees</code>, <code>message</code>, <code>do you like,this wiki entry?</code></p>
-<p>Example for developers (Java):</p>
-<pre><code class="java">private Requirement&lt;ListParameter&gt; messages = require.parameter.listParameter(&quot;messages&quot;);
-@Override
-public void setup() {
-  log(&quot;You entered the following messages:&quot;);
-  for (String string : messages.get().get()) {
-    log(string);
-  }
-}
-</code></pre>
-
-<h2 id="map-parameter">Map parameter</h2>
+<p>Example for developers (Java):
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">ListParameter</span><span class="o">&gt;</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">listParameter</span><span class="p">(</span><span class="s">&quot;messages&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;You entered the following messages:&quot;</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">string</span> <span class="p">:</span> <span class="n">messages</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">string</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="map-parameter">Map parameter<a class="headerlink" href="#map-parameter" title="Permanent link">&para;</a></h2>
 <p>The map parameter requires you to enter a map. A map uses the following format: <code>key;value</code> or <code>(key;value)</code>. You have to seperate entries by using a comma.</p>
 <p>Example: <code>(website;https://github.com/codeoverflow-org/chatoverflow)</code>, <code>twitch;prime</code>, <code>(key1:value1),(key2;value2)</code>, <code>key1:value1,key2;value2</code></p>
-<p>Example for developers (Java):</p>
-<pre><code class="java">private Requirement&lt;MapParameter&gt; commands = require.parameter.mapParameter(&quot;commands&quot;);
-@Override
-public void setup() {
-  log(&quot;You're using the following commands:&quot;);
-  for (String key : commands.get().get().keySet()) {
-    log(key + &quot;: &quot; + commands.get().get().get(key));
-  }
-}
-</code></pre>
-
-<h2 id="date-parameter">Date parameter</h2>
+<p>Example for developers (Java):
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">MapParameter</span><span class="o">&gt;</span> <span class="n">commands</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">mapParameter</span><span class="p">(</span><span class="s">&quot;commands&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;You&#39;re using the following commands:&quot;</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">key</span> <span class="p">:</span> <span class="n">commands</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">keySet</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="n">commands</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="date-parameter">Date parameter<a class="headerlink" href="#date-parameter" title="Permanent link">&para;</a></h2>
 <p>The date parameter requires you to enter a valid date following the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601 standard</a>. It is defined as:</p>
 <p><code>YYYY-MM-DD</code> (<code>Y</code> = year, <code>M</code> = month, <code>D</code> = day)</p>
 <p>Example: <code>2011-12-30</code>, <code>2019-11-09</code></p>
-<p>Example for developers (Java):</p>
-<pre><code class="java">private Requirement&lt;DateParameter&gt; exam = require.parameter.dateParameter(&quot;exam&quot;);
-@Override
-public void setup() {
-  log(&quot;Your exam is at &quot; + exam.get().get().toString());
-}
-</code></pre>
-
-<h2 id="time-parameter">Time parameter</h2>
+<p>Example for developers (Java):
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DateParameter</span><span class="o">&gt;</span> <span class="n">exam</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">dateParameter</span><span class="p">(</span><span class="s">&quot;exam&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Your exam is at &quot;</span> <span class="o">+</span> <span class="n">exam</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="time-parameter">Time parameter<a class="headerlink" href="#time-parameter" title="Permanent link">&para;</a></h2>
 <p>The time parameter requires you to enter a valid time following the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601 standard</a>. It is defined as:</p>
 <p><code>HH:MM:SS</code> (<code>H</code> = hour, <code>M</code> = minute, <code>S</code> = second)<br />
 or<br />
 <code>HH:MM</code></p>
 <p>Example: <code>10:15</code>, <code>18:36:10</code></p>
-<p>Example for developers (Java):</p>
-<pre><code class="java">private Requirement&lt;TimeParameter&gt; alarm = require.parameter.timeParameter(&quot;alarm&quot;);
-@Override
-public void setup() {
-  log(&quot;The alarm is set to &quot; + alarm.get().get().toString());
-}
-</code></pre>
-
-<h2 id="date-time-parameter">Date Time parameter</h2>
+<p>Example for developers (Java):
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">TimeParameter</span><span class="o">&gt;</span> <span class="n">alarm</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">timeParameter</span><span class="p">(</span><span class="s">&quot;alarm&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;The alarm is set to &quot;</span> <span class="o">+</span> <span class="n">alarm</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="date-time-parameter">Date Time parameter<a class="headerlink" href="#date-time-parameter" title="Permanent link">&para;</a></h2>
 <p>The date time parameter requires you to enter a valid time at a specific date following the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601 standard</a>. It is defined as:</p>
 <p><code>YYYY-MM-DDThh:mm:ss</code> (<code>Y</code> = year, <code>M</code> = month, <code>D</code> = day, <code>h</code> = hour, <code>m</code> = minute, <code>s</code> = second)<br />
 or<br />
 <code>YYYY-MM-DDThh:mm</code></p>
 <p>Example: <code>2011-12-30T10:15:30</code>, <code>2019-11-09T18:40</code></p>
-<p>Example for developers (Java):</p>
-<pre><code class="java">private Requirement&lt;DateTimeParameter&gt; appointment = 
-                                    require.parameter.dateTimeParameter(&quot;appointment&quot;);
-@Override
-public void setup() {
-  log(&quot;Yo have an appointment on &quot; + appointment.get().get().toLocalDate().toString() 
-    + &quot; at &quot; + appointment.get().get().toLocalTime().toString());
-}
-</code></pre>
+<p>Example for developers (Java):
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DateTimeParameter</span><span class="o">&gt;</span> <span class="n">appointment</span> <span class="o">=</span> 
+                                    <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">dateTimeParameter</span><span class="p">(</span><span class="s">&quot;appointment&quot;</span><span class="p">);</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Yo have an appointment on &quot;</span> <span class="o">+</span> <span class="n">appointment</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toLocalDate</span><span class="p">().</span><span class="na">toString</span><span class="p">()</span> 
+    <span class="o">+</span> <span class="s">&quot; at &quot;</span> <span class="o">+</span> <span class="n">appointment</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toLocalTime</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
                 
                   
                 

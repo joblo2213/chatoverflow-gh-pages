@@ -40,7 +40,7 @@
     
     
       
-        <title>Discord - Chatoverflow</title>
+        <title>Discord - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -774,7 +774,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/services/Discord.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/services/Discord.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Discord</h1>
@@ -785,13 +785,13 @@
 react on new, edited or deleted messages as well as reactions.  </p>
 <p>You can also send messages, files or even <a href="https://www.discord.club/static/home/img/embedg.png">fancy embeds</a>.  </p>
 <blockquote>
-<h3 id="quick-note">Quick note:</h3>
+<h3 id="quick-note">Quick note:<a class="headerlink" href="#quick-note" title="Permanent link">&para;</a></h3>
 <p>It's clever to use discord in the developer mode, so that you can easily copy the id of a server/channel/user.<br />
 To activate the developer mode go to <code>User Settings &gt; Appearance &gt; Advanced</code></p>
 <p><img alt="" src="/img/services/discord-developer-mode.png" /></p>
 </blockquote>
-<h2 id="credentials">Credentials</h2>
-<h3 id="authtoken-required"><code>authToken</code> <em>(required)</em></h3>
+<h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h2>
+<h3 id="authtoken-required"><code>authToken</code> <em>(required)</em><a class="headerlink" href="#authtoken-required" title="Permanent link">&para;</a></h3>
 <p>The authentication token for accessing the discord api with a bot.  </p>
 <p>First of all you need to register a new application on the <a href="https://discordapp.com/developers/applications/">discord developer portal
 </a>.  </p>
@@ -805,171 +805,326 @@ Go to OAuth2 and create a link to login with bot scope:</p>
 <p>If you add the following permissions the bot is allowed to do any action chatoverflow supports:</p>
 <p><img alt="" src="/img/services/discord-oauth-permissions.png" /></p>
 <p>Now you only need to copy the link, follow it, login and add the bot!</p>
-<h2 id="plugin-development-with-discord-chat-input">Plugin development with Discord Chat Input</h2>
+<h2 id="plugin-development-with-discord-chat-input">Plugin development with Discord Chat Input<a class="headerlink" href="#plugin-development-with-discord-chat-input" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that uses an event handler to log all messages and displays the amount of messages every 5 seconds. It also logs if messages are edited, deleted and reactions are added.</p>
-<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/chat/DiscordChatInput.html">javadoc</a>.</p>
-<pre><code class="java">import java.util.function.Consumer;
-import java.util.List;
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/chat/DiscordChatInput.html">javadoc</a>.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
 
-import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
-import org.codeoverflow.chatoverflow.api.io.input.chat.DiscordChatInput;
-import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
-import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
-import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageReceiveEvent;
-import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageEditEvent;
-import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageDeleteEvent;
-import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReactionAddEvent;
-import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReaction;
-import org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordChatMessage;
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.chat.DiscordChatInput</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageReceiveEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageEditEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageDeleteEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReactionAddEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReaction</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordChatMessage</span><span class="p">;</span>
 
-public class TestPlugin extends PluginImpl {
-    //require a new discord chat input
-    private Requirement&lt;DiscordChatInput&gt; discordIn = 
-        require.input.discordChat(&quot;discordChat&quot;, &quot;The discord chat&quot;, false);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
+    <span class="c1">//require a new discord chat input</span>
+    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DiscordChatInput</span><span class="o">&gt;</span> <span class="n">discordIn</span> <span class="o">=</span> 
+        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">discordChat</span><span class="p">(</span><span class="s">&quot;discordChat&quot;</span><span class="p">,</span> <span class="s">&quot;The discord chat&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-    public TestPlugin(PluginManager pluginManager) {
-        super(pluginManager);
-        //Set the loop to repeat every 5 seconds (default 1 second)
-        loopInterval = 5000;
-    }
+    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
+        <span class="c1">//Set the loop to repeat every 5 seconds (default 1 second)</span>
+        <span class="n">loopInterval</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    @Override
-    public void setup() {
-        //set the channel for which we want to get the messages
-        discordIn.get().setChannel(&quot;285809306790789120&quot;);
-        log(&quot;Connected to channel with id 285809306790789120&quot;);
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//set the channel for which we want to get the messages</span>
+        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">setChannel</span><span class="p">(</span><span class="s">&quot;285809306790789120&quot;</span><span class="p">);</span>
+        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Connected to channel with id 285809306790789120&quot;</span><span class="p">);</span>
 
-        //register the event handlers
-        discordIn.get().registerChatMessageReceiveEventHandler(new MessageHandler());
-        discordIn.get().registerChatMessageEditEventHandler(new MessageEditHandler());
-        discordIn.get().registerChatMessageDeleteEventHandler(new MessageDeleteHandler());
-        discordIn.get().registerReactionAddEventHandler(new ReactionHandler());
-    }
+        <span class="c1">//register the event handlers</span>
+        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerChatMessageReceiveEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">MessageHandler</span><span class="p">());</span>
+        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerChatMessageEditEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">MessageEditHandler</span><span class="p">());</span>
+        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerChatMessageDeleteEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">MessageDeleteHandler</span><span class="p">());</span>
+        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerReactionAddEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">ReactionHandler</span><span class="p">());</span>
+    <span class="p">}</span>
 
-    @Override
-    public void loop() {
-        //get the recent messages
-        List&lt;DiscordChatMessage&gt; messages = discordIn.get().getLastMessages(getLoopInterval());
-        //calculate rate of messages per second
-        double rate = messages.size() / (loopInterval / 1000.0);
-         log(&quot;Users are chatting at a rate of &quot; + rate + &quot; messages per second&quot;);
-     }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//get the recent messages</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">DiscordChatMessage</span><span class="o">&gt;</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getLastMessages</span><span class="p">(</span><span class="n">getLoopInterval</span><span class="p">());</span>
+        <span class="c1">//calculate rate of messages per second</span>
+        <span class="kt">double</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">messages</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">loopInterval</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">);</span>
+         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Users are chatting at a rate of &quot;</span> <span class="o">+</span> <span class="n">rate</span> <span class="o">+</span> <span class="s">&quot; messages per second&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     @Override 
-     public void shutdown() {
-         log(&quot;Shutdown!&quot;);
-     }
+     <span class="nd">@Override</span> 
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     private class MessageHandler implements Consumer&lt;DiscordChatMessageReceiveEvent&gt; {
+     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">MessageHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">DiscordChatMessageReceiveEvent</span><span class="o">&gt;</span> <span class="p">{</span>
 
-         @Override
-         public void accept(DiscordChatMessageReceiveEvent event) {
-             DiscordChatMessage message = event.getMessage();
+         <span class="nd">@Override</span>
+         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">DiscordChatMessageReceiveEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+             <span class="n">DiscordChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
 
-            //log the message
-            log(&quot;[Discord]&quot; + message.toString());
-         }
-     }
+            <span class="c1">//log the message</span>
+            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Discord]&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
 
-     private class MessageEditHandler implements Consumer&lt;DiscordChatMessageEditEvent&gt; {
+     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">MessageEditHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">DiscordChatMessageEditEvent</span><span class="o">&gt;</span> <span class="p">{</span>
 
-         @Override
-         public void accept(DiscordChatMessageEditEvent event) {
-             DiscordChatMessage message = event.getMessage();
-             DiscordChatMessage oldMessage = event.getOldMessage();
+         <span class="nd">@Override</span>
+         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">DiscordChatMessageEditEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+             <span class="n">DiscordChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
+             <span class="n">DiscordChatMessage</span> <span class="n">oldMessage</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getOldMessage</span><span class="p">();</span>
 
-            //log the old and the new message
-            log(&quot;[Discord] Message '&quot; + message.toString() + &quot;' updated to '&quot; + oldMessage.toString() + &quot;'&quot;);
-         }
-     }
+            <span class="c1">//log the old and the new message</span>
+            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Discord] Message &#39;&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; updated to &#39;&quot;</span> <span class="o">+</span> <span class="n">oldMessage</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
 
-     private class MessageDeleteHandler implements Consumer&lt;DiscordChatMessageDeleteEvent&gt; {
+     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">MessageDeleteHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">DiscordChatMessageDeleteEvent</span><span class="o">&gt;</span> <span class="p">{</span>
 
-         @Override
-         public void accept(DiscordChatMessageDeleteEvent event) {
-             DiscordChatMessage message = event.getMessage();
+         <span class="nd">@Override</span>
+         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">DiscordChatMessageDeleteEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+             <span class="n">DiscordChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
 
-            //log the deleted message
-            log(&quot;[Discord] Deleted message: '&quot; + message.toString() + &quot;'&quot;);
-         }
-     }
+            <span class="c1">//log the deleted message</span>
+            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Discord] Deleted message: &#39;&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
 
-     private class ReactionHandler implements Consumer&lt;DiscordReactionAddEvent&gt; {
+     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">ReactionHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">DiscordReactionAddEvent</span><span class="o">&gt;</span> <span class="p">{</span>
 
-         @Override
-         public void accept(DiscordReactionAddEvent event) {
-            DiscordReaction reaction = event.getReaction();
-            DiscordChatMessage message = event.getMessage();
+         <span class="nd">@Override</span>
+         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">DiscordReactionAddEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">DiscordReaction</span> <span class="n">reaction</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getReaction</span><span class="p">();</span>
+            <span class="n">DiscordChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
 
-            //log the reaction
-            log(&quot;[Discord] Reaction &quot; + reaction.getImageUrl() + &quot; added to message '&quot; + message.toString( + &quot;'&quot;);
-         }
-     }
- }
-</code></pre>
-
-<h2 id="plugin-development-with-discord-chat-output">Plugin development with Discord Chat Output</h2>
+            <span class="c1">//log the reaction</span>
+            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Discord] Reaction &quot;</span> <span class="o">+</span> <span class="n">reaction</span><span class="p">.</span><span class="na">getImageUrl</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; added to message &#39;&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="plugin-development-with-discord-chat-output">Plugin development with Discord Chat Output<a class="headerlink" href="#plugin-development-with-discord-chat-output" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that posts the current time to the chat every minute.</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/output/chat/DiscordChatOutput.html">javadoc</a>.</p>
-<pre><code class="java">import java.util.function.Consumer;
-import java.util.List;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.OffsetDateTime</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
 
-import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
-import org.codeoverflow.chatoverflow.api.io.output.chat.DiscordChatOutput;
-import org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordEmbed;
-import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
-import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.output.chat.DiscordChatOutput</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordEmbed</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
 
-public class TestPlugin extends PluginImpl {
-    //require a new discord chat output
-    private Requirement&lt;DiscordChatOutput&gt; discordOut = 
-        require.output.discordChat(&quot;discordChat&quot;, &quot;The discord chat&quot;, false);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
+    <span class="c1">//require a new discord chat output</span>
+    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DiscordChatOutput</span><span class="o">&gt;</span> <span class="n">discordOut</span> <span class="o">=</span> 
+        <span class="n">require</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">discordChat</span><span class="p">(</span><span class="s">&quot;discordChat&quot;</span><span class="p">,</span> <span class="s">&quot;The discord chat&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-    public TestPlugin(PluginManager pluginManager) {
-        super(pluginManager);
-        //Set the loop to repeat every 5 minutes (default 1 second)
-        loopInterval = 5 * 60 * 1000;
-    }
+    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
+        <span class="c1">//Set the loop to repeat every 5 minutes (default 1 second)</span>
+        <span class="n">loopInterval</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    @Override
-    public void setup() {
-        //set the channel to which we want send the messages
-        discordOut.get().setChannel(&quot;285809306790789120&quot;);
-        log(&quot;Connected to channel with id 285809306790789120&quot;);
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//set the channel to which we want send the messages</span>
+        <span class="n">discordOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">setChannel</span><span class="p">(</span><span class="s">&quot;285809306790789120&quot;</span><span class="p">);</span>
+        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Connected to channel with id 285809306790789120&quot;</span><span class="p">);</span>
 
-        //Send a message to the channel
-        discordOut.get().sendChatMessage(&quot;Hello! 👋&quot;);
+        <span class="c1">//Send a message to the channel</span>
+        <span class="n">discordOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">sendChatMessage</span><span class="p">(</span><span class="s">&quot;Hello! 👋&quot;</span><span class="p">);</span>
 
-        //Send a file form chatoverflows data folder to the channel
-        discordOut.get().sendFile(&quot;test_file.png&quot;)
-    }
+        <span class="c1">//Send a file form chatoverflows data folder to the channel</span>
+        <span class="n">discordOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">sendFile</span><span class="p">(</span><span class="s">&quot;test_file.png&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
 
-    @Override
-    public void loop() {
-        String timeMessage = &quot;Es ist &quot; 
-            + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME) + &quot; Uhr!&quot;;
-        log(timeMessage);
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">timeMessage</span> <span class="o">=</span> <span class="s">&quot;Es ist &quot;</span> 
+            <span class="o">+</span> <span class="n">LocalTime</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">format</span><span class="p">(</span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ISO_LOCAL_TIME</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; Uhr!&quot;</span><span class="p">;</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">timeMessage</span><span class="p">);</span>
 
-        DiscordEmbed embed = DiscordEmbed.Builder()
-            .withColor(&quot;#FF7A04&quot;)
-            .withTitle(timeMessage)
-            .withAuthor(&quot;codeoverflow.org&quot;, &quot;http://codeoverflow.org&quot;, &quot;https://avatars3.githubusercontent.com/u/34384464?s=200&amp;v=4&quot;)
-            .withTimestamp(OffsetDateTime.now())
-            .build();
+        <span class="n">DiscordEmbed</span> <span class="n">embed</span> <span class="o">=</span> <span class="n">DiscordEmbed</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
+            <span class="p">.</span><span class="na">withColor</span><span class="p">(</span><span class="s">&quot;#FF7A04&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">withTitle</span><span class="p">(</span><span class="n">timeMessage</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">withAuthor</span><span class="p">(</span><span class="s">&quot;codeoverflow.org&quot;</span><span class="p">,</span> <span class="s">&quot;http://codeoverflow.org&quot;</span><span class="p">,</span> <span class="s">&quot;https://avatars3.githubusercontent.com/u/34384464?s=200&amp;v=4&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">withTimestamp</span><span class="p">(</span><span class="n">OffsetDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">())</span>
+            <span class="p">.</span><span class="na">build</span><span class="p">();</span>
 
-        //Output the embed to the discord chat
-        discordOut.get().sendChatMessage(embed);
-     }
+        <span class="c1">//Output the embed to the discord chat</span>
+        <span class="n">discordOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">sendChatMessage</span><span class="p">(</span><span class="n">embed</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     @Override 
-     public void shutdown() {
-         log(&quot;Shutdown!&quot;);
-     }
-}
-</code></pre>
+     <span class="nd">@Override</span> 
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

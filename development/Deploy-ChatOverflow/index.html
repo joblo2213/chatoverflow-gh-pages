@@ -40,7 +40,7 @@
     
     
       
-        <title>Deploy ChatOverflow - Chatoverflow</title>
+        <title>Deploy ChatOverflow - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -720,13 +720,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/development/Deploy-ChatOverflow.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/development/Deploy-ChatOverflow.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Deploy ChatOverflow</h1>
                 
                 <p>Chat Overflow has two different kinds of deployments: a end-user deployment that is only able to run plugins and a plugin developer deployment that can also be used to create plugins. These deployments are usually generated and published to the world when a new version of Chat Overflow is released.</p>
-<h2 id="end-user-deployment">End-User Deployment</h2>
+<h2 id="end-user-deployment">End-User Deployment<a class="headerlink" href="#end-user-deployment" title="Permanent link">&para;</a></h2>
 <p>To create a deployment for end-users that only want to run plugins and use the framework follow these steps:</p>
 <ol>
 <li>Execute the IntelliJ run configuration <code>[Deploy] Generate Bootstrap Launcher and deploy</code> or run the make target with <code>make bootstrap_deploy</code>. This bundles everything and copies it along with start scripts, the license and a readme to the <code>deploy</code>-folder. Magic.</li>
@@ -734,16 +734,22 @@
 </ol>
 <p>The <code>deploy</code>-folder contains the bootstrap launcher that can be started with the start scripts or with <code>java -jar ChatOverflow.jar</code>. It then downloads all required libraries, which are specified in the <code>dependencies.pom</code> file that is included in the jar file of the framework, to the local cache using <a href="https://get-coursier.io">Coursier</a> and starts Chat Overflow.</p>
 <p>The folder-structure of the end-user deployment is as follows:</p>
-<pre><code>deploy/
-├──bin/                      Jars of the API, the framework and the GUI
-├──ChatOverflow.jar          Fat-Jar of the bootstrap launcher
-├──ChatOverflow.*            Start scripts for various platforms
-├──LICENSE                   EPL-2.0 license
-└──README.html               A readme with starter information
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">deploy/</span>
+<span class="err">├──bin/                      Jars of the API, the framework and the GUI</span>
+<span class="err">├──ChatOverflow.jar          Fat-Jar of the bootstrap launcher</span>
+<span class="err">├──ChatOverflow.*            Start scripts for various platforms</span>
+<span class="err">├──LICENSE                   EPL-2.0 license</span>
+<span class="err">└──README.html               A readme with starter information</span>
+</pre></div>
+</td></tr></table>
 
 <p>If the framework has been started once it will create directories for config files, data files of plugins and plugin jars. These directories and their contents are <em>NOT</em> to be included in the deployment zip file.</p>
-<h2 id="plugin-developer-deployment">Plugin Developer Deployment</h2>
+<h2 id="plugin-developer-deployment">Plugin Developer Deployment<a class="headerlink" href="#plugin-developer-deployment" title="Permanent link">&para;</a></h2>
 <p>To create a deployment for plugin dev that not only want to run plugin, but also want to develop them follow these steps:</p>
 <ol>
 <li>Execute the IntelliJ run configuration <code>[DeployDev] Deploy Plugin Dev Environment</code> or use make to create the deployment by executing <code>make bootstrap_deploy_dev</code>.</li>
@@ -751,15 +757,23 @@
 </ol>
 <p>A plugin developer deployment contains the framework and the GUI in jars, the api in form of source code and sbt scripts (e.g. create and fetch) to be able to create and compile plugins.</p>
 <p>The folder-structure of the plugin-dev deployment is as follows:</p>
-<pre><code>deployDev/
-├──.idea/                    IntelliJ run configurations
-├──api/                      The api project in source code
-├──bin/                      Jars of the framework and the GUI
-├──project/                  Contains a jar of the chatoverflow-build code
-├──build.sbt                 Main sbt file, contains general settings and task definitons
-├──dependencies.sbt          Imports all dependencies of the framework
-└──LICENSE                   EPL-2.0 license
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">deployDev/</span>
+<span class="err">├──.idea/                    IntelliJ run configurations</span>
+<span class="err">├──api/                      The api project in source code</span>
+<span class="err">├──bin/                      Jars of the framework and the GUI</span>
+<span class="err">├──project/                  Contains a jar of the chatoverflow-build code</span>
+<span class="err">├──build.sbt                 Main sbt file, contains general settings and task definitons</span>
+<span class="err">├──dependencies.sbt          Imports all dependencies of the framework</span>
+<span class="err">└──LICENSE                   EPL-2.0 license</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

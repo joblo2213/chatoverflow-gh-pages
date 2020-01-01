@@ -40,7 +40,7 @@
     
     
       
-        <title>Using the CLI - Chatoverflow</title>
+        <title>Using the CLI - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -774,49 +774,71 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/usage/Using-the-CLI.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/usage/Using-the-CLI.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Using the CLI</h1>
                 
                 <p>Chat overflow may be configured using the CLI. While running, the easiest way to control everything is the <a href="../Using-the-GUI/"><strong>Better REPL</strong></a>, accessible through <code>http://localhost:2400</code>.</p>
-<h2 id="command-line-interface">Command Line Interface</h2>
+<h2 id="command-line-interface">Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h2>
 <p>This messages shows up when you execute the framework with the flag <code>--help</code>:</p>
-<pre><code>Chat Overflow x.x
-Usage: Chat Overflow [options]
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Chat</span><span class="w"> </span><span class="n">Overflow</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">x</span><span class="w"></span>
+<span class="k">Usage</span><span class="err">:</span><span class="w"> </span><span class="n">Chat</span><span class="w"> </span><span class="n">Overflow</span><span class="w"> </span><span class="o">[</span><span class="n">options</span><span class="o">]</span><span class="w"></span>
 
-  -p, --pluginFolder &lt;value&gt;
-                           path to a folder with packaged plugin jar files
-  -c, --configFolder &lt;value&gt;
-                           path to the folder to save configs and credentials
-  -r, --requirementPackage &lt;value&gt;
-                           path to the package where all requirements are defined
-  -l, --login &lt;value&gt;      the password to login to chat overflow on framework startup
-  -s, --start &lt;value&gt;      a comma-separated list of plugin instances to start after login (has to be combined with -l)
-  -d, --pluginDataFolder &lt;value&gt;
-                           path to the data folder, accessible from within plugins
-  -w, --webServerPort &lt;value&gt;
-                           default web server port, used eg. for the rest api and web gui
-  -o, --enablePluginOutput
-                           set this flag to enable plugin log output on console
-  -f, --enableLogFile      set this flag to enable logging to log files
+<span class="w">  </span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="c1">--pluginFolder &lt;value&gt;</span>
+<span class="w">                           </span><span class="k">path</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">packaged</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="n">jar</span><span class="w"> </span><span class="n">files</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="c1">--configFolder &lt;value&gt;</span>
+<span class="w">                           </span><span class="k">path</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">save</span><span class="w"> </span><span class="n">configs</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">credentials</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="c1">--requirementPackage &lt;value&gt;</span>
+<span class="w">                           </span><span class="k">path</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="ow">all</span><span class="w"> </span><span class="n">requirements</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">defined</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="c1">--login &lt;value&gt;      the password to login to chat overflow on framework startup</span>
+<span class="w">  </span><span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="c1">--start &lt;value&gt;      a comma-separated list of plugin instances to start after login (has to be combined with -l)</span>
+<span class="w">  </span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="c1">--pluginDataFolder &lt;value&gt;</span>
+<span class="w">                           </span><span class="k">path</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">folder</span><span class="p">,</span><span class="w"> </span><span class="n">accessible</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">within</span><span class="w"> </span><span class="n">plugins</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="c1">--webServerPort &lt;value&gt;</span>
+<span class="w">                           </span><span class="k">default</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">eg</span><span class="p">.</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">rest</span><span class="w"> </span><span class="n">api</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">gui</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="c1">--enablePluginOutput</span>
+<span class="w">                           </span><span class="k">set</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">enable</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="k">output</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">console</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="c1">--enableLogFile      set this flag to enable logging to log files</span>
 
-For more information, please visit http://codeoverflow.org/
-</code></pre>
+<span class="k">For</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">information</span><span class="p">,</span><span class="w"> </span><span class="n">please</span><span class="w"> </span><span class="n">visit</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">codeoverflow</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
 
 <blockquote>
-<h2 id="attention">Attention:</h2>
-<h3 id="currently-there-is-a-bug-that-prevents-custom-web-server-ports-from-working-properly">Currently there is a bug that prevents custom web server ports from working properly.</h3>
-<h3 id="see-149">See <a href="https://github.com/codeoverflow-org/chatoverflow/issues/149">#149</a>.</h3>
+<h2 id="attention">Attention:<a class="headerlink" href="#attention" title="Permanent link">&para;</a></h2>
+<h3 id="currently-there-is-a-bug-that-prevents-custom-web-server-ports-from-working-properly">Currently there is a bug that prevents custom web server ports from working properly.<a class="headerlink" href="#currently-there-is-a-bug-that-prevents-custom-web-server-ports-from-working-properly" title="Permanent link">&para;</a></h3>
+<h3 id="see-149">See <a href="https://github.com/codeoverflow-org/chatoverflow/issues/149">#149</a>.<a class="headerlink" href="#see-149" title="Permanent link">&para;</a></h3>
 </blockquote>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>You can also configure the paths of config- and credentials-files to create custom setups:</p>
-<pre><code>-c customConfigFolder -p customPluginFolder
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">-c customConfigFolder -p customPluginFolder</span>
+</pre></div>
+</td></tr></table>
 
 <p>The combination of logging in and starting plugins with one command is very useful for rapid prototyping.</p>
-<pre><code>-l myPassword -s startupPluginInstance1,startupPluginInstance2
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">-l myPassword -s startupPluginInstance1,startupPluginInstance2</span>
+</pre></div>
+</td></tr></table>
 
 <p>By default the log output of a plugin on the console is disabled. You can enable it with the flag <code>-o</code>.</p>
                 

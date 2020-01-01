@@ -40,7 +40,7 @@
     
     
       
-        <title>Pluggable migration guide - Chatoverflow</title>
+        <title>Pluggable migration guide - ChatOverflow</title>
       
     
     
@@ -94,7 +94,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -107,7 +107,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -162,7 +162,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -247,12 +247,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -270,7 +270,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -646,7 +646,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/development/Pluggable-migration-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/development/Pluggable-migration-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Pluggable migration guide</h1>
@@ -665,21 +665,36 @@
 <p>Create a file at <code>yourPlugin/src/main/resources/plugin.xml</code> containing the following: </p>
 </li>
 </ol>
-<p><code>xml
-   &lt;plugin&gt;
-       &lt;name&gt;myPluginName&lt;/name&gt;
-       &lt;author&gt;sebinside&lt;/author&gt;
-       &lt;description&gt;This is a simple plugin for demonstration purposes.&lt;/description&gt;
-       &lt;api&gt;
-           &lt;major&gt;3&lt;/major&gt;
-           &lt;minor&gt;0&lt;/minor&gt;
-       &lt;/api&gt;
-       &lt;version&gt;0.3.0&lt;/version&gt;
-       &lt;website&gt;http://codeoverflow.org&lt;/website&gt;
-       &lt;sourceRepo&gt;https://github.com/codeoverflow-org/chatoverflow-plugins&lt;/sourceRepo&gt;
-       &lt;bugtracker&gt;https://github.com/codeoverflow-org/chatoverflow/issues&lt;/bugtracker&gt;
-       &lt;license&gt;EPL-2.0&lt;/license&gt;
-   &lt;/plugin&gt;</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;plugin&gt;</span>
+    <span class="nt">&lt;name&gt;</span>myPluginName<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;author&gt;</span>sebinside<span class="nt">&lt;/author&gt;</span>
+    <span class="nt">&lt;description&gt;</span>This is a simple plugin for demonstration purposes.<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;api&gt;</span>
+        <span class="nt">&lt;major&gt;</span>3<span class="nt">&lt;/major&gt;</span>
+        <span class="nt">&lt;minor&gt;</span>0<span class="nt">&lt;/minor&gt;</span>
+    <span class="nt">&lt;/api&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.3.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;website&gt;</span>http://codeoverflow.org<span class="nt">&lt;/website&gt;</span>
+    <span class="nt">&lt;sourceRepo&gt;</span>https://github.com/codeoverflow-org/chatoverflow-plugins<span class="nt">&lt;/sourceRepo&gt;</span>
+    <span class="nt">&lt;bugtracker&gt;</span>https://github.com/codeoverflow-org/chatoverflow/issues<span class="nt">&lt;/bugtracker&gt;</span>
+    <span class="nt">&lt;license&gt;</span>EPL-2.0<span class="nt">&lt;/license&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</td></tr></table>
+
 <ol>
 <li>Replace these values with yours. Name, author, api and version are mandatory while the other ones aren't and can be omitted by remove the xml tag. Note that you also may need to adjust the api version numbers if you are running a newer version.</li>
 </ol>

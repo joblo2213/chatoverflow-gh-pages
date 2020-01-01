@@ -40,7 +40,7 @@
     
     
       
-        <title>TipeeeStream - Chatoverflow</title>
+        <title>TipeeeStream - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -760,7 +760,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/services/TipeeeStream.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/services/TipeeeStream.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>TipeeeStream</h1>
@@ -769,17 +769,17 @@
 
 <p>By using the TipeeeStream service you can react on donations, subscriptions and follows in your stream.<br />
 Just listen to the events provided by the TipeeeStream event input.</p>
-<h2 id="credentials">Credentials</h2>
-<h3 id="username-required"><code>username</code> <em>(required)</em></h3>
+<h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h2>
+<h3 id="username-required"><code>username</code> <em>(required)</em><a class="headerlink" href="#username-required" title="Permanent link">&para;</a></h3>
 <p>Guess what: Your TipeeeStream username 😉.</p>
 <p>Just add a new credentials value with <code>username</code> as key and your username as value.<br />
 A guide can be found <a href="/usage/Using-the-GUI.md#Set-credentials">here</a>.</p>
-<h3 id="apikey-required"><code>apiKey</code> <em>(required)</em></h3>
+<h3 id="apikey-required"><code>apiKey</code> <em>(required)</em><a class="headerlink" href="#apikey-required" title="Permanent link">&para;</a></h3>
 <p>The key used for authentication to the TipeeeStream api. </p>
 <p>You find your key on https://www.tipeeestream.com/dashboard/api-key.</p>
 <p>Click on <code>Show</code>, copy the entire key, add it as a credentials value with the key <code>apikey</code> and you're done!</p>
 <p><img alt="" src="/img/services/tipeeestream-apikey.png" /></p>
-<h2 id="plugin-development-with-tipeeestream-event-input">Plugin development with TipeeeStream Event Input</h2>
+<h2 id="plugin-development-with-tipeeestream-event-input">Plugin development with TipeeeStream Event Input<a class="headerlink" href="#plugin-development-with-tipeeestream-event-input" title="Permanent link">&para;</a></h2>
 <p>This simple example plugin logs all Subscriptions:</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/event/TipeeestreamEventInput.html">javadoc</a>, the TipeeeStream event input is capable of all the following events:</p>
 <ul>
@@ -790,51 +790,95 @@ A guide can be found <a href="/usage/Using-the-GUI.md#Set-credentials">here</a>.
 <li>Raids</li>
 <li>Hosts</li>
 </ul>
-<pre><code class="java">import java.util.function.Consumer;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
 
-import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
-import org.codeoverflow.chatoverflow.api.io.input.event.TipeeestreamEventInput;
-import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
-import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
-import org.codeoverflow.chatoverflow.api.io.event.stream.tipeeestream.TipeeestreamSubscriptionEvent;
-import org.codeoverflow.chatoverflow.api.io.dto.stat.stream.tipeeestream.TipeeestreamSubscription;
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.event.TipeeestreamEventInput</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.stream.tipeeestream.TipeeestreamSubscriptionEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.dto.stat.stream.tipeeestream.TipeeestreamSubscription</span><span class="p">;</span>
 
-public class TestPlugin extends PluginImpl {
-    // require a new TipeeeStream event input
-    private Requirement&lt;TipeeestreamEventInput&gt; tipeeeIn = 
-        require.input.tipeeeStream(&quot;tipeeestream&quot;, &quot;Connection to the TipeeeStream api&quot;, false);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
+    <span class="c1">// require a new TipeeeStream event input</span>
+    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">TipeeestreamEventInput</span><span class="o">&gt;</span> <span class="n">tipeeeIn</span> <span class="o">=</span> 
+        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">tipeeeStream</span><span class="p">(</span><span class="s">&quot;tipeeestream&quot;</span><span class="p">,</span> <span class="s">&quot;Connection to the TipeeeStream api&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-    public TestPlugin(PluginManager pluginManager) {
-        super(pluginManager);
-    }
+    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    @Override
-    public void setup() {
-        // register the subscription event handler that reacts on subscriptions 
-        tipeeeIn.get().registerSubscriptionEventHandler(new SubHandler());
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// register the subscription event handler that reacts on subscriptions </span>
+        <span class="n">tipeeeIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerSubscriptionEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">SubHandler</span><span class="p">());</span>
+    <span class="p">}</span>
 
-    @Override
-    public void loop() {
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
 
-    @Override 
-    public void shutdown() {
-        log(&quot;Shutdown!&quot;);
-    }
+    <span class="nd">@Override</span> 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    private class SubHandler implements Consumer&lt;TipeeestreamSubscriptionEvent&gt; {
-        @Override
-        public void accept(TipeeestreamSubscriptionEvent event) {
-            TipeeestreamSubscription sub = event.getInfo();
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">SubHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">TipeeestreamSubscriptionEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">TipeeestreamSubscriptionEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">TipeeestreamSubscription</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getInfo</span><span class="p">();</span>
 
-            // print information about the event to the log
-            log(sub.getSubscriber().getDisplayName() + &quot; subscribed. Resub streak: &quot; 
-                + sub.getResub());
-        }
-    }
-}
-</code></pre>
+            <span class="c1">// print information about the event to the log</span>
+            <span class="n">log</span><span class="p">(</span><span class="n">sub</span><span class="p">.</span><span class="na">getSubscriber</span><span class="p">().</span><span class="na">getDisplayName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; subscribed. Resub streak: &quot;</span> 
+                <span class="o">+</span> <span class="n">sub</span><span class="p">.</span><span class="na">getResub</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

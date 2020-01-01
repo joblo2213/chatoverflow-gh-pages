@@ -40,7 +40,7 @@
     
     
       
-        <title>RCON - Chatoverflow</title>
+        <title>RCON - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -788,7 +788,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/services/RCON.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/services/RCON.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>RCON</h1>
@@ -799,85 +799,141 @@
 <p>Popular games that implement the RCON protocol are Minecraft, Factorio, Garrysmod and Counter-Strike: Global Offensive.<br />
 But there are way more games that also have this functionality,<br />
 Google will help you to find out if your game has it and how you can activate it.</p>
-<h2 id="credentials">Credentials</h2>
-<h3 id="address-required"><code>address</code> <em>(required)</em></h3>
+<h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h2>
+<h3 id="address-required"><code>address</code> <em>(required)</em><a class="headerlink" href="#address-required" title="Permanent link">&para;</a></h3>
 <p>The IPv4 address or domain of your game server.</p>
-<h3 id="password-required"><code>password</code> <em>(required)</em></h3>
+<h3 id="password-required"><code>password</code> <em>(required)</em><a class="headerlink" href="#password-required" title="Permanent link">&para;</a></h3>
 <p>The password for accessing your servers RCON socket.<br />
 It is defined somewhere in your servers configuration (different for each game, google will help you).</p>
-<h3 id="port-optional"><code>port</code> <em>(optional)</em></h3>
+<h3 id="port-optional"><code>port</code> <em>(optional)</em><a class="headerlink" href="#port-optional" title="Permanent link">&para;</a></h3>
 <p>The port on which the RCON socket runs.<br />
 It is defined somewhere in your servers configuration (different for each game, google will help you).</p>
-<h2 id="plugin-development-with-rcon-output">Plugin development with RCON Output</h2>
+<h2 id="plugin-development-with-rcon-output">Plugin development with RCON Output<a class="headerlink" href="#plugin-development-with-rcon-output" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple plugin that says hello to all players on a minecraft server using rcon:</p>
-<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/RconOutput.html">javadoc</a>.</p>
-<pre><code class="java">
-import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
-import org.codeoverflow.chatoverflow.api.io.input.RconOutput;
-import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
-import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/RconOutput.html">javadoc</a>.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.RconOutput</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
 
-public class TestPlugin extends PluginImpl {
-    //require a new rcon output
-    private Requirement&lt;RconOutput&gt; rcon = 
-        require.output.rcon(&quot;rcon&quot;, &quot;Connect to a minecraft server using RCON&quot;, false);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
+    <span class="c1">//require a new rcon output</span>
+    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">RconOutput</span><span class="o">&gt;</span> <span class="n">rcon</span> <span class="o">=</span> 
+        <span class="n">require</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">rcon</span><span class="p">(</span><span class="s">&quot;rcon&quot;</span><span class="p">,</span> <span class="s">&quot;Connect to a minecraft server using RCON&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-    public TestPlugin(PluginManager pluginManager) {
-        super(pluginManager);
-    }
+    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    @Override
-    public void setup() {
-        //execute a command
-        rcon.get().sendCommand(&quot;say Hello World!&quot;);
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//execute a command</span>
+        <span class="n">rcon</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">sendCommand</span><span class="p">(</span><span class="s">&quot;say Hello World!&quot;</span><span class="p">);</span>
 
-    }
+    <span class="p">}</span>
 
-    @Override
-    public void loop() {}
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
 
-     @Override 
-     public void shutdown() {
-         log(&quot;Shutdown!&quot;);
-     }
- }
-</code></pre>
-
-<h2 id="plugin-development-with-rcon-input">Plugin development with RCON Input</h2>
+     <span class="nd">@Override</span> 
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="plugin-development-with-rcon-input">Plugin development with RCON Input<a class="headerlink" href="#plugin-development-with-rcon-input" title="Permanent link">&para;</a></h2>
 <p>If you want to also get the response of a command have a look at this simple plugin:</p>
-<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/RconInput.html">javadoc</a>.</p>
-<pre><code class="java">
-import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
-import org.codeoverflow.chatoverflow.api.io.input.RconInput;
-import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
-import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/RconInput.html">javadoc</a>.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.RconInput</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
 
-public class TestPlugin extends PluginImpl {
-    //require a new rcon input
-    private Requirement&lt;RconInput&gt; rcon = 
-        require.input.rcon(&quot;rcon&quot;, &quot;Connect to a minecraft server using RCON&quot;, false);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
+    <span class="c1">//require a new rcon input</span>
+    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">RconInput</span><span class="o">&gt;</span> <span class="n">rcon</span> <span class="o">=</span> 
+        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">rcon</span><span class="p">(</span><span class="s">&quot;rcon&quot;</span><span class="p">,</span> <span class="s">&quot;Connect to a minecraft server using RCON&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-    public TestPlugin(PluginManager pluginManager) {
-        super(pluginManager);
-    }
+    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    @Override
-    public void setup() {
-        //execute a command and log the response
-        String response = rcon.get().getCommandOutput(&quot;list&quot;);
-        log(response);
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//execute a command and log the response</span>
+        <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">rcon</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getCommandOutput</span><span class="p">(</span><span class="s">&quot;list&quot;</span><span class="p">);</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
 
-    }
+    <span class="p">}</span>
 
-    @Override
-    public void loop() {}
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
 
-     @Override 
-     public void shutdown() {
-         log(&quot;Shutdown!&quot;);
-     }
- }
-</code></pre>
+     <span class="nd">@Override</span> 
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
                 
                   
                 

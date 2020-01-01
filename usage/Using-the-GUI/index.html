@@ -40,7 +40,7 @@
     
     
       
-        <title>Using the GUI - Chatoverflow</title>
+        <title>Using the GUI - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -762,14 +762,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/usage/Using-the-GUI.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/usage/Using-the-GUI.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Using the GUI</h1>
                 
                 <p>The GUI for chatoverflow is still in development.<br />
 That's why we have the <strong>Better REPL</strong>, an easy-to-use one-page dashboard, where everything can be controlled.</p>
-<h2 id="starting-the-better-repl">Starting the Better REPL</h2>
+<h2 id="starting-the-better-repl">Starting the Better REPL<a class="headerlink" href="#starting-the-better-repl" title="Permanent link">&para;</a></h2>
 <p>When using the GUI for the first time use the <code>[Advanced]</code> run configuration that packages the gui. Make sure to reload sbt afterwards to make IntelliJ find and load the gui.</p>
 <p>For all further runs you may use the <code>[Simple]</code> run configuration which is way faster.  </p>
 <p>Once the framework is running open http://localhost:2400/ in a browser and wait for the server status to display <code>Connected!</code>. Now click on <code>OPEN BETTER REPL</code>. </p>
@@ -777,7 +777,7 @@ That's why we have the <strong>Better REPL</strong>, an easy-to-use one-page das
 <p>When running for the first time enter a password that you want to use for securing your credentials and click on <code>REGISTER</code>.<br />
 If you are already registered, use your password to login.<br />
 If the login was successful the gui will display the authentication key for this session.  </p>
-<h2 id="creating-a-plugin-instance">Creating a plugin instance</h2>
+<h2 id="creating-a-plugin-instance">Creating a plugin instance<a class="headerlink" href="#creating-a-plugin-instance" title="Permanent link">&para;</a></h2>
 <p>Before running a plugin you have to create a plugin instance.<br />
 All available plugins are listed under <code>Plugin types</code>.<br />
 Add more plugins by putting the plugin <code>.jar</code> files into the plugins folder. If you are adding new plugins to the folder while the framework is still running, you need to restart the framework in order for it to load the newly added plugins.</p>
@@ -788,7 +788,7 @@ Add more plugins by putting the plugin <code>.jar</code> files into the plugins 
 <p><img alt="" src="/img/usage/plugin-instances.png" /></p>
 <p>You can use the pen to copy the name of an instance.<br />
 There are buttons that allow you to <code>START</code> / <code>STOP</code> an instance, to show its log (if running) or requirements and a button to <code>DELETE</code> the instance (just make sure to stop it before deleting it).</p>
-<h2 id="setting-plugin-requirements">Setting plugin requirements</h2>
+<h2 id="setting-plugin-requirements">Setting plugin requirements<a class="headerlink" href="#setting-plugin-requirements" title="Permanent link">&para;</a></h2>
 <p>Before you can start a plugin you need to set its requirements.
 A plugin can require a lot of things, for example Strings, Inputs or Outputs.
 To view all requirements of a plugin enter the instance name and click on <code>SHOW REQUIREMENTS</code>.  </p>
@@ -798,10 +798,10 @@ You see which requirements are already set and which ones are optional.<br />
 To set or change the value click on the blue pen, enter the required value and click on <code>PUT</code>.  </p>
 <p><img alt="" src="/img/usage/change-requirement.png" /></p>
 <p>For inputs and outputs the value should be the source identifier of a connector - which you first have to define.</p>
-<h2 id="adding-connectors">Adding connectors</h2>
+<h2 id="adding-connectors">Adding connectors<a class="headerlink" href="#adding-connectors" title="Permanent link">&para;</a></h2>
 <p>To add a connector use whatever source identifier you like, specify the connector type (a list of all types can be found in the connector types box above) and click <code>ADD</code>.  It will then be displayed in the list on the left side.  </p>
 <p><img alt="" src="/img/usage/create-connector.png" /></p>
-<h2 id="set-credentials">Set credentials</h2>
+<h2 id="set-credentials">Set credentials<a class="headerlink" href="#set-credentials" title="Permanent link">&para;</a></h2>
 <p>Every connector requires you to set the credentials for that service.<br />
 Some of them are required for the connector to work and some are optional.</p>
 <p><img alt="" src="/img/usage/connectors.png" /></p>

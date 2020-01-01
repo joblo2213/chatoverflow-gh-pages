@@ -40,7 +40,7 @@
     
     
       
-        <title>Serial Port (Arduino - Chatoverflow</title>
+        <title>Serial Port (Arduino - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -800,7 +800,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/services/Serial.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/services/Serial.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Serial Port (Arduino</h1>
@@ -809,8 +809,8 @@
 
 <p>The Serial service allows you to communicate with a device that is connected to your PC over a serial port.  </p>
 <p>The most common example is exchanging data with an <a href="https://www.arduino.cc/">arduino</a> over USB.</p>
-<h2 id="credentials">Credentials</h2>
-<h3 id="port-required"><code>port</code> <em>(required)</em></h3>
+<h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h2>
+<h3 id="port-required"><code>port</code> <em>(required)</em><a class="headerlink" href="#port-required" title="Permanent link">&para;</a></h3>
 <p>The serial port you want to communicate with. Finding the right port is different on every operating system:  </p>
 <p><strong>Windows:</strong>
 1. Open Device Manager, and expand the Ports (COM &amp; LPT) list<br />
@@ -818,129 +818,227 @@
 <img alt="" src="/img/services/serial-ports.png/" /></p>
 <p><strong>Mac:</strong><br />
 1. Open terminal and type: 
-   <code>shell
-   ls /dev/*</code><br />
+   <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ls /dev/*
+</pre></div>
+</td></tr></table>
 2. Note the port number listed for <code>/dev/tty.usbmodem*</code> or <code>/dev/tty.usbserial*.</code><br />
    The port number is represented with <code>*</code> here.  </p>
 <p><strong>Linux:</strong><br />
 1. Open terminal and type: 
-   <code>shell
-   ls /dev/tty*</code> 
+   <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ls /dev/tty*
+</pre></div>
+</td></tr></table>
 2. Note the port number listed for <code>/dev/ttyUSB*</code> or <code>/dev/ttyACM*</code><br />
    The port number is represented with <code>*</code> here</p>
-<h3 id="baudrate-optional"><code>baudRate</code> <em>(optional)</em></h3>
+<h3 id="baudrate-optional"><code>baudRate</code> <em>(optional)</em><a class="headerlink" href="#baudrate-optional" title="Permanent link">&para;</a></h3>
 <p>If you want to use a custom baud rate to communicate with the device you can set it here.<br />
 Default value is <code>9600</code>.</p>
-<h2 id="plugin-development-with-serial-input">Plugin development with Serial Input</h2>
+<h2 id="plugin-development-with-serial-input">Plugin development with Serial Input<a class="headerlink" href="#plugin-development-with-serial-input" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that prints incoming data to log:</p>
-<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/SerialInput.html">javadoc</a>.</p>
-<pre><code class="java">import java.util.function.Consumer;
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/SerialInput.html">javadoc</a>.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
 
-import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
-import org.codeoverflow.chatoverflow.api.io.input.SerialInput;
-import org.codeoverflow.chatoverflow.api.io.event.serial.SerialDataAvailableEvent;
-import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
-import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.SerialInput</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.serial.SerialDataAvailableEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
 
-public class TestPlugin extends PluginImpl {
-    //require a new serial input
-    private Requirement&lt;SerialInput&gt; serialIn = 
-        require.input.serial(&quot;serialIn&quot;, &quot;An arduino connected to the serial port&quot;, false);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
+    <span class="c1">//require a new serial input</span>
+    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">SerialInput</span><span class="o">&gt;</span> <span class="n">serialIn</span> <span class="o">=</span> 
+        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">serial</span><span class="p">(</span><span class="s">&quot;serialIn&quot;</span><span class="p">,</span> <span class="s">&quot;An arduino connected to the serial port&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-    public TestPlugin(PluginManager pluginManager) {
-        super(pluginManager);
-    }
+    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    @Override
-    public void setup() {
-        //register the message handler that reacts on incoming messages
-        serialIn.get().registerDataAvailableEventHandler(new DataHandler());
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//register the message handler that reacts on incoming messages</span>
+        <span class="n">serialIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerDataAvailableEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">DataHandler</span><span class="p">());</span>
+    <span class="p">}</span>
 
-    @Override
-    public void loop() {}
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
 
-     @Override 
-     public void shutdown() {
-         log(&quot;Shutdown!&quot;);
-     }
+     <span class="nd">@Override</span> 
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     private class DataHandler implements Consumer&lt;SerialDataAvailableEvent&gt; {
+     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">DataHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">SerialDataAvailableEvent</span><span class="o">&gt;</span> <span class="p">{</span>
 
-         @Override
-         public void accept(SerialDataAvailableEvent event) {
-            //print the incoming string to the log
-            log(&quot;[Serial]&quot; + event.getAsString());
-         }
-     }
- }
-</code></pre>
-
-<h2 id="plugin-development-with-serial-output">Plugin development with Serial Output</h2>
+         <span class="nd">@Override</span>
+         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">SerialDataAvailableEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//print the incoming string to the log</span>
+            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Serial]&quot;</span> <span class="o">+</span> <span class="n">event</span><span class="p">.</span><span class="na">getAsString</span><span class="p">());</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
+<h2 id="plugin-development-with-serial-output">Plugin development with Serial Output<a class="headerlink" href="#plugin-development-with-serial-output" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that sends <code>ping</code> to the connected device</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/output/SerialOutput.html">javadoc</a>.</p>
-<pre><code class="java">import java.util.function.Consumer;
-import java.util.List;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
 
-import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
-import org.codeoverflow.chatoverflow.api.io.output.SerialOutput;
-import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
-import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.output.SerialOutput</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
 
-public class TestPlugin extends PluginImpl {
-    //require a new serial output
-    private Requirement&lt;SerialOutput&gt; serialOut = 
-        require.output.serial(&quot;serialOut&quot;, &quot;An arduino connected to the serial port&quot;, false);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
+    <span class="c1">//require a new serial output</span>
+    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">SerialOutput</span><span class="o">&gt;</span> <span class="n">serialOut</span> <span class="o">=</span> 
+        <span class="n">require</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">serial</span><span class="p">(</span><span class="s">&quot;serialOut&quot;</span><span class="p">,</span> <span class="s">&quot;An arduino connected to the serial port&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-    public TestPlugin(PluginManager pluginManager) {
-        super(pluginManager);
-        //Set the loop to repeat every 30 seconds (default 1 second)
-        loopInterval = 30 * 1000;
-    }
+    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
+        <span class="c1">//Set the loop to repeat every 30 seconds (default 1 second)</span>
+        <span class="n">loopInterval</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    @Override
-    public void setup() {}
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{}</span>
 
-    @Override
-    public void loop() {
-        //Send ping to serial port
-        serialOut.getPrintStream().println(&quot;ping&quot;);
-     }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//Send ping to serial port</span>
+        <span class="n">serialOut</span><span class="p">.</span><span class="na">getPrintStream</span><span class="p">().</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ping&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     @Override 
-     public void shutdown() {
-         log(&quot;Shutdown!&quot;);
-     }
-}
-</code></pre>
+     <span class="nd">@Override</span> 
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
 
-<h3 id="example-arduino-script">Example arduino script</h3>
-<p>A simple ping-pong example script for your arduino.</p>
-<pre><code class="cpp">String inputString = &quot;&quot;;     
-boolean stringComplete = false; 
+<h3 id="example-arduino-script">Example arduino script<a class="headerlink" href="#example-arduino-script" title="Permanent link">&para;</a></h3>
+<p>A simple ping-pong example script for your arduino.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">String</span> <span class="n">inputString</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>     
+<span class="n">boolean</span> <span class="n">stringComplete</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> 
 
-void setup() {
-    Serial.begin(9600);
-}
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
 
-// the loop routine runs over and over again forever
-void loop() {
-    while (Serial.available()) {
-        char inChar = (char)Serial.read();
-            inputString += inChar;
-            if (inChar == '\n') {
-            stringComplete = true;
-        }
-    }
-    if (stringComplete) {
-        Serial.println(&quot;pong&quot;);
-        stringComplete = false;
-    }
-  delay(1);        // delay in between reads for stability
-}
-</code></pre>
+<span class="c1">// the loop routine runs over and over again forever</span>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">inChar</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+            <span class="n">inputString</span> <span class="o">+=</span> <span class="n">inChar</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inChar</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">stringComplete</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">stringComplete</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;pong&quot;</span><span class="p">);</span>
+        <span class="n">stringComplete</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>        <span class="c1">// delay in between reads for stability</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
                 
                   
                 

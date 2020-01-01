@@ -40,7 +40,7 @@
     
     
       
-        <title>Sample - Chatoverflow</title>
+        <title>Sample - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -251,12 +251,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -274,7 +274,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -720,7 +720,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/services/Sample.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/services/Sample.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Sample</h1>
@@ -730,48 +730,76 @@
 <p>The Sample service is just an example on how a connector should look like.
 And this wiki page is just an example how a wiki page for a connector should look like.</p>
 <p>First you have a short description.</p>
-<p>The image in the upper right corner can be done with the following html in the first line of the page:</p>
-<pre><code class="html">&lt;p&gt;&lt;img align=&quot;right&quot; width=&quot;128&quot; height=&quot;128&quot; src=&quot;/img/services/sample-material-icon.png&quot;&gt;&lt;/p&gt;
-</code></pre>
-
-<p>The image should be uploaded to <a href="https://github.com/codeoverflow-org/chatoverflow-wiki/tree/master/img/services">img/services</a>.</p>
-<h2 id="credentials">Credentials</h2>
+<p>The image in the upper right corner can be done with the following html in the first line of the page:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;right&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;128&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;128&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/img/services/sample-material-icon.png&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+The image should be uploaded to <a href="https://github.com/codeoverflow-org/chatoverflow-wiki/tree/master/img/services">img/services</a>.</p>
+<h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h2>
 <p>The sample service doesn't require any credentials.
 Otherwise this section should list all required credentials and show how to obtain them, see <a href="../Discord/">discord service</a>.</p>
-<h2 id="plugin-development-with-sample-input">Plugin development with Sample Input</h2>
+<h2 id="plugin-development-with-sample-input">Plugin development with Sample Input<a class="headerlink" href="#plugin-development-with-sample-input" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple sample plugin:</p>
-<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/SampleInput.html">javadoc</a>.</p>
-<pre><code class="java">
-import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
-import org.codeoverflow.chatoverflow.api.io.input.SampleInput;
-import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
-import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/SampleInput.html">javadoc</a>.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.SampleInput</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
 
-public class TestPlugin extends PluginImpl {
-    //require a new sample input
-    private Requirement&lt;SampleInput&gt; sample = 
-        require.input.sample(&quot;sample&quot;, &quot;Some description&quot;, false);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
+    <span class="c1">//require a new sample input</span>
+    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">SampleInput</span><span class="o">&gt;</span> <span class="n">sample</span> <span class="o">=</span> 
+        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">sample</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">,</span> <span class="s">&quot;Some description&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-    public TestPlugin(PluginManager pluginManager) {
-        super(pluginManager);
-    }
+    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    @Override
-    public void setup() {
-        //some code that shows of the general usage of the service here
-        //...
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//some code that shows of the general usage of the service here</span>
+        <span class="c1">//...</span>
 
-    }
+    <span class="p">}</span>
 
-    @Override
-    public void loop() {}
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
 
-     @Override 
-     public void shutdown() {
-         log(&quot;Shutdown!&quot;);
-     }
- }
-</code></pre>
+     <span class="nd">@Override</span> 
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
                 
                   
                 

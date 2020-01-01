@@ -40,7 +40,7 @@
     
     
       
-        <title>Versioning - Chatoverflow</title>
+        <title>Versioning - ChatOverflow</title>
       
     
     
@@ -98,7 +98,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://codeoverflow.org" title="Chatoverflow" class="md-header-nav__button md-logo">
+        <a href="http://codeoverflow.org" title="ChatOverflow" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -111,7 +111,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Chatoverflow
+              ChatOverflow
             </span>
             <span class="md-header-nav__topic">
               
@@ -166,7 +166,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
           </div>
@@ -249,12 +249,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://codeoverflow.org" title="Chatoverflow" class="md-nav__button md-logo">
+    <a href="http://codeoverflow.org" title="ChatOverflow" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Chatoverflow
+    ChatOverflow
   </label>
   
     <div class="md-nav__source">
@@ -272,7 +272,7 @@
     </div>
   
   <div class="md-source__repository">
-    GitHub
+    codeoverflow-org/chatoverflow
   </div>
 </a>
     </div>
@@ -675,13 +675,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/docs/development/Versioning.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/development/Versioning.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Versioning</h1>
                 
                 <p>This article summarizes how we handle versioning in the Chat Overflow project. This is primarily relevant for team members while releasing new builds but also for every other developer. The scope of this article is <em>versioning</em>, not <em>version control</em>. Obviously, we use git and every component is available through github.</p>
-<h2 id="versioned-artefacts">Versioned artefacts</h2>
+<h2 id="versioned-artefacts">Versioned artefacts<a class="headerlink" href="#versioned-artefacts" title="Permanent link">&para;</a></h2>
 <p>The following components / artefacts / parts of the Chat Overflow project have a dedicated version number:</p>
 <ul>
 <li>Framework (contains startup code and service implementation, specifies release version)</li>
@@ -692,7 +692,7 @@
 </ul>
 <p>These versions are displayed while the framework is starting. Please note, that we do not display dedicated versions for the build environment or the (bootstrap) launcher / updater. Install scripts and plugin versions are out of scope, too.</p>
 <p>Although these artefacts are usually deployed together, the specific version numbers are independent. The framework version does always include all changes and specifies the release version.</p>
-<h2 id="versioning">Versioning</h2>
+<h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h2>
 <p>We use semantic versioning, which is documented <a href="https://semver.org/">here</a>. Semantic version numbers have the following pattern: <code>MAJOR.MINOR.PATCH</code>. To summarize:</p>
 <ul>
 <li><strong>Major</strong> changes are new releases with API-incompatible changes</li>
