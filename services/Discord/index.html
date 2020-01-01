@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Discord - Chatoverflow</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Chatoverflow</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../development/Adding-a-new-platform-source/">Adding a new platform source</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Deploy-ChatOverflow/">Deploy ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Pluggable-migration-guide/">Pluggable migration guide</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Release-ChatOverflow/">Release ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Setting-up-the-Build-Environment/">Setting up the Build Environment</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Structure/">Structure</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Versioning/">Versioning</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Working-with-NPM/">Working with NPM</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Writing-a-plugin/">Writing a plugin</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">Discord</a>
+</li>
+                                    
+<li >
+    <a href="../File/">File</a>
+</li>
+                                    
+<li >
+    <a href="../RCON/">RCON</a>
+</li>
+                                    
+<li >
+    <a href="../Sample/">Sample</a>
+</li>
+                                    
+<li >
+    <a href="../Serial/">Serial</a>
+</li>
+                                    
+<li >
+    <a href="../StreamElements/">StreamElements</a>
+</li>
+                                    
+<li >
+    <a href="../TipeeeStream/">TipeeeStream</a>
+</li>
+                                    
+<li >
+    <a href="../Twitch-Chat/">Twitch Chat</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../usage/Frequent-Issues/">Frequent Issues</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-Parameters/">Using Parameters</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-the-CLI/">Using the CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-the-GUI/">Using the GUI</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../development/Writing-a-plugin/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../File/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#quick-note">Quick note:</a></li>
+        <li class="main "><a href="#credentials">Credentials</a></li>
+            <li><a href="#authtoken-required">authToken (required)</a></li>
+        <li class="main "><a href="#plugin-development-with-discord-chat-input">Plugin development with Discord Chat Input</a></li>
+        <li class="main "><a href="#plugin-development-with-discord-chat-output">Plugin development with Discord Chat Output</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img align="right" width="128" height="128" src="/img/services/discord-logo.png"></p>
+
+<p>The discord service allows you to connect to a discord text channel to get a list of recent messages,
+react on new, edited or deleted messages as well as reactions.  </p>
+<p>You can also send messages, files or even <a href="https://www.discord.club/static/home/img/embedg.png">fancy embeds</a>.  </p>
+<blockquote>
+<h3 id="quick-note">Quick note:</h3>
+<p>It's clever to use discord in the developer mode, so that you can easily copy the id of a server/channel/user.<br />
+To activate the developer mode go to <code>User Settings &gt; Appearance &gt; Advanced</code></p>
+<p><img alt="" src="/img/services/discord-developer-mode.png" /></p>
+</blockquote>
+<h2 id="credentials">Credentials</h2>
+<h3 id="authtoken-required"><code>authToken</code> <em>(required)</em></h3>
+<p>The authentication token for accessing the discord api with a bot.  </p>
+<p>First of all you need to register a new application on the <a href="https://discordapp.com/developers/applications/">discord developer portal
+</a>.  </p>
+<p>Then head over to the bot page and add a bot:  </p>
+<p><img alt="" src="/img/services/discord-build-a-bot.png" /></p>
+<p>Now you can retrieve the authentication token, click on copy and <a href="/usage/Using-the-GUI.md#Set-credentials">add it as a credentials value</a> using the GUI.</p>
+<p><img alt="" src="/img/services/discord-bot-token.png" /></p>
+<p>The only thing left to do is adding the bot to your server.<br />
+Go to OAuth2 and create a link to login with bot scope:</p>
+<p><img alt="" src="/img/services/discord-oauth-scope.png" /></p>
+<p>If you add the following permissions the bot is allowed to do any action chatoverflow supports:</p>
+<p><img alt="" src="/img/services/discord-oauth-permissions.png" /></p>
+<p>Now you only need to copy the link, follow it, login and add the bot!</p>
+<h2 id="plugin-development-with-discord-chat-input">Plugin development with Discord Chat Input</h2>
+<p>Have a look at this simple example plugin that uses an event handler to log all messages and displays the amount of messages every 5 seconds. It also logs if messages are edited, deleted and reactions are added.</p>
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/chat/DiscordChatInput.html">javadoc</a>.</p>
+<pre><code class="java">import java.util.function.Consumer;
+import java.util.List;
+
+import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
+import org.codeoverflow.chatoverflow.api.io.input.chat.DiscordChatInput;
+import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
+import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageReceiveEvent;
+import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageEditEvent;
+import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageDeleteEvent;
+import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReactionAddEvent;
+import org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReaction;
+import org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordChatMessage;
+
+public class TestPlugin extends PluginImpl {
+    //require a new discord chat input
+    private Requirement&lt;DiscordChatInput&gt; discordIn = 
+        require.input.discordChat(&quot;discordChat&quot;, &quot;The discord chat&quot;, false);
+
+    public TestPlugin(PluginManager pluginManager) {
+        super(pluginManager);
+        //Set the loop to repeat every 5 seconds (default 1 second)
+        loopInterval = 5000;
+    }
+
+    @Override
+    public void setup() {
+        //set the channel for which we want to get the messages
+        discordIn.get().setChannel(&quot;285809306790789120&quot;);
+        log(&quot;Connected to channel with id 285809306790789120&quot;);
+
+        //register the event handlers
+        discordIn.get().registerChatMessageReceiveEventHandler(new MessageHandler());
+        discordIn.get().registerChatMessageEditEventHandler(new MessageEditHandler());
+        discordIn.get().registerChatMessageDeleteEventHandler(new MessageDeleteHandler());
+        discordIn.get().registerReactionAddEventHandler(new ReactionHandler());
+    }
+
+    @Override
+    public void loop() {
+        //get the recent messages
+        List&lt;DiscordChatMessage&gt; messages = discordIn.get().getLastMessages(getLoopInterval());
+        //calculate rate of messages per second
+        double rate = messages.size() / (loopInterval / 1000.0);
+         log(&quot;Users are chatting at a rate of &quot; + rate + &quot; messages per second&quot;);
+     }
+
+     @Override 
+     public void shutdown() {
+         log(&quot;Shutdown!&quot;);
+     }
+
+     private class MessageHandler implements Consumer&lt;DiscordChatMessageReceiveEvent&gt; {
+
+         @Override
+         public void accept(DiscordChatMessageReceiveEvent event) {
+             DiscordChatMessage message = event.getMessage();
+
+            //log the message
+            log(&quot;[Discord]&quot; + message.toString());
+         }
+     }
+
+     private class MessageEditHandler implements Consumer&lt;DiscordChatMessageEditEvent&gt; {
+
+         @Override
+         public void accept(DiscordChatMessageEditEvent event) {
+             DiscordChatMessage message = event.getMessage();
+             DiscordChatMessage oldMessage = event.getOldMessage();
+
+            //log the old and the new message
+            log(&quot;[Discord] Message '&quot; + message.toString() + &quot;' updated to '&quot; + oldMessage.toString() + &quot;'&quot;);
+         }
+     }
+
+     private class MessageDeleteHandler implements Consumer&lt;DiscordChatMessageDeleteEvent&gt; {
+
+         @Override
+         public void accept(DiscordChatMessageDeleteEvent event) {
+             DiscordChatMessage message = event.getMessage();
+
+            //log the deleted message
+            log(&quot;[Discord] Deleted message: '&quot; + message.toString() + &quot;'&quot;);
+         }
+     }
+
+     private class ReactionHandler implements Consumer&lt;DiscordReactionAddEvent&gt; {
+
+         @Override
+         public void accept(DiscordReactionAddEvent event) {
+            DiscordReaction reaction = event.getReaction();
+            DiscordChatMessage message = event.getMessage();
+
+            //log the reaction
+            log(&quot;[Discord] Reaction &quot; + reaction.getImageUrl() + &quot; added to message '&quot; + message.toString( + &quot;'&quot;);
+         }
+     }
+ }
+</code></pre>
+
+<h2 id="plugin-development-with-discord-chat-output">Plugin development with Discord Chat Output</h2>
+<p>Have a look at this simple example plugin that posts the current time to the chat every minute.</p>
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/output/chat/DiscordChatOutput.html">javadoc</a>.</p>
+<pre><code class="java">import java.util.function.Consumer;
+import java.util.List;
+import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+
+import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
+import org.codeoverflow.chatoverflow.api.io.output.chat.DiscordChatOutput;
+import org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordEmbed;
+import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
+import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+
+public class TestPlugin extends PluginImpl {
+    //require a new discord chat output
+    private Requirement&lt;DiscordChatOutput&gt; discordOut = 
+        require.output.discordChat(&quot;discordChat&quot;, &quot;The discord chat&quot;, false);
+
+    public TestPlugin(PluginManager pluginManager) {
+        super(pluginManager);
+        //Set the loop to repeat every 5 minutes (default 1 second)
+        loopInterval = 5 * 60 * 1000;
+    }
+
+    @Override
+    public void setup() {
+        //set the channel to which we want send the messages
+        discordOut.get().setChannel(&quot;285809306790789120&quot;);
+        log(&quot;Connected to channel with id 285809306790789120&quot;);
+
+        //Send a message to the channel
+        discordOut.get().sendChatMessage(&quot;Hello! 👋&quot;);
+
+        //Send a file form chatoverflows data folder to the channel
+        discordOut.get().sendFile(&quot;test_file.png&quot;)
+    }
+
+    @Override
+    public void loop() {
+        String timeMessage = &quot;Es ist &quot; 
+            + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME) + &quot; Uhr!&quot;;
+        log(timeMessage);
+
+        DiscordEmbed embed = DiscordEmbed.Builder()
+            .withColor(&quot;#FF7A04&quot;)
+            .withTitle(timeMessage)
+            .withAuthor(&quot;codeoverflow.org&quot;, &quot;http://codeoverflow.org&quot;, &quot;https://avatars3.githubusercontent.com/u/34384464?s=200&amp;v=4&quot;)
+            .withTimestamp(OffsetDateTime.now())
+            .build();
+
+        //Output the embed to the discord chat
+        discordOut.get().sendChatMessage(embed);
+     }
+
+     @Override 
+     public void shutdown() {
+         log(&quot;Shutdown!&quot;);
+     }
+}
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

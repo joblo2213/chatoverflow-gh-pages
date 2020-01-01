@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Writing a plugin - Chatoverflow</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Chatoverflow</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../Adding-a-new-platform-source/">Adding a new platform source</a>
+</li>
+                                    
+<li >
+    <a href="../Deploy-ChatOverflow/">Deploy ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../Pluggable-migration-guide/">Pluggable migration guide</a>
+</li>
+                                    
+<li >
+    <a href="../Release-ChatOverflow/">Release ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../Setting-up-the-Build-Environment/">Setting up the Build Environment</a>
+</li>
+                                    
+<li >
+    <a href="../Structure/">Structure</a>
+</li>
+                                    
+<li >
+    <a href="../Versioning/">Versioning</a>
+</li>
+                                    
+<li >
+    <a href="../Working-with-NPM/">Working with NPM</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Writing a plugin</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../services/Discord/">Discord</a>
+</li>
+                                    
+<li >
+    <a href="../../services/File/">File</a>
+</li>
+                                    
+<li >
+    <a href="../../services/RCON/">RCON</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Sample/">Sample</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Serial/">Serial</a>
+</li>
+                                    
+<li >
+    <a href="../../services/StreamElements/">StreamElements</a>
+</li>
+                                    
+<li >
+    <a href="../../services/TipeeeStream/">TipeeeStream</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Twitch-Chat/">Twitch Chat</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../usage/Frequent-Issues/">Frequent Issues</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-Parameters/">Using Parameters</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-the-CLI/">Using the CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-the-GUI/">Using the GUI</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../Working-with-NPM/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../services/Discord/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#create-a-new-plugin-project">Create a new plugin project</a></li>
+        <li class="main "><a href="#inspect-the-pluginxml-file">Inspect the plugin.xml file</a></li>
+        <li class="main "><a href="#extend-the-plugin-with-own-logic">Extend the Plugin with own logic</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><strong>Important: Chat Overflow is still work in progress. So this guide will probably change in the future!</strong></p>
+<p>There are 3 important steps when you want to create and implement a new chat overflow plugin:</p>
+<ol>
+<li>Create a new plugin project with the commands of the framework</li>
+<li>Inspect the <code>plugin.xml</code> file</li>
+<li>Extend the plugin with own logic</li>
+</ol>
+<h2 id="create-a-new-plugin-project">Create a new plugin project</h2>
+<p>Use the <em>Create Plugin</em> run configuration or start the custom task <code>sbt create</code> directly. Enter the basic plugin information in the command prompt. This includes mandatory values like the name, author, version and base plugin folder (e.g. <code>plugins-public</code>) and some optional values like a description, a website, a link to a source repo, a link to a bug tracker and a license.</p>
+<p>The command creates the folder structure of the new plugin and adds a basic build file. Here you can also add custom dependencies. In addition the command generates a basic <code>plugin.xml</code> containing all the passed information like name and description and a basic source code file generated in the language of your choice to get you started. Note that currently only Scala and Java are supported.</p>
+<p>Next, run the custom task <code>sbt fetch</code> to let the framework look for new plugins and update the plugin reference file <code>plugins.sbt</code>. If you're using IntelliJ, you can now reload the framework manually to register the plugin as a new custom project. You should also run <code>sbt reload</code> (Yes, both actions have different effects although they shouldn't).</p>
+<h2 id="inspect-the-pluginxml-file">Inspect the <code>plugin.xml</code> file</h2>
+<p>All the metadata of the plugin like the name and the author of the plugin is saved in a xml file which is located at <code>src/main/resources/plugin.xml</code> in the plugin directory. This file gets autogenerated by the create command, but in case you need to update a value its good to know where this file is located.</p>
+<p>A simple version of the <code>plugin.xml</code> file might look like this:</p>
+<p><code>xml
+&lt;plugin&gt;
+    &lt;name&gt;Demonstration&lt;/name&gt;
+    &lt;author&gt;sebinside&lt;/author&gt;
+    &lt;description&gt;This is a simple plugin for demonstration purposes.&lt;/description&gt;
+    &lt;api&gt;
+        &lt;major&gt;3&lt;/major&gt;
+        &lt;minor&gt;0&lt;/minor&gt;
+    &lt;/api&gt;
+    &lt;version&gt;0.3.0&lt;/version&gt;
+    &lt;website&gt;http://codeoverflow.org&lt;/website&gt;
+    &lt;sourceRepo&gt;https://github.com/codeoverflow-org/chatoverflow-plugins&lt;/sourceRepo&gt;
+    &lt;bugtracker&gt;https://github.com/codeoverflow-org/chatoverflow/issues&lt;/bugtracker&gt;
+    &lt;license&gt;EPL-2.0&lt;/license&gt;
+&lt;/plugin&gt;</code></p>
+<p>The properties called name, author, api versions and version are mandatory and the framework won't load the plugin, if one of these is missing. All others are optional information for the user. If you don't want to specify a value for those you can just omit them.</p>
+<p>The api tag contains the API-Version, which your plugin uses. These are evaluated in the loading process to ensure that your plugin works with the framework version from the user. You can get these numbers either from <code>org.codeoverflow.chatoverflow.api.APIVersion</code> in the api project or in the <code>build.sbt</code> also in the api project.</p>
+<h2 id="extend-the-plugin-with-own-logic">Extend the Plugin with own logic</h2>
+<p>The last step is the creation of the plugin class, which contains your own plugin logic. Again the create command has autogenerated a basic class extending <code>org.codeoverflow.chatoverflow.api.plugin.PluginImpl</code> in the language of your choice. Such a file might look like this in case of Scala:</p>
+<pre><code class="scala">import org.codeoverflow.chatoverflow.api.plugin.{PluginImpl, PluginManager}
+
+class DemonstrationPlugin(manager: PluginManager) extends PluginImpl(manager) {
+
+  // require more requirements as needed here
+  private val sampleReq = require.input.sample(&quot;sampleReq&quot;, &quot;Sample requirement&quot;, true)
+
+  // you can adjust the loop interval here
+  // loopInterval = 1000;
+
+  /**
+    * The setup method is executed one, when the plugin is started. Do NOT define your requirements in here!
+    */
+  override def setup(): Unit = {
+    log(&quot;Initialized Demonstration!&quot;)
+  }
+
+  /**
+    * The loop method is executed in loop with a specified interval until the shutdown method is called.
+    * The loop method is NOT executed if a negative loop interval is set.
+    */
+  override def loop(): Unit = {
+    log(&quot;Demonstration loop!&quot;)
+  }
+
+  /**
+    * The shutdown method should contain logic to close everything.
+    */
+  override def shutdown(): Unit = {
+    log(&quot;Shutting down Demonstration!&quot;)
+  }
+}
+</code></pre>
+
+<p>The framework searches for a class implementing <code>org.codeoverflow.chatoverflow.api.plugin.Plugin</code> when it tries to load a plugin. <code>PluginImpl</code> does this for you and also decreases some other boilerplate. Note that the whole plugin is only allowed to have <em>exactly</em> one class implementing <code>Plugin</code> otherwise the framework won't load your plugin.</p>
+<p>All methods in the generated class are pretty self explaining. The only thing we might need to talk about are <em>Requirements</em>: These are used to retrieve data from the outside world and returning information to it. Basically, you can require everything from a single parameter set by the user to full access to a users livestream chat.</p>
+<p>Thanks to <code>PluginImpl</code> a requirements object is already created, meaning you can start adding requirements right away. Here is a example:</p>
+<pre><code class="scala">private val twitchChatInput = require.input.twitchChat(&quot;reqTwitch&quot;, &quot;A twitch channel&quot;, false)
+private val nameToSayHelloTo = require.parameter.string(&quot;reqHello&quot;, &quot;Your name&quot;, false)
+</code></pre>
+
+<p>This code requires read access to a twitch livestream chat and a parameter ("<em>a name to say hello to"</em>). Note: You can obviously not specify which channel the user might choose - but you can be sure that you will get a working input. The framework takes care of that.</p>
+<p>After this, the last step is the <code>start</code> method. And it is as easy as you might think: Just add your own logic now, using the required parameters of your Requirement object. Here is a short example: This code will simply print out all messages from a twitch chat to the console. To access the chat, use the <code>get()</code> method on the requirement.</p>
+<pre><code class="scala">twitchChatInput.get().registerMessageHandler(msg =&gt; println(msg))
+</code></pre>
+
+<p>Of course, you can also add own classes and infrastructure by now - the important steps are done, happy coding!</p>
+<p><em>One last note: If you are testing your plugin for the first time, a full reload might be needed. Use the custom task <code>[Advanced] Full Reload and run ChatOverflow</code> to do so. Afters this, you can configure the framework to start your plugin using the <a href="usage/Using-the-CLI.md">CLI</a>!</em></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

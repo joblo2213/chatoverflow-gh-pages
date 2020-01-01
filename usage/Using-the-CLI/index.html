@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Using the CLI - Chatoverflow</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Chatoverflow</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../development/Adding-a-new-platform-source/">Adding a new platform source</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Deploy-ChatOverflow/">Deploy ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Pluggable-migration-guide/">Pluggable migration guide</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Release-ChatOverflow/">Release ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Setting-up-the-Build-Environment/">Setting up the Build Environment</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Structure/">Structure</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Versioning/">Versioning</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Working-with-NPM/">Working with NPM</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Writing-a-plugin/">Writing a plugin</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../services/Discord/">Discord</a>
+</li>
+                                    
+<li >
+    <a href="../../services/File/">File</a>
+</li>
+                                    
+<li >
+    <a href="../../services/RCON/">RCON</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Sample/">Sample</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Serial/">Serial</a>
+</li>
+                                    
+<li >
+    <a href="../../services/StreamElements/">StreamElements</a>
+</li>
+                                    
+<li >
+    <a href="../../services/TipeeeStream/">TipeeeStream</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Twitch-Chat/">Twitch Chat</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../Frequent-Issues/">Frequent Issues</a>
+</li>
+                                    
+<li >
+    <a href="../Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../Using-Parameters/">Using Parameters</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Using the CLI</a>
+</li>
+                                    
+<li >
+    <a href="../Using-the-GUI/">Using the GUI</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../Using-Parameters/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Using-the-GUI/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#command-line-interface">Command Line Interface</a></li>
+        <li class="main "><a href="#attention">Attention:</a></li>
+            <li><a href="#currently-there-is-a-bug-that-prevents-custom-web-server-ports-from-working-properly">Currently there is a bug that prevents custom web server ports from working properly.</a></li>
+            <li><a href="#see-149">See #149.</a></li>
+        <li class="main "><a href="#configuration">Configuration</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>Chat overflow may be configured using the CLI. While running, the easiest way to control everything is the <a href="../Using-the-GUI/"><strong>Better REPL</strong></a>, accessible through <code>http://localhost:2400</code>.</p>
+<h2 id="command-line-interface">Command Line Interface</h2>
+<p>This messages shows up when you execute the framework with the flag <code>--help</code>:</p>
+<pre><code>Chat Overflow x.x
+Usage: Chat Overflow [options]
+
+  -p, --pluginFolder &lt;value&gt;
+                           path to a folder with packaged plugin jar files
+  -c, --configFolder &lt;value&gt;
+                           path to the folder to save configs and credentials
+  -r, --requirementPackage &lt;value&gt;
+                           path to the package where all requirements are defined
+  -l, --login &lt;value&gt;      the password to login to chat overflow on framework startup
+  -s, --start &lt;value&gt;      a comma-separated list of plugin instances to start after login (has to be combined with -l)
+  -d, --pluginDataFolder &lt;value&gt;
+                           path to the data folder, accessible from within plugins
+  -w, --webServerPort &lt;value&gt;
+                           default web server port, used eg. for the rest api and web gui
+  -o, --enablePluginOutput
+                           set this flag to enable plugin log output on console
+  -f, --enableLogFile      set this flag to enable logging to log files
+
+For more information, please visit http://codeoverflow.org/
+</code></pre>
+
+<blockquote>
+<h2 id="attention">Attention:</h2>
+<h3 id="currently-there-is-a-bug-that-prevents-custom-web-server-ports-from-working-properly">Currently there is a bug that prevents custom web server ports from working properly.</h3>
+<h3 id="see-149">See <a href="https://github.com/codeoverflow-org/chatoverflow/issues/149">#149</a>.</h3>
+</blockquote>
+<h2 id="configuration">Configuration</h2>
+<p>You can also configure the paths of config- and credentials-files to create custom setups:</p>
+<pre><code>-c customConfigFolder -p customPluginFolder
+</code></pre>
+
+<p>The combination of logging in and starting plugins with one command is very useful for rapid prototyping.</p>
+<pre><code>-l myPassword -s startupPluginInstance1,startupPluginInstance2
+</code></pre>
+
+<p>By default the log output of a plugin on the console is disabled. You can enable it with the flag <code>-o</code>.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

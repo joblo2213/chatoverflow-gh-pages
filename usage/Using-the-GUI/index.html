@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Using the GUI - Chatoverflow</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Chatoverflow</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../development/Adding-a-new-platform-source/">Adding a new platform source</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Deploy-ChatOverflow/">Deploy ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Pluggable-migration-guide/">Pluggable migration guide</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Release-ChatOverflow/">Release ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Setting-up-the-Build-Environment/">Setting up the Build Environment</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Structure/">Structure</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Versioning/">Versioning</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Working-with-NPM/">Working with NPM</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Writing-a-plugin/">Writing a plugin</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../services/Discord/">Discord</a>
+</li>
+                                    
+<li >
+    <a href="../../services/File/">File</a>
+</li>
+                                    
+<li >
+    <a href="../../services/RCON/">RCON</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Sample/">Sample</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Serial/">Serial</a>
+</li>
+                                    
+<li >
+    <a href="../../services/StreamElements/">StreamElements</a>
+</li>
+                                    
+<li >
+    <a href="../../services/TipeeeStream/">TipeeeStream</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Twitch-Chat/">Twitch Chat</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../Frequent-Issues/">Frequent Issues</a>
+</li>
+                                    
+<li >
+    <a href="../Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../Using-Parameters/">Using Parameters</a>
+</li>
+                                    
+<li >
+    <a href="../Using-the-CLI/">Using the CLI</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Using the GUI</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../Using-the-CLI/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#starting-the-better-repl">Starting the Better REPL</a></li>
+        <li class="main "><a href="#creating-a-plugin-instance">Creating a plugin instance</a></li>
+        <li class="main "><a href="#setting-plugin-requirements">Setting plugin requirements</a></li>
+        <li class="main "><a href="#adding-connectors">Adding connectors</a></li>
+        <li class="main "><a href="#set-credentials">Set credentials</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>The GUI for chatoverflow is still in development.<br />
+That's why we have the <strong>Better REPL</strong>, an easy-to-use one-page dashboard, where everything can be controlled.</p>
+<h2 id="starting-the-better-repl">Starting the Better REPL</h2>
+<p>When using the GUI for the first time use the <code>[Advanced]</code> run configuration that packages the gui. Make sure to reload sbt afterwards to make IntelliJ find and load the gui.</p>
+<p>For all further runs you may use the <code>[Simple]</code> run configuration which is way faster.  </p>
+<p>Once the framework is running open http://localhost:2400/ in a browser and wait for the server status to display <code>Connected!</code>. Now click on <code>OPEN BETTER REPL</code>. </p>
+<p><img alt="" src="/img/usage/login.png" /></p>
+<p>When running for the first time enter a password that you want to use for securing your credentials and click on <code>REGISTER</code>.<br />
+If you are already registered, use your password to login.<br />
+If the login was successful the gui will display the authentication key for this session.  </p>
+<h2 id="creating-a-plugin-instance">Creating a plugin instance</h2>
+<p>Before running a plugin you have to create a plugin instance.<br />
+All available plugins are listed under <code>Plugin types</code>.<br />
+Add more plugins by putting the plugin <code>.jar</code> files into the plugins folder. If you are adding new plugins to the folder while the framework is still running, you need to restart the framework in order for it to load the newly added plugins.</p>
+<p><img alt="" src="/img/usage/plugin-types.png" /></p>
+<p>Enter the plugin and author name of the plugin and give the instance a name (whatever you like), then click on <code>CREATE</code>: </p>
+<p><img alt="" src="/img/usage/create-plugin.png" /></p>
+<p>The plugin instance should now be listed under <code>Plugin instances</code>: </p>
+<p><img alt="" src="/img/usage/plugin-instances.png" /></p>
+<p>You can use the pen to copy the name of an instance.<br />
+There are buttons that allow you to <code>START</code> / <code>STOP</code> an instance, to show its log (if running) or requirements and a button to <code>DELETE</code> the instance (just make sure to stop it before deleting it).</p>
+<h2 id="setting-plugin-requirements">Setting plugin requirements</h2>
+<p>Before you can start a plugin you need to set its requirements.
+A plugin can require a lot of things, for example Strings, Inputs or Outputs.
+To view all requirements of a plugin enter the instance name and click on <code>SHOW REQUIREMENTS</code>.  </p>
+<p><img alt="" src="/img/usage/plugin-requirements.png" />
+You see that each requirement has a type and needs a value.<br />
+You see which requirements are already set and which ones are optional.<br />
+To set or change the value click on the blue pen, enter the required value and click on <code>PUT</code>.  </p>
+<p><img alt="" src="/img/usage/change-requirement.png" /></p>
+<p>For inputs and outputs the value should be the source identifier of a connector - which you first have to define.</p>
+<h2 id="adding-connectors">Adding connectors</h2>
+<p>To add a connector use whatever source identifier you like, specify the connector type (a list of all types can be found in the connector types box above) and click <code>ADD</code>.  It will then be displayed in the list on the left side.  </p>
+<p><img alt="" src="/img/usage/create-connector.png" /></p>
+<h2 id="set-credentials">Set credentials</h2>
+<p>Every connector requires you to set the credentials for that service.<br />
+Some of them are required for the connector to work and some are optional.</p>
+<p><img alt="" src="/img/usage/connectors.png" /></p>
+<p>Click on the <code>Request details...</code> link. Then the gui will display if the connector is running and which credentials should be set. Underlined ones are required, the plain ones are optional.<br />
+Use the blue pen to copy the key, the identifier and the type of the connector and then use the manage credentials field to add the value of the credentials.</p>
+<p><img alt="" src="/img/usage/credentials.png" /></p>
+<p>If you are getting errors when adding credentials <a href="../Frequent-Issues/#Credentials-value-encrypted-with-wrong-auth-key">Frequent-Issues</a> might contain a solution.</p>
+<p><em>Please note: Added credentials are encrypted with AES 128/256. The password is not stored anywhere. If you loose your password, there will be no way to reuse your configured and saved credentials.</em></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

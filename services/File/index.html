@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>File - Chatoverflow</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Chatoverflow</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../development/Adding-a-new-platform-source/">Adding a new platform source</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Deploy-ChatOverflow/">Deploy ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Pluggable-migration-guide/">Pluggable migration guide</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Release-ChatOverflow/">Release ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Setting-up-the-Build-Environment/">Setting up the Build Environment</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Structure/">Structure</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Versioning/">Versioning</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Working-with-NPM/">Working with NPM</a>
+</li>
+                                    
+<li >
+    <a href="../../development/Writing-a-plugin/">Writing a plugin</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../Discord/">Discord</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">File</a>
+</li>
+                                    
+<li >
+    <a href="../RCON/">RCON</a>
+</li>
+                                    
+<li >
+    <a href="../Sample/">Sample</a>
+</li>
+                                    
+<li >
+    <a href="../Serial/">Serial</a>
+</li>
+                                    
+<li >
+    <a href="../StreamElements/">StreamElements</a>
+</li>
+                                    
+<li >
+    <a href="../TipeeeStream/">TipeeeStream</a>
+</li>
+                                    
+<li >
+    <a href="../Twitch-Chat/">Twitch Chat</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../usage/Frequent-Issues/">Frequent Issues</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-Parameters/">Using Parameters</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-the-CLI/">Using the CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-the-GUI/">Using the GUI</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../Discord/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../RCON/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#credentials">Credentials</a></li>
+        <li class="main "><a href="#plugin-development-with-file-input">Plugin development with File Input</a></li>
+        <li class="main "><a href="#plugin-development-with-file-output">Plugin development with File Output</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img align="right" width="128" height="128" src="/img/services/file-material-icon.png"></p>
+
+<p>The file service allows you to perform file operations that would otherwise be prohibited by the sandbox security manager.<br />
+It features easy ways to read, write or delete files and for managing subdirectories.<br />
+To keep you safe from malicious plugins all file operations are restricted to the data folder.</p>
+<h2 id="credentials">Credentials</h2>
+<p>The file service doesn't require any credentials.</p>
+<h2 id="plugin-development-with-file-input">Plugin development with File Input</h2>
+<p>Have a look at this simple example plugin that loads files from the data folder:</p>
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/FileInput.html">javadoc</a>.</p>
+<pre><code class="java">import java.util.Optional;
+import java.awt.image.BufferedImage;
+
+import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
+import org.codeoverflow.chatoverflow.api.io.input.FileInput;
+import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
+import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+
+public class TestPlugin extends PluginImpl {
+    //require a new file input
+    private Requirement&lt;FileInput&gt; fsi = 
+        require.input.file(&quot;fileInput&quot;, &quot;Read data from the file system&quot;, false);
+
+    public TestPlugin(PluginManager pluginManager) {
+        super(pluginManager);
+    }
+
+    @Override
+    public void setup() {
+        //read text from the test.txt file in the data folder to a string:
+        Optional&lt;String&gt; text = fsi.get().getFile(&quot;test.txt&quot;);
+        if (text.isPresent()) {
+            log(text.get());
+        } else {
+            log(&quot;Couldn't read test.txt&quot;);
+        }
+
+        //read the content of a file into a byte array
+        Optional&lt;byte[]&gt; raw = fsi.get().getBinaryFile(&quot;test.bin&quot;);
+        if (raw.isPresent()) {
+            byte[] array = raw.get();
+            //...
+
+        } else {
+            log(&quot;Couldn't read test.bin&quot;);
+        }
+
+        //load an image
+        Optional&lt;BufferedImage&gt; img = fsi.get().getImage(&quot;test.png&quot;);
+        if (img.isPresent()) {
+            BufferedImage image = img.get();
+            //...
+
+        } else {
+            log(&quot;Couldn't load test.png&quot;);
+        }
+    }
+
+    @Override
+    public void loop() {}
+
+     @Override 
+     public void shutdown() {
+         log(&quot;Shutdown!&quot;);
+     }
+ }
+</code></pre>
+
+<h2 id="plugin-development-with-file-output">Plugin development with File Output</h2>
+<p>Have a look at this simple example plugin that saves files and creates or deletes directories in the data folder.</p>
+<p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/output/FileOutput.html">javadoc</a>.</p>
+<pre><code class="java">import java.awt.image.BufferedImage;
+import java.awt.Graphics2D;
+import java.awt.Color;
+
+import org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;
+import org.codeoverflow.chatoverflow.api.io.output.FileOutput;
+import org.codeoverflow.chatoverflow.api.plugin.PluginImpl;
+import org.codeoverflow.chatoverflow.api.plugin.PluginManager;
+
+public class TestPlugin extends PluginImpl {
+    //require a new file output
+    private Requirement&lt;FileOutput&gt; fso = 
+        require.output.serial(&quot;fileOutput&quot;, &quot;Interact with the file system&quot;, false);
+
+    public TestPlugin(PluginManager pluginManager) {
+        super(pluginManager);
+    }
+
+    @Override
+    public void setup() {
+        //create a folder called &quot;test&quot; inside the data folder
+        fso.createDirectory(&quot;test&quot;);
+
+        //create a sample file with a stupid swabian tongue twister
+        fso.saveFile(&quot;Schellet's net an sellrer Schelle, selle Schelle schellet net.\n&quot;
+            + &quot;Schellet's an seller Schelle, selle Schelle schellet!&quot;, 
+            &quot;test/tounge-twister.txt&quot;);
+
+        //save some binary to a file
+        byte[] binary = {0x48, 0x65, 0x6C, 0x6C, 0x6F, 0x20,
+                         0x57, 0x6F, 0x72, 0x6C, 0x64, 0x21};
+        fso.saveBinaryFile(binary, &quot;test.bin&quot;);
+
+        //save an image
+        BufferedImage img = new BufferedImage(256, 256, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D graphics = img.createGraphics();
+        graphics.setPaint(new Color(255, 121, 1));
+        graphics.fillRect( 0, 0, img.getWidth(), img.getHeight() );
+        fso.saveImage(img, &quot;test.png&quot;);
+
+        //check if a file exists
+        boolean exists = fso.exists(&quot;test.txt&quot;);
+
+        //delete a file 
+        if (exists) fso.delete(&quot;test.txt&quot;);
+    }
+
+    @Override
+    public void loop() {}
+
+     @Override 
+     public void shutdown() {
+         log(&quot;Shutdown!&quot;);
+     }
+}
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

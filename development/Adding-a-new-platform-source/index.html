@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Adding a new platform source - Chatoverflow</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Chatoverflow</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">Adding a new platform source</a>
+</li>
+                                    
+<li >
+    <a href="../Deploy-ChatOverflow/">Deploy ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../Pluggable-migration-guide/">Pluggable migration guide</a>
+</li>
+                                    
+<li >
+    <a href="../Release-ChatOverflow/">Release ChatOverflow</a>
+</li>
+                                    
+<li >
+    <a href="../Setting-up-the-Build-Environment/">Setting up the Build Environment</a>
+</li>
+                                    
+<li >
+    <a href="../Structure/">Structure</a>
+</li>
+                                    
+<li >
+    <a href="../Versioning/">Versioning</a>
+</li>
+                                    
+<li >
+    <a href="../Working-with-NPM/">Working with NPM</a>
+</li>
+                                    
+<li >
+    <a href="../Writing-a-plugin/">Writing a plugin</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../services/Discord/">Discord</a>
+</li>
+                                    
+<li >
+    <a href="../../services/File/">File</a>
+</li>
+                                    
+<li >
+    <a href="../../services/RCON/">RCON</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Sample/">Sample</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Serial/">Serial</a>
+</li>
+                                    
+<li >
+    <a href="../../services/StreamElements/">StreamElements</a>
+</li>
+                                    
+<li >
+    <a href="../../services/TipeeeStream/">TipeeeStream</a>
+</li>
+                                    
+<li >
+    <a href="../../services/Twitch-Chat/">Twitch Chat</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../usage/Frequent-Issues/">Frequent Issues</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-Parameters/">Using Parameters</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-the-CLI/">Using the CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/Using-the-GUI/">Using the GUI</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Deploy-ChatOverflow/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#add-new-types-to-the-api">Add new types to the API</a></li>
+        <li class="main "><a href="#add-a-new-package-and-connector">Add a new package and connector</a></li>
+        <li class="main "><a href="#metadata">Metadata</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>Thank you for improving <em>Chat Overflow</em>.<br />
+While plugins live in their own project, source connections (e.g. to a platform like Twitch or Discord) exist in the framework itself.<br />
+<!-- By this measure, we can make sure that everyone profits from the same features.   -->
+We made this design choice so that all platform source connectors are free to access by all plugin developers.
+This wiki entry tries to show you the different steps needed to implement a new connection.</p>
+<ol>
+<li>Add new types to the API (Also register them in the requirement Input/Output section)</li>
+<li>Create a new package in the framework services package and implement the source specific connector</li>
+<li>Create a impl package and implement the types you have added in the API</li>
+<li>Enhance your connector with metadata</li>
+</ol>
+<h2 id="add-new-types-to-the-api">Add new types to the API</h2>
+<p>Add all needed data transfer objects in <code>org.codeoverflow.chatoverflow.api.io.dto</code> and interfaces representing input / output to the correct API package. E.g., a chat input belongs to <code>org.codeoverflow.chatoverflow.api.io.input.chat</code> and should extend <code>ChatInput</code>.</p>
+<p>We require you to also register your new type in the corresponding requirement class located in <code>org.codeoverflow.chatoverflow.api.plugin.configuration</code>. Yes, this step could be automated by using reflection, but by providing a clean interface to the plugin developer we protect type safety.</p>
+<h2 id="add-a-new-package-and-connector">Add a new package and connector</h2>
+<p>Create a new package inside the service package of the framework: <code>org.codeoverflow.chatoverflow.requirement.service</code>. Next, implement a connector that extends <code>org.codeoverflow.chatoverflow.connector.Connector</code> which takes login data and creates a connection to the new platform.<br />
+Use the lists <code>requiredCredentialKeys</code> and <code>optionalCredentialKeys</code> to set what login data you need and the credentials object to get the actual data.<br />
+Implement the code that sets up the connection in the <code>start()</code> method and the code that closes the connection on shutdown in <code>stop()</code>.<br />
+For logging use the logger provided by the <code>WithLogger</code> trait.<br />
+A very basic example is the <code>org.codeoverflow.chatoverflow.requirement.service.sample.SampleConnector</code>.
+Just use the helper impl classes <code>InputImpl</code> and <code>OutputImpl</code></p>
+<p>With this connector, you can now implement the interfaces you just added to the API. E.g.</p>
+<pre><code>@Impl(impl = classOf[SampleInput], connector = classOf[SampleConnector])
+class SampleInputImpl extends InputImpl[SampleConnector] with SampleInput with WithLogger {
+
+  override def start(): Boolean = ...
+
+  override def stop(): Boolean = ...
+}
+</code></pre>
+
+<p><strong>Important:</strong> The @Impl-annotation will guide the framework to load your new connector and types.</p>
+<h2 id="metadata">Metadata</h2>
+<p>To guide the user while adding new connectors / platform sources, we ask you to provide some metadata for your connector.</p>
+<p>Create a XML-file with the full name of your connector type, e.g. <code>org.codeoverflow.chatoverflow.requirement.service.discord.discordchatconnector.xml</code> inside the <code>main/resources/connector</code>-folder of the project. This file should contain the following information:</p>
+<pre><code class="xml">&lt;connector&gt;
+    &lt;display&gt;The Display Name&lt;/display&gt;
+    &lt;description&gt;A short description&lt;/description&gt;
+    &lt;wiki&gt;A link to the corresponding wiki entry&lt;/wiki&gt;
+    &lt;icon48&gt;
+      a base64 encoded 48x48 png file
+    &lt;/icon48&gt;
+&lt;/connector&gt;
+</code></pre>
+
+<p>Note that this step is optional, but highly recommended.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
