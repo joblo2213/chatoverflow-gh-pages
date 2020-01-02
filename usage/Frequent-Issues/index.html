@@ -745,9 +745,8 @@
 <p>Because of the differences in IntelliJ versions the run configurations could be broken. If they are broken, change the <code>classpath or module</code> setting in <code>Edit configurations...</code> to ChatOverflow root module (<code>chatoverflow</code>). Now everything should be working fine again.</p>
 <h2 id="credentials-value-encrypted-with-wrong-auth-key">Credentials value encrypted with wrong auth key<a class="headerlink" href="#credentials-value-encrypted-with-wrong-auth-key" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../img/usage/value-encrypted-wrong-key.png" /><br />
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">ERROR configuration.CryptoUtil$  - Your environment does not work with AES256.Please update your Java runtime version to at least: 1.8.0_161</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">ERROR configuration.CryptoUtil$  - Your environment does not work with AES256.Please update your Java runtime version to at least: 1.8.0_161</span>
 </pre></div>
-</td></tr></table>
 If you see this image or error message you are probably running on an old Java version that doesn't work with AES 256 bit encryption.<br />
 To fix this error you have to update Java to version <code>1.8.0_161</code> or later.<br />
 More information about this issue can be found <a href="https://stackoverflow.com/questions/3862800/invalidkeyexception-illegal-key-size">on stackoverflow.com</a>.</p>

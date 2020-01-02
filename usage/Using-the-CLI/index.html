@@ -784,26 +784,7 @@
                 <p>Chat overflow may be configured using the CLI. While running, the easiest way to control everything is the <a href="../Using-the-GUI/"><strong>Better REPL</strong></a>, accessible through <code>http://localhost:2400</code>.</p>
 <h2 id="command-line-interface">Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h2>
 <p>This messages shows up when you execute the framework with the flag <code>--help</code>:</p>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">Chat Overflow x.x</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">Chat Overflow x.x</span>
 <span style="color: #66d9ef">Usage</span><span style="color: #960050; background-color: #1e0010">:</span><span style="color: #f8f8f2"> Chat Overflow </span><span style="color: #f92672">[</span><span style="color: #f8f8f2">options</span><span style="color: #f92672">]</span><span style="color: #f8f8f2"></span>
 
 <span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">p, </span><span style="color: #75715e">--pluginFolder &lt;value&gt;</span>
@@ -824,7 +805,6 @@
 
 <span style="color: #66d9ef">For</span><span style="color: #f8f8f2"> more information, please visit http:</span><span style="color: #f92672">//</span><span style="color: #f8f8f2">codeoverflow.org</span><span style="color: #f92672">/</span><span style="color: #f8f8f2"></span>
 </pre></div>
-</td></tr></table>
 
 <blockquote>
 <h2 id="attention">Attention:<a class="headerlink" href="#attention" title="Permanent link">&para;</a></h2>
@@ -833,14 +813,12 @@
 </blockquote>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>You can also configure the paths of config- and credentials-files to create custom setups:</p>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">-c customConfigFolder -p customPluginFolder</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">-c customConfigFolder -p customPluginFolder</span>
 </pre></div>
-</td></tr></table>
 
 <p>The combination of logging in and starting plugins with one command is very useful for rapid prototyping.</p>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">-l myPassword -s startupPluginInstance1,startupPluginInstance2</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">-l myPassword -s startupPluginInstance1,startupPluginInstance2</span>
 </pre></div>
-</td></tr></table>
 
 <p>By default the log output of a plugin on the console is disabled. You can enable it with the flag <code>-o</code>.</p>
                 

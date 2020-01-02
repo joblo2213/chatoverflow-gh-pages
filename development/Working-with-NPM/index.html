@@ -763,59 +763,46 @@
 <p>Generate the npm package using <code>swagger-codegen-cli</code>. This can be achieved with the following console command (the backslahes are only needed for *nix-systems):</p>
 </li>
 </ol>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">java -jar swagger-codegen-cli-2.4.9.jar generate \</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">java -jar swagger-codegen-cli-2.4.9.jar generate \</span>
 <span style="color: #960050; background-color: #1e0010">   -i http://localhost:2400/api-docs/swagger.json \</span>
 <span style="color: #960050; background-color: #1e0010">   -l typescript-angular \</span>
 <span style="color: #960050; background-color: #1e0010">   -o ./angular_api_client \</span>
 <span style="color: #960050; background-color: #1e0010">   --additional-properties npmName=@codeoverflow-org/chatoverflow,snapshot=false,npmVersion=x.x.x-x,ngVersion=7.2.1</span>
 </pre></div>
-</td></tr></table>
 
 <p>Make sure to replace the <code>npm-version</code> with the version number you have used in the <code>VersionInfo</code>-file, e.g. <code>3.0.0-6</code>.</p>
 <ol>
 <li>Next, some dependencies have to be installed. Navigate into your generated folder by using <code>cd angular_api_client</code>, then execute the following install-commands:</li>
 </ol>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">npm</span> <span style="color: #f8f8f2">install</span> <span style="color: #f92672">--</span><span style="color: #f8f8f2">save</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">dev</span> <span style="color: #f8f8f2">typescript</span><span style="color: #ae81ff">@3.2.4</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">npm</span> <span style="color: #f8f8f2">install</span> <span style="color: #f92672">--</span><span style="color: #f8f8f2">save</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">dev</span> <span style="color: #f8f8f2">typescript</span><span style="color: #ae81ff">@3.2.4</span>
 <span style="color: #f8f8f2">npm</span> <span style="color: #f8f8f2">install</span> <span style="color: #f92672">--</span><span style="color: #f8f8f2">save</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">dev</span> <span style="color: #f8f8f2">tsickle</span><span style="color: #ae81ff">@0.35.0</span>
 </pre></div>
-</td></tr></table>
 
 <ol>
 <li>After this, you have to update the generated <code>package.json</code>-file to make sure, that the package is published correctly to the github package registry. Add the following lines:</li>
 </ol>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">&quot;publishConfig&quot;: { &quot;registry&quot;: &quot;https://npm.pkg.github.com/&quot; },</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">&quot;publishConfig&quot;: { &quot;registry&quot;: &quot;https://npm.pkg.github.com/&quot; },</span>
 <span style="color: #960050; background-color: #1e0010">&quot;repository&quot;: &quot;git://github.com/codeoverflow-org/chatoverflow.git&quot;,</span>
 </pre></div>
-</td></tr></table>
 
 <ol>
 <li>There is only one configuration step left: Add a new file called <code>.npmrc</code> to the generated folder, containing the following line:</li>
 </ol>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">registry=https://npm.pkg.github.com/codeoverflow-org</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">registry=https://npm.pkg.github.com/codeoverflow-org</span>
 </pre></div>
-</td></tr></table>
 
 <ol>
 <li>Now, everything is ready. You can now install and build your generated package:</li>
 </ol>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">npm install</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">npm install</span>
 <span style="color: #960050; background-color: #1e0010">npm run build</span>
 </pre></div>
-</td></tr></table>
 
 <p>That's it. You have now a ready-to-use npm package with all the bindings for the REST-API, optimized for typescript in angular.</p>
 <h2 id="publish">Publish<a class="headerlink" href="#publish" title="Permanent link">&para;</a></h2>
 <p>To publish your freshly build version of the npm package, use the following command. Make sure, that you have the right to do so; and <em>never</em> forget the <code>dist</code> part.</p>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">npm publish dist</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">npm publish dist</span>
 </pre></div>
-</td></tr></table>
 
 <p>Now, you can open the <code>package.json</code> file of the <a href="https://github.com/codeoverflow-org/chatoverflow-gui">chatoverflow-gui</a> project and update the version of the dependency <code>@codeoverflow-org/chatoverflow</code> to your new version. Simply run <code>npm install</code> afterwards and rebuild the gui.</p>
                 

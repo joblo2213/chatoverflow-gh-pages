@@ -763,13 +763,7 @@ For logging use the logger provided by the <code>WithLogger</code> trait.<br />
 A very basic example is the <code>org.codeoverflow.chatoverflow.requirement.service.sample.SampleConnector</code>.
 Just use the helper impl classes <code>InputImpl</code> and <code>OutputImpl</code></p>
 <p>With this connector, you can now implement the interfaces you just added to the API. E.g.</p>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">@Impl(impl </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> classOf</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">SampleInput</span><span style="color: #f92672">]</span><span style="color: #f8f8f2">, connector </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> classOf</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">SampleConnector</span><span style="color: #f92672">]</span><span style="color: #f8f8f2">)</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">@Impl(impl </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> classOf</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">SampleInput</span><span style="color: #f92672">]</span><span style="color: #f8f8f2">, connector </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> classOf</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">SampleConnector</span><span style="color: #f92672">]</span><span style="color: #f8f8f2">)</span>
 <span style="color: #66d9ef">class</span><span style="color: #f8f8f2"> SampleInputImpl extends InputImpl</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">SampleConnector</span><span style="color: #f92672">]</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">with</span><span style="color: #f8f8f2"> SampleInput </span><span style="color: #66d9ef">with</span><span style="color: #f8f8f2"> WithLogger </span><span style="color: #960050; background-color: #1e0010">{</span><span style="color: #f8f8f2"></span>
 
 <span style="color: #f8f8f2">  override def </span><span style="color: #66d9ef">start</span><span style="color: #f8f8f2">()</span><span style="color: #960050; background-color: #1e0010">:</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">Boolean</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> ...</span>
@@ -777,20 +771,12 @@ Just use the helper impl classes <code>InputImpl</code> and <code>OutputImpl</co
 <span style="color: #f8f8f2">  override def stop()</span><span style="color: #960050; background-color: #1e0010">:</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">Boolean</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> ...</span>
 <span style="color: #960050; background-color: #1e0010">}</span><span style="color: #f8f8f2"></span>
 </pre></div>
-</td></tr></table>
 
 <p><strong>Important:</strong> The @Impl-annotation will guide the framework to load your new connector and types.</p>
 <h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
 <p>To guide the user while adding new connectors / platform sources, we ask you to provide some metadata for your connector.</p>
 <p>Create a XML-file with the full name of your connector type, e.g. <code>org.codeoverflow.chatoverflow.requirement.service.discord.discordchatconnector.xml</code> inside the <code>main/resources/connector</code>-folder of the project. This file should contain the following information:</p>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">&lt;connector&gt;</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">&lt;connector&gt;</span>
     <span style="color: #f92672">&lt;display&gt;</span>The Display Name<span style="color: #f92672">&lt;/display&gt;</span>
     <span style="color: #f92672">&lt;description&gt;</span>A short description<span style="color: #f92672">&lt;/description&gt;</span>
     <span style="color: #f92672">&lt;wiki&gt;</span>A link to the corresponding wiki entry<span style="color: #f92672">&lt;/wiki&gt;</span>
@@ -799,7 +785,6 @@ Just use the helper impl classes <code>InputImpl</code> and <code>OutputImpl</co
     <span style="color: #f92672">&lt;/icon48&gt;</span>
 <span style="color: #f92672">&lt;/connector&gt;</span>
 </pre></div>
-</td></tr></table>
 
 <p>Note that this step is optional, but highly recommended.</p>
                 
