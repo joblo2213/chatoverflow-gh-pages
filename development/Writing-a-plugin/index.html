@@ -849,21 +849,22 @@
 <p>A simple version of the <code>plugin.xml</code> file might look like this:</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><code>xml
-&lt;plugin&gt;
-    &lt;name&gt;Demonstration&lt;/name&gt;
-    &lt;author&gt;sebinside&lt;/author&gt;
-    &lt;description&gt;This is a simple plugin for demonstration purposes.&lt;/description&gt;
-    &lt;api&gt;
-        &lt;major&gt;3&lt;/major&gt;
-        &lt;minor&gt;0&lt;/minor&gt;
-    &lt;/api&gt;
-    &lt;version&gt;0.3.0&lt;/version&gt;
-    &lt;website&gt;http://codeoverflow.org&lt;/website&gt;
-    &lt;sourceRepo&gt;https://github.com/codeoverflow-org/chatoverflow-plugins&lt;/sourceRepo&gt;
-    &lt;bugtracker&gt;https://github.com/codeoverflow-org/chatoverflow/issues&lt;/bugtracker&gt;
-    &lt;license&gt;EPL-2.0&lt;/license&gt;
-&lt;/plugin&gt;</code></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">&lt;plugin&gt;</span>
+    <span style="color: #f92672">&lt;name&gt;</span>Demonstration<span style="color: #f92672">&lt;/name&gt;</span>
+    <span style="color: #f92672">&lt;author&gt;</span>sebinside<span style="color: #f92672">&lt;/author&gt;</span>
+    <span style="color: #f92672">&lt;description&gt;</span>This is a simple plugin for demonstration purposes.<span style="color: #f92672">&lt;/description&gt;</span>
+    <span style="color: #f92672">&lt;api&gt;</span>
+        <span style="color: #f92672">&lt;major&gt;</span>3<span style="color: #f92672">&lt;/major&gt;</span>
+        <span style="color: #f92672">&lt;minor&gt;</span>0<span style="color: #f92672">&lt;/minor&gt;</span>
+    <span style="color: #f92672">&lt;/api&gt;</span>
+    <span style="color: #f92672">&lt;version&gt;</span>0.3.0<span style="color: #f92672">&lt;/version&gt;</span>
+    <span style="color: #f92672">&lt;website&gt;</span>http://codeoverflow.org<span style="color: #f92672">&lt;/website&gt;</span>
+    <span style="color: #f92672">&lt;sourceRepo&gt;</span>https://github.com/codeoverflow-org/chatoverflow-plugins<span style="color: #f92672">&lt;/sourceRepo&gt;</span>
+    <span style="color: #f92672">&lt;bugtracker&gt;</span>https://github.com/codeoverflow-org/chatoverflow/issues<span style="color: #f92672">&lt;/bugtracker&gt;</span>
+    <span style="color: #f92672">&lt;license&gt;</span>EPL-2.0<span style="color: #f92672">&lt;/license&gt;</span>
+<span style="color: #f92672">&lt;/plugin&gt;</span>
+</pre></div>
+
 </div>
 <p>The properties called name, author, api versions and version are mandatory and the framework won't load the plugin, if one of these is missing. All others are optional information for the user. If you don't want to specify a value for those you can just omit them.</p>
 <p>The api tag contains the API-Version, which your plugin uses. These are evaluated in the loading process to ensure that your plugin works with the framework version from the user. You can get these numbers either from <code>org.codeoverflow.chatoverflow.api.APIVersion</code> in the api project or in the <code>build.sbt</code> also in the api project.</p>
@@ -944,7 +945,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: January 2, 2020 18:12:22
+                        Last update: January 2, 2020 18:43:54
                       
                     </small>
                   </div>
