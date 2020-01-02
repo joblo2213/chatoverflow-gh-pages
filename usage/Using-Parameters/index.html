@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -856,81 +858,81 @@
 <p>The string parameter requires you to enter a string. </p>
 <p>Example: <code>The snow is snowier than before</code></p>
 <p>Example for developers (Java): 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">StringParameter</span><span class="o">&gt;</span> <span class="n">motd</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">stringParameter</span><span class="p">(</span><span class="s">&quot;motd&quot;</span><span class="p">);</span>
+6</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">StringParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">motd</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">stringParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;motd&quot;</span><span style="color: #f8f8f2">);</span>
 
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Message of the day: &quot;</span> <span class="o">+</span> <span class="n">motd</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">());</span>
-<span class="p">}</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Message of the day: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">motd.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">());</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="integer-parameter">Integer parameter<a class="headerlink" href="#integer-parameter" title="Permanent link">&para;</a></h2>
 <p>The integer parameter requires you to enter an integer number.</p>
 <p>Example: <code>5</code>, <code>7</code>, <code>-10</code></p>
 <p>Example for developers (Java): 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">IntegerParameter</span><span class="o">&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">integerParameter</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;You are &quot;</span> <span class="o">+</span> <span class="n">age</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; years old.&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+5</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">IntegerParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">integerParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;age&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;You are &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">age.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; years old.&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="double-parameter">Double parameter<a class="headerlink" href="#double-parameter" title="Permanent link">&para;</a></h2>
 <p>The double parameter requires you to enter a floating point number.</p>
 <p>Example: <code>3.14159265359</code>, <code>5</code>, <code>-10.5</code></p>
 <p>Example for developers (Java): 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DoubleParameter</span><span class="o">&gt;</span> <span class="n">size</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">doubleParameter</span><span class="p">(</span><span class="s">&quot;size&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;You are &quot;</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; meters tall.&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+5</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DoubleParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">size</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">doubleParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;size&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;You are &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">size.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; meters tall.&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="boolean-parameter">Boolean parameter<a class="headerlink" href="#boolean-parameter" title="Permanent link">&para;</a></h2>
 <p>The boolean parameter requires you to enter a boolean. Note that any input that isn't <code>true</code> will default to false.</p>
 <p>Example: <code>true</code>, <code>false</code></p>
 <p>Example for developers (Java):
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">BooleanParameter</span><span class="o">&gt;</span> <span class="n">debug</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">booleanParameter</span><span class="p">(</span><span class="s">&quot;debug&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span><span class="p">(</span><span class="n">debug</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">log</span><span class="p">(</span><span class="s">&quot;Debug mode has been activated.&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+7</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">BooleanParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">debug</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">booleanParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;debug&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(debug.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">())</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Debug mode has been activated.&quot;</span><span style="color: #f8f8f2">);</span>
+  <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="uri-parameter">URI parameter<a class="headerlink" href="#uri-parameter" title="Permanent link">&para;</a></h2>
 <p>The URI parameter reqires you to enter an <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">Uniform Resource Identifier</a>, most comonly a link to a website.</p>
 <p>Example: <code>donate/to/team.txt</code>, <code>trees.html</code>, <code>org.jpg</code>, <code>http://www.codeoverflow.org/</code></p>
 <p>Example for developers (java): 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">UriParameter</span><span class="o">&gt;</span> <span class="n">twitchURL</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">uriParameter</span><span class="p">(</span><span class="s">&quot;twitchURL&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Your twitch URL is: &quot;</span> <span class="o">+</span> <span class="n">twitchURL</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
-<span class="p">}</span>
+5</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">UriParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">twitchURL</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">uriParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;twitchURL&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Your twitch URL is: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">twitchURL.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">());</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="color-parameter">Color parameter<a class="headerlink" href="#color-parameter" title="Permanent link">&para;</a></h2>
@@ -940,57 +942,57 @@
 <p><code>R,G,B</code> or <code>R,G,B,A</code>: The color in integer numbers (0-255) or floting point numbers (0.0-1.0)</p>
 <p>Example: <code>#FFFFFF</code>, <code>251,121,1</code>, <code>#FFFF00BB</code>, <code>255,255,255,10</code>, <code>1.0,1.0,0.5,1.0</code>, <code>1.0,0.7,0.3</code></p>
 <p>Example for developers:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">ColorParameter</span><span class="o">&gt;</span> <span class="n">favColor</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">colorParameter</span><span class="p">(</span><span class="s">&quot;favColor&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Your favorite Color is: &quot;</span> <span class="o">+</span> <span class="n">favColor</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">getRed</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">favColor</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">getGreen</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">favColor</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">getGreen</span><span class="p">());</span>
-<span class="p">}</span>
+5</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">ColorParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">favColor</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">colorParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;favColor&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Your favorite Color is: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">favColor.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getRed</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">favColor.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getGreen</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">favColor.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getGreen</span><span style="color: #f8f8f2">());</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="list-parameter">List parameter<a class="headerlink" href="#list-parameter" title="Permanent link">&para;</a></h2>
 <p>The list parameter requires you to enter a list. You have to seperate entries by using a comma.</p>
 <p>Example: <code>i,like,trees</code>, <code>message</code>, <code>do you like,this wiki entry?</code></p>
 <p>Example for developers (Java):
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">ListParameter</span><span class="o">&gt;</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">listParameter</span><span class="p">(</span><span class="s">&quot;messages&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;You entered the following messages:&quot;</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">string</span> <span class="p">:</span> <span class="n">messages</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">string</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+8</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">ListParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">messages</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">listParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;messages&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;You entered the following messages:&quot;</span><span style="color: #f8f8f2">);</span>
+  <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(String</span> <span style="color: #f8f8f2">string</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">messages.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">())</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">log(string);</span>
+  <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="map-parameter">Map parameter<a class="headerlink" href="#map-parameter" title="Permanent link">&para;</a></h2>
 <p>The map parameter requires you to enter a map. A map uses the following format: <code>key;value</code> or <code>(key;value)</code>. You have to seperate entries by using a comma.</p>
 <p>Example: <code>(website;https://github.com/codeoverflow-org/chatoverflow)</code>, <code>twitch;prime</code>, <code>(key1:value1),(key2;value2)</code>, <code>key1:value1,key2;value2</code></p>
 <p>Example for developers (Java):
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">MapParameter</span><span class="o">&gt;</span> <span class="n">commands</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">mapParameter</span><span class="p">(</span><span class="s">&quot;commands&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;You&#39;re using the following commands:&quot;</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">key</span> <span class="p">:</span> <span class="n">commands</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">keySet</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="n">commands</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+8</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">MapParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">commands</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">mapParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;commands&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;You&#39;re using the following commands:&quot;</span><span style="color: #f8f8f2">);</span>
+  <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(String</span> <span style="color: #f8f8f2">key</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">commands.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">keySet</span><span style="color: #f8f8f2">())</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">log(key</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">commands.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">(key));</span>
+  <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="date-parameter">Date parameter<a class="headerlink" href="#date-parameter" title="Permanent link">&para;</a></h2>
@@ -998,15 +1000,15 @@
 <p><code>YYYY-MM-DD</code> (<code>Y</code> = year, <code>M</code> = month, <code>D</code> = day)</p>
 <p>Example: <code>2011-12-30</code>, <code>2019-11-09</code></p>
 <p>Example for developers (Java):
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DateParameter</span><span class="o">&gt;</span> <span class="n">exam</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">dateParameter</span><span class="p">(</span><span class="s">&quot;exam&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Your exam is at &quot;</span> <span class="o">+</span> <span class="n">exam</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
-<span class="p">}</span>
+5</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DateParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">exam</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">dateParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;exam&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Your exam is at &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">exam.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">());</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="time-parameter">Time parameter<a class="headerlink" href="#time-parameter" title="Permanent link">&para;</a></h2>
@@ -1016,15 +1018,15 @@ or<br />
 <code>HH:MM</code></p>
 <p>Example: <code>10:15</code>, <code>18:36:10</code></p>
 <p>Example for developers (Java):
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">TimeParameter</span><span class="o">&gt;</span> <span class="n">alarm</span> <span class="o">=</span> <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">timeParameter</span><span class="p">(</span><span class="s">&quot;alarm&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;The alarm is set to &quot;</span> <span class="o">+</span> <span class="n">alarm</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
-<span class="p">}</span>
+5</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">TimeParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">alarm</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">timeParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;alarm&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;The alarm is set to &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">alarm.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">());</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="date-time-parameter">Date Time parameter<a class="headerlink" href="#date-time-parameter" title="Permanent link">&para;</a></h2>
@@ -1034,19 +1036,19 @@ or<br />
 <code>YYYY-MM-DDThh:mm</code></p>
 <p>Example: <code>2011-12-30T10:15:30</code>, <code>2019-11-09T18:40</code></p>
 <p>Example for developers (Java):
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DateTimeParameter</span><span class="o">&gt;</span> <span class="n">appointment</span> <span class="o">=</span> 
-                                    <span class="n">require</span><span class="p">.</span><span class="na">parameter</span><span class="p">.</span><span class="na">dateTimeParameter</span><span class="p">(</span><span class="s">&quot;appointment&quot;</span><span class="p">);</span>
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">log</span><span class="p">(</span><span class="s">&quot;Yo have an appointment on &quot;</span> <span class="o">+</span> <span class="n">appointment</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toLocalDate</span><span class="p">().</span><span class="na">toString</span><span class="p">()</span> 
-    <span class="o">+</span> <span class="s">&quot; at &quot;</span> <span class="o">+</span> <span class="n">appointment</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">get</span><span class="p">().</span><span class="na">toLocalTime</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
-<span class="p">}</span>
+7</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DateTimeParameter</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">appointment</span> <span style="color: #f92672">=</span> 
+                                    <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">parameter</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">dateTimeParameter</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;appointment&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">@Override</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Yo have an appointment on &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">appointment.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">toLocalDate</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">()</span> 
+    <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; at &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">appointment.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">toLocalTime</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">());</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
                 

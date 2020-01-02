@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -808,7 +810,7 @@ Go to OAuth2 and create a link to login with bot scope:</p>
 <h2 id="plugin-development-with-discord-chat-input">Plugin development with Discord Chat Input<a class="headerlink" href="#plugin-development-with-discord-chat-input" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that uses an event handler to log all messages and displays the amount of messages every 5 seconds. It also logs if messages are edited, deleted and reactions are added.</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/chat/DiscordChatInput.html">javadoc</a>.
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -905,110 +907,110 @@ Go to OAuth2 and create a link to login with bot scope:</p>
 95
 96
 97
-98</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+98</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.function.Consumer;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List;</span>
 
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.chat.DiscordChatInput</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageReceiveEvent</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageEditEvent</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageDeleteEvent</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReactionAddEvent</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReaction</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordChatMessage</span><span class="p">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.input.chat.DiscordChatInput;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginImpl;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginManager;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageReceiveEvent;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageEditEvent;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordChatMessageDeleteEvent;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReactionAddEvent;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.event.chat.discord.DiscordReaction;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordChatMessage;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
-    <span class="c1">//require a new discord chat input</span>
-    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DiscordChatInput</span><span class="o">&gt;</span> <span class="n">discordIn</span> <span class="o">=</span> 
-        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">discordChat</span><span class="p">(</span><span class="s">&quot;discordChat&quot;</span><span class="p">,</span> <span class="s">&quot;The discord chat&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TestPlugin</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">PluginImpl</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">//require a new discord chat input</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DiscordChatInput</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">discordIn</span> <span style="color: #f92672">=</span> 
+        <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">input</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">discordChat</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;discordChat&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;The discord chat&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
 
-    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
-        <span class="c1">//Set the loop to repeat every 5 seconds (default 1 second)</span>
-        <span class="n">loopInterval</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TestPlugin</span><span style="color: #f8f8f2">(PluginManager</span> <span style="color: #f8f8f2">pluginManager)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">super</span><span style="color: #f8f8f2">(pluginManager);</span>
+        <span style="color: #75715e">//Set the loop to repeat every 5 seconds (default 1 second)</span>
+        <span style="color: #f8f8f2">loopInterval</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5000</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//set the channel for which we want to get the messages</span>
-        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">setChannel</span><span class="p">(</span><span class="s">&quot;285809306790789120&quot;</span><span class="p">);</span>
-        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Connected to channel with id 285809306790789120&quot;</span><span class="p">);</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//set the channel for which we want to get the messages</span>
+        <span style="color: #f8f8f2">discordIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">setChannel</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;285809306790789120&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Connected to channel with id 285809306790789120&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//register the event handlers</span>
-        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerChatMessageReceiveEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">MessageHandler</span><span class="p">());</span>
-        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerChatMessageEditEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">MessageEditHandler</span><span class="p">());</span>
-        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerChatMessageDeleteEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">MessageDeleteHandler</span><span class="p">());</span>
-        <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerReactionAddEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">ReactionHandler</span><span class="p">());</span>
-    <span class="p">}</span>
+        <span style="color: #75715e">//register the event handlers</span>
+        <span style="color: #f8f8f2">discordIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">registerChatMessageReceiveEventHandler</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">MessageHandler());</span>
+        <span style="color: #f8f8f2">discordIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">registerChatMessageEditEventHandler</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">MessageEditHandler());</span>
+        <span style="color: #f8f8f2">discordIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">registerChatMessageDeleteEventHandler</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">MessageDeleteHandler());</span>
+        <span style="color: #f8f8f2">discordIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">registerReactionAddEventHandler</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ReactionHandler());</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//get the recent messages</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">DiscordChatMessage</span><span class="o">&gt;</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">discordIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getLastMessages</span><span class="p">(</span><span class="n">getLoopInterval</span><span class="p">());</span>
-        <span class="c1">//calculate rate of messages per second</span>
-        <span class="kt">double</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">messages</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">loopInterval</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">);</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Users are chatting at a rate of &quot;</span> <span class="o">+</span> <span class="n">rate</span> <span class="o">+</span> <span class="s">&quot; messages per second&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//get the recent messages</span>
+        <span style="color: #f8f8f2">List</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DiscordChatMessage</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">messages</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">discordIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getLastMessages</span><span style="color: #f8f8f2">(getLoopInterval());</span>
+        <span style="color: #75715e">//calculate rate of messages per second</span>
+        <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">rate</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">messages.</span><span style="color: #a6e22e">size</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">/</span> <span style="color: #f8f8f2">(loopInterval</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">1000.0</span><span style="color: #f8f8f2">);</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Users are chatting at a rate of &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">rate</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; messages per second&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="nd">@Override</span> 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
+     <span style="color: #a6e22e">@Override</span> 
+     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">shutdown</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Shutdown!&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">MessageHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">DiscordChatMessageReceiveEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">MessageHandler</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">Consumer</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DiscordChatMessageReceiveEvent</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
 
-         <span class="nd">@Override</span>
-         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">DiscordChatMessageReceiveEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-             <span class="n">DiscordChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
+         <span style="color: #a6e22e">@Override</span>
+         <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">accept</span><span style="color: #f8f8f2">(DiscordChatMessageReceiveEvent</span> <span style="color: #f8f8f2">event)</span> <span style="color: #f8f8f2">{</span>
+             <span style="color: #f8f8f2">DiscordChatMessage</span> <span style="color: #f8f8f2">message</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">event.</span><span style="color: #a6e22e">getMessage</span><span style="color: #f8f8f2">();</span>
 
-            <span class="c1">//log the message</span>
-            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Discord]&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
-         <span class="p">}</span>
-     <span class="p">}</span>
+            <span style="color: #75715e">//log the message</span>
+            <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;[Discord]&quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">message.</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">());</span>
+         <span style="color: #f8f8f2">}</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">MessageEditHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">DiscordChatMessageEditEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">MessageEditHandler</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">Consumer</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DiscordChatMessageEditEvent</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
 
-         <span class="nd">@Override</span>
-         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">DiscordChatMessageEditEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-             <span class="n">DiscordChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
-             <span class="n">DiscordChatMessage</span> <span class="n">oldMessage</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getOldMessage</span><span class="p">();</span>
+         <span style="color: #a6e22e">@Override</span>
+         <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">accept</span><span style="color: #f8f8f2">(DiscordChatMessageEditEvent</span> <span style="color: #f8f8f2">event)</span> <span style="color: #f8f8f2">{</span>
+             <span style="color: #f8f8f2">DiscordChatMessage</span> <span style="color: #f8f8f2">message</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">event.</span><span style="color: #a6e22e">getMessage</span><span style="color: #f8f8f2">();</span>
+             <span style="color: #f8f8f2">DiscordChatMessage</span> <span style="color: #f8f8f2">oldMessage</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">event.</span><span style="color: #a6e22e">getOldMessage</span><span style="color: #f8f8f2">();</span>
 
-            <span class="c1">//log the old and the new message</span>
-            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Discord] Message &#39;&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; updated to &#39;&quot;</span> <span class="o">+</span> <span class="n">oldMessage</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
-         <span class="p">}</span>
-     <span class="p">}</span>
+            <span style="color: #75715e">//log the old and the new message</span>
+            <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;[Discord] Message &#39;&quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">message.</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;&#39; updated to &#39;&quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">oldMessage.</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;&#39;&quot;</span><span style="color: #f8f8f2">);</span>
+         <span style="color: #f8f8f2">}</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">MessageDeleteHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">DiscordChatMessageDeleteEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">MessageDeleteHandler</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">Consumer</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DiscordChatMessageDeleteEvent</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
 
-         <span class="nd">@Override</span>
-         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">DiscordChatMessageDeleteEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-             <span class="n">DiscordChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
+         <span style="color: #a6e22e">@Override</span>
+         <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">accept</span><span style="color: #f8f8f2">(DiscordChatMessageDeleteEvent</span> <span style="color: #f8f8f2">event)</span> <span style="color: #f8f8f2">{</span>
+             <span style="color: #f8f8f2">DiscordChatMessage</span> <span style="color: #f8f8f2">message</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">event.</span><span style="color: #a6e22e">getMessage</span><span style="color: #f8f8f2">();</span>
 
-            <span class="c1">//log the deleted message</span>
-            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Discord] Deleted message: &#39;&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
-         <span class="p">}</span>
-     <span class="p">}</span>
+            <span style="color: #75715e">//log the deleted message</span>
+            <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;[Discord] Deleted message: &#39;&quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">message.</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;&#39;&quot;</span><span style="color: #f8f8f2">);</span>
+         <span style="color: #f8f8f2">}</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">ReactionHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">DiscordReactionAddEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ReactionHandler</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">Consumer</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DiscordReactionAddEvent</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
 
-         <span class="nd">@Override</span>
-         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">DiscordReactionAddEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">DiscordReaction</span> <span class="n">reaction</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getReaction</span><span class="p">();</span>
-            <span class="n">DiscordChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
+         <span style="color: #a6e22e">@Override</span>
+         <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">accept</span><span style="color: #f8f8f2">(DiscordReactionAddEvent</span> <span style="color: #f8f8f2">event)</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">DiscordReaction</span> <span style="color: #f8f8f2">reaction</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">event.</span><span style="color: #a6e22e">getReaction</span><span style="color: #f8f8f2">();</span>
+            <span style="color: #f8f8f2">DiscordChatMessage</span> <span style="color: #f8f8f2">message</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">event.</span><span style="color: #a6e22e">getMessage</span><span style="color: #f8f8f2">();</span>
 
-            <span class="c1">//log the reaction</span>
-            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Discord] Reaction &quot;</span> <span class="o">+</span> <span class="n">reaction</span><span class="p">.</span><span class="na">getImageUrl</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; added to message &#39;&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
-         <span class="p">}</span>
-     <span class="p">}</span>
- <span class="p">}</span>
+            <span style="color: #75715e">//log the reaction</span>
+            <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;[Discord] Reaction &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">reaction.</span><span style="color: #a6e22e">getImageUrl</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; added to message &#39;&quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">message.</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">(</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;&#39;&quot;</span><span style="color: #f8f8f2">);</span>
+         <span style="color: #f8f8f2">}</span>
+     <span style="color: #f8f8f2">}</span>
+ <span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="plugin-development-with-discord-chat-output">Plugin development with Discord Chat Output<a class="headerlink" href="#plugin-development-with-discord-chat-output" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that posts the current time to the chat every minute.</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/output/chat/DiscordChatOutput.html">javadoc</a>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -1065,64 +1067,64 @@ Go to OAuth2 and create a link to login with bot scope:</p>
 55
 56
 57
-58</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.time.OffsetDateTime</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
+58</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.function.Consumer;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.time.LocalTime;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.time.OffsetDateTime;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.time.format.DateTimeFormatter;</span>
 
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.output.chat.DiscordChatOutput</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordEmbed</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.output.chat.DiscordChatOutput;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.dto.chat.discord.DiscordEmbed;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginImpl;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginManager;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
-    <span class="c1">//require a new discord chat output</span>
-    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">DiscordChatOutput</span><span class="o">&gt;</span> <span class="n">discordOut</span> <span class="o">=</span> 
-        <span class="n">require</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">discordChat</span><span class="p">(</span><span class="s">&quot;discordChat&quot;</span><span class="p">,</span> <span class="s">&quot;The discord chat&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TestPlugin</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">PluginImpl</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">//require a new discord chat output</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">DiscordChatOutput</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">discordOut</span> <span style="color: #f92672">=</span> 
+        <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">output</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">discordChat</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;discordChat&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;The discord chat&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
 
-    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
-        <span class="c1">//Set the loop to repeat every 5 minutes (default 1 second)</span>
-        <span class="n">loopInterval</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TestPlugin</span><span style="color: #f8f8f2">(PluginManager</span> <span style="color: #f8f8f2">pluginManager)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">super</span><span style="color: #f8f8f2">(pluginManager);</span>
+        <span style="color: #75715e">//Set the loop to repeat every 5 minutes (default 1 second)</span>
+        <span style="color: #f8f8f2">loopInterval</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">60</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">1000</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//set the channel to which we want send the messages</span>
-        <span class="n">discordOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">setChannel</span><span class="p">(</span><span class="s">&quot;285809306790789120&quot;</span><span class="p">);</span>
-        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Connected to channel with id 285809306790789120&quot;</span><span class="p">);</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//set the channel to which we want send the messages</span>
+        <span style="color: #f8f8f2">discordOut.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">setChannel</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;285809306790789120&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Connected to channel with id 285809306790789120&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//Send a message to the channel</span>
-        <span class="n">discordOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">sendChatMessage</span><span class="p">(</span><span class="s">&quot;Hello! 👋&quot;</span><span class="p">);</span>
+        <span style="color: #75715e">//Send a message to the channel</span>
+        <span style="color: #f8f8f2">discordOut.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">sendChatMessage</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Hello! 👋&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//Send a file form chatoverflows data folder to the channel</span>
-        <span class="n">discordOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">sendFile</span><span class="p">(</span><span class="s">&quot;test_file.png&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
+        <span style="color: #75715e">//Send a file form chatoverflows data folder to the channel</span>
+        <span style="color: #f8f8f2">discordOut.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">sendFile</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;test_file.png&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="n">timeMessage</span> <span class="o">=</span> <span class="s">&quot;Es ist &quot;</span> 
-            <span class="o">+</span> <span class="n">LocalTime</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">format</span><span class="p">(</span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ISO_LOCAL_TIME</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; Uhr!&quot;</span><span class="p">;</span>
-        <span class="n">log</span><span class="p">(</span><span class="n">timeMessage</span><span class="p">);</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">timeMessage</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Es ist &quot;</span> 
+            <span style="color: #f92672">+</span> <span style="color: #f8f8f2">LocalTime.</span><span style="color: #a6e22e">now</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">format</span><span style="color: #f8f8f2">(DateTimeFormatter.</span><span style="color: #a6e22e">ISO_LOCAL_TIME</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; Uhr!&quot;</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">log(timeMessage);</span>
 
-        <span class="n">DiscordEmbed</span> <span class="n">embed</span> <span class="o">=</span> <span class="n">DiscordEmbed</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
-            <span class="p">.</span><span class="na">withColor</span><span class="p">(</span><span class="s">&quot;#FF7A04&quot;</span><span class="p">)</span>
-            <span class="p">.</span><span class="na">withTitle</span><span class="p">(</span><span class="n">timeMessage</span><span class="p">)</span>
-            <span class="p">.</span><span class="na">withAuthor</span><span class="p">(</span><span class="s">&quot;codeoverflow.org&quot;</span><span class="p">,</span> <span class="s">&quot;http://codeoverflow.org&quot;</span><span class="p">,</span> <span class="s">&quot;https://avatars3.githubusercontent.com/u/34384464?s=200&amp;v=4&quot;</span><span class="p">)</span>
-            <span class="p">.</span><span class="na">withTimestamp</span><span class="p">(</span><span class="n">OffsetDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">())</span>
-            <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+        <span style="color: #f8f8f2">DiscordEmbed</span> <span style="color: #f8f8f2">embed</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">DiscordEmbed.</span><span style="color: #a6e22e">Builder</span><span style="color: #f8f8f2">()</span>
+            <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">withColor</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;#FF7A04&quot;</span><span style="color: #f8f8f2">)</span>
+            <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">withTitle</span><span style="color: #f8f8f2">(timeMessage)</span>
+            <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">withAuthor</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;codeoverflow.org&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;http://codeoverflow.org&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;https://avatars3.githubusercontent.com/u/34384464?s=200&amp;v=4&quot;</span><span style="color: #f8f8f2">)</span>
+            <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">withTimestamp</span><span style="color: #f8f8f2">(OffsetDateTime.</span><span style="color: #a6e22e">now</span><span style="color: #f8f8f2">())</span>
+            <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">build</span><span style="color: #f8f8f2">();</span>
 
-        <span class="c1">//Output the embed to the discord chat</span>
-        <span class="n">discordOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">sendChatMessage</span><span class="p">(</span><span class="n">embed</span><span class="p">);</span>
-     <span class="p">}</span>
+        <span style="color: #75715e">//Output the embed to the discord chat</span>
+        <span style="color: #f8f8f2">discordOut.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">sendChatMessage</span><span style="color: #f8f8f2">(embed);</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="nd">@Override</span> 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
-<span class="p">}</span>
+     <span style="color: #a6e22e">@Override</span> 
+     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">shutdown</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Shutdown!&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table>
                 

@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -790,7 +792,7 @@ A guide can be found <a href="../../usage/Using-the-GUI/#set-credentials">here</
 <li>Raids</li>
 <li>Hosts</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -833,50 +835,50 @@ A guide can be found <a href="../../usage/Using-the-GUI/#set-credentials">here</
 41
 42
 43
-44</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
+44</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.function.Consumer;</span>
 
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.event.TipeeestreamEventInput</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.stream.tipeeestream.TipeeestreamSubscriptionEvent</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.dto.stat.stream.tipeeestream.TipeeestreamSubscription</span><span class="p">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.input.event.TipeeestreamEventInput;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginImpl;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginManager;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.event.stream.tipeeestream.TipeeestreamSubscriptionEvent;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.dto.stat.stream.tipeeestream.TipeeestreamSubscription;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
-    <span class="c1">// require a new TipeeeStream event input</span>
-    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">TipeeestreamEventInput</span><span class="o">&gt;</span> <span class="n">tipeeeIn</span> <span class="o">=</span> 
-        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">tipeeeStream</span><span class="p">(</span><span class="s">&quot;tipeeestream&quot;</span><span class="p">,</span> <span class="s">&quot;Connection to the TipeeeStream api&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TestPlugin</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">PluginImpl</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">// require a new TipeeeStream event input</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">TipeeestreamEventInput</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">tipeeeIn</span> <span style="color: #f92672">=</span> 
+        <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">input</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">tipeeeStream</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;tipeeestream&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Connection to the TipeeeStream api&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
 
-    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TestPlugin</span><span style="color: #f8f8f2">(PluginManager</span> <span style="color: #f8f8f2">pluginManager)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">super</span><span style="color: #f8f8f2">(pluginManager);</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// register the subscription event handler that reacts on subscriptions </span>
-        <span class="n">tipeeeIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerSubscriptionEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">SubHandler</span><span class="p">());</span>
-    <span class="p">}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">// register the subscription event handler that reacts on subscriptions </span>
+        <span style="color: #f8f8f2">tipeeeIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">registerSubscriptionEventHandler</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">SubHandler());</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-    <span class="p">}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span> 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span style="color: #a6e22e">@Override</span> 
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">shutdown</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Shutdown!&quot;</span><span style="color: #f8f8f2">);</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">SubHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">TipeeestreamSubscriptionEvent</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">TipeeestreamSubscriptionEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">TipeeestreamSubscription</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getInfo</span><span class="p">();</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">SubHandler</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">Consumer</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">TipeeestreamSubscriptionEvent</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #a6e22e">@Override</span>
+        <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">accept</span><span style="color: #f8f8f2">(TipeeestreamSubscriptionEvent</span> <span style="color: #f8f8f2">event)</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">TipeeestreamSubscription</span> <span style="color: #f8f8f2">sub</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">event.</span><span style="color: #a6e22e">getInfo</span><span style="color: #f8f8f2">();</span>
 
-            <span class="c1">// print information about the event to the log</span>
-            <span class="n">log</span><span class="p">(</span><span class="n">sub</span><span class="p">.</span><span class="na">getSubscriber</span><span class="p">().</span><span class="na">getDisplayName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; subscribed. Resub streak: &quot;</span> 
-                <span class="o">+</span> <span class="n">sub</span><span class="p">.</span><span class="na">getResub</span><span class="p">());</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+            <span style="color: #75715e">// print information about the event to the log</span>
+            <span style="color: #f8f8f2">log(sub.</span><span style="color: #a6e22e">getSubscriber</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getDisplayName</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; subscribed. Resub streak: &quot;</span> 
+                <span style="color: #f92672">+</span> <span style="color: #f8f8f2">sub.</span><span style="color: #a6e22e">getResub</span><span style="color: #f8f8f2">());</span>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table>
                 

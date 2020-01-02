@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -811,17 +813,17 @@
 <ol>
 <li>
 <p>Upload the Chat Overflow API to the Github Maven Package Registry. For initial setup, create this file <code>~/.sbt/1.0/gpr-codeoverflow.sbt</code> with the following content:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">credentials</span> <span class="o">+=</span> <span class="nc">Credentials</span><span class="o">(</span>
-  <span class="s">&quot;GitHub Package Registry&quot;</span><span class="o">,</span>
-  <span class="s">&quot;maven.pkg.github.com&quot;</span><span class="o">,</span>
-  <span class="s">&quot;&lt;GITHUB_USERNAME&gt;&quot;</span><span class="o">,</span>
-  <span class="s">&quot;&lt;GITHUB_TOKEN&gt;&quot;</span>
-<span class="o">)</span>
+6</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">credentials</span> <span style="color: #f92672">+=</span> <span style="color: #a6e22e">Credentials</span><span style="color: #f92672">(</span>
+  <span style="color: #e6db74">&quot;GitHub Package Registry&quot;</span><span style="color: #f92672">,</span>
+  <span style="color: #e6db74">&quot;maven.pkg.github.com&quot;</span><span style="color: #f92672">,</span>
+  <span style="color: #e6db74">&quot;&lt;GITHUB_USERNAME&gt;&quot;</span><span style="color: #f92672">,</span>
+  <span style="color: #e6db74">&quot;&lt;GITHUB_TOKEN&gt;&quot;</span>
+<span style="color: #f92672">)</span>
 </pre></div>
 </td></tr></table>
 

@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -731,7 +733,7 @@
 And this wiki page is just an example how a wiki page for a connector should look like.</p>
 <p>First you have a short description.</p>
 <p>The image in the upper right corner can be done with the following html in the first line of the page:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;right&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;128&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;128&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/chatoverflow-gh-pages/img/services/sample-material-icon.png&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">&lt;</span><span style="color: #f92672">p</span><span style="color: #f8f8f2">&gt;&lt;</span><span style="color: #f92672">img</span> <span style="color: #a6e22e">align</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;right&quot;</span> <span style="color: #a6e22e">width</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;128&quot;</span> <span style="color: #a6e22e">height</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;128&quot;</span> <span style="color: #a6e22e">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/chatoverflow-gh-pages/img/services/sample-material-icon.png&quot;</span><span style="color: #f8f8f2">&gt;&lt;/</span><span style="color: #f92672">p</span><span style="color: #f8f8f2">&gt;</span>
 </pre></div>
 </td></tr></table>
 The image should be uploaded to <a href="https://github.com/codeoverflow-org/chatoverflow-wiki/tree/master/img/services">img/services</a>.</p>
@@ -741,7 +743,7 @@ Otherwise this section should list all required credentials and show how to obta
 <h2 id="plugin-development-with-sample-input">Plugin development with Sample Input<a class="headerlink" href="#plugin-development-with-sample-input" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple sample plugin:</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/SampleInput.html">javadoc</a>.
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -769,35 +771,35 @@ Otherwise this section should list all required credentials and show how to obta
 26
 27
 28
-29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.SampleInput</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
+29</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.input.SampleInput;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginImpl;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginManager;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
-    <span class="c1">//require a new sample input</span>
-    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">SampleInput</span><span class="o">&gt;</span> <span class="n">sample</span> <span class="o">=</span> 
-        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">sample</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">,</span> <span class="s">&quot;Some description&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TestPlugin</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">PluginImpl</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">//require a new sample input</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">SampleInput</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">sample</span> <span style="color: #f92672">=</span> 
+        <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">input</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sample</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;sample&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Some description&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
 
-    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TestPlugin</span><span style="color: #f8f8f2">(PluginManager</span> <span style="color: #f8f8f2">pluginManager)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">super</span><span style="color: #f8f8f2">(pluginManager);</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//some code that shows of the general usage of the service here</span>
-        <span class="c1">//...</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//some code that shows of the general usage of the service here</span>
+        <span style="color: #75715e">//...</span>
 
-    <span class="p">}</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{}</span>
 
-     <span class="nd">@Override</span> 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
- <span class="p">}</span>
+     <span style="color: #a6e22e">@Override</span> 
+     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">shutdown</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Shutdown!&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
+ <span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
                 

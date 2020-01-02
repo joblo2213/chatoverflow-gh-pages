@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -782,7 +784,7 @@
                 <p>Chat overflow may be configured using the CLI. While running, the easiest way to control everything is the <a href="../Using-the-GUI/"><strong>Better REPL</strong></a>, accessible through <code>http://localhost:2400</code>.</p>
 <h2 id="command-line-interface">Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h2>
 <p>This messages shows up when you execute the framework with the flag <code>--help</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -801,26 +803,26 @@
 17
 18
 19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Chat</span><span class="w"> </span><span class="n">Overflow</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">x</span><span class="w"></span>
-<span class="k">Usage</span><span class="err">:</span><span class="w"> </span><span class="n">Chat</span><span class="w"> </span><span class="n">Overflow</span><span class="w"> </span><span class="o">[</span><span class="n">options</span><span class="o">]</span><span class="w"></span>
+20</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">Chat Overflow x.x</span>
+<span style="color: #66d9ef">Usage</span><span style="color: #960050; background-color: #1e0010">:</span><span style="color: #f8f8f2"> Chat Overflow </span><span style="color: #f92672">[</span><span style="color: #f8f8f2">options</span><span style="color: #f92672">]</span><span style="color: #f8f8f2"></span>
 
-<span class="w">  </span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="c1">--pluginFolder &lt;value&gt;</span>
-<span class="w">                           </span><span class="k">path</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">packaged</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="n">jar</span><span class="w"> </span><span class="n">files</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="c1">--configFolder &lt;value&gt;</span>
-<span class="w">                           </span><span class="k">path</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">save</span><span class="w"> </span><span class="n">configs</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">credentials</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="c1">--requirementPackage &lt;value&gt;</span>
-<span class="w">                           </span><span class="k">path</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="ow">all</span><span class="w"> </span><span class="n">requirements</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">defined</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="c1">--login &lt;value&gt;      the password to login to chat overflow on framework startup</span>
-<span class="w">  </span><span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="c1">--start &lt;value&gt;      a comma-separated list of plugin instances to start after login (has to be combined with -l)</span>
-<span class="w">  </span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="c1">--pluginDataFolder &lt;value&gt;</span>
-<span class="w">                           </span><span class="k">path</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">folder</span><span class="p">,</span><span class="w"> </span><span class="n">accessible</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">within</span><span class="w"> </span><span class="n">plugins</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="c1">--webServerPort &lt;value&gt;</span>
-<span class="w">                           </span><span class="k">default</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">eg</span><span class="p">.</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">rest</span><span class="w"> </span><span class="n">api</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">gui</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="c1">--enablePluginOutput</span>
-<span class="w">                           </span><span class="k">set</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">enable</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="k">output</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">console</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="c1">--enableLogFile      set this flag to enable logging to log files</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">p, </span><span style="color: #75715e">--pluginFolder &lt;value&gt;</span>
+<span style="color: #f8f8f2">                           </span><span style="color: #66d9ef">path</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">to</span><span style="color: #f8f8f2"> a folder </span><span style="color: #66d9ef">with</span><span style="color: #f8f8f2"> packaged plugin jar files</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">c, </span><span style="color: #75715e">--configFolder &lt;value&gt;</span>
+<span style="color: #f8f8f2">                           </span><span style="color: #66d9ef">path</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">to</span><span style="color: #f8f8f2"> the folder </span><span style="color: #66d9ef">to</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">save</span><span style="color: #f8f8f2"> configs </span><span style="color: #f92672">and</span><span style="color: #f8f8f2"> credentials</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">r, </span><span style="color: #75715e">--requirementPackage &lt;value&gt;</span>
+<span style="color: #f8f8f2">                           </span><span style="color: #66d9ef">path</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">to</span><span style="color: #f8f8f2"> the package </span><span style="color: #66d9ef">where</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">all</span><span style="color: #f8f8f2"> requirements </span><span style="color: #66d9ef">are</span><span style="color: #f8f8f2"> defined</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">l, </span><span style="color: #75715e">--login &lt;value&gt;      the password to login to chat overflow on framework startup</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">s, </span><span style="color: #75715e">--start &lt;value&gt;      a comma-separated list of plugin instances to start after login (has to be combined with -l)</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">d, </span><span style="color: #75715e">--pluginDataFolder &lt;value&gt;</span>
+<span style="color: #f8f8f2">                           </span><span style="color: #66d9ef">path</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">to</span><span style="color: #f8f8f2"> the </span><span style="color: #66d9ef">data</span><span style="color: #f8f8f2"> folder, accessible </span><span style="color: #66d9ef">from</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">within</span><span style="color: #f8f8f2"> plugins</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">w, </span><span style="color: #75715e">--webServerPort &lt;value&gt;</span>
+<span style="color: #f8f8f2">                           </span><span style="color: #66d9ef">default</span><span style="color: #f8f8f2"> web server port, used eg. </span><span style="color: #66d9ef">for</span><span style="color: #f8f8f2"> the rest api </span><span style="color: #f92672">and</span><span style="color: #f8f8f2"> web gui</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">o, </span><span style="color: #75715e">--enablePluginOutput</span>
+<span style="color: #f8f8f2">                           </span><span style="color: #66d9ef">set</span><span style="color: #f8f8f2"> this flag </span><span style="color: #66d9ef">to</span><span style="color: #f8f8f2"> enable plugin </span><span style="color: #a6e22e">log</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">output</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">on</span><span style="color: #f8f8f2"> console</span>
+<span style="color: #f8f8f2">  </span><span style="color: #f92672">-</span><span style="color: #f8f8f2">f, </span><span style="color: #75715e">--enableLogFile      set this flag to enable logging to log files</span>
 
-<span class="k">For</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">information</span><span class="p">,</span><span class="w"> </span><span class="n">please</span><span class="w"> </span><span class="n">visit</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">codeoverflow</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="w"></span>
+<span style="color: #66d9ef">For</span><span style="color: #f8f8f2"> more information, please visit http:</span><span style="color: #f92672">//</span><span style="color: #f8f8f2">codeoverflow.org</span><span style="color: #f92672">/</span><span style="color: #f8f8f2"></span>
 </pre></div>
 </td></tr></table>
 
@@ -831,12 +833,12 @@
 </blockquote>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>You can also configure the paths of config- and credentials-files to create custom setups:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">-c customConfigFolder -p customPluginFolder</span>
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">-c customConfigFolder -p customPluginFolder</span>
 </pre></div>
 </td></tr></table>
 
 <p>The combination of logging in and starting plugins with one command is very useful for rapid prototyping.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">-l myPassword -s startupPluginInstance1,startupPluginInstance2</span>
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">-l myPassword -s startupPluginInstance1,startupPluginInstance2</span>
 </pre></div>
 </td></tr></table>
 

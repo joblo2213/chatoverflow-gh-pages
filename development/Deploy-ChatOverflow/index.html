@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -734,17 +736,17 @@
 </ol>
 <p>The <code>deploy</code>-folder contains the bootstrap launcher that can be started with the start scripts or with <code>java -jar ChatOverflow.jar</code>. It then downloads all required libraries, which are specified in the <code>dependencies.pom</code> file that is included in the jar file of the framework, to the local cache using <a href="https://get-coursier.io">Coursier</a> and starts Chat Overflow.</p>
 <p>The folder-structure of the end-user deployment is as follows:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">deploy/</span>
-<span class="err">├──bin/                      Jars of the API, the framework and the GUI</span>
-<span class="err">├──ChatOverflow.jar          Fat-Jar of the bootstrap launcher</span>
-<span class="err">├──ChatOverflow.*            Start scripts for various platforms</span>
-<span class="err">├──LICENSE                   EPL-2.0 license</span>
-<span class="err">└──README.html               A readme with starter information</span>
+6</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">deploy/</span>
+<span style="color: #960050; background-color: #1e0010">├──bin/                      Jars of the API, the framework and the GUI</span>
+<span style="color: #960050; background-color: #1e0010">├──ChatOverflow.jar          Fat-Jar of the bootstrap launcher</span>
+<span style="color: #960050; background-color: #1e0010">├──ChatOverflow.*            Start scripts for various platforms</span>
+<span style="color: #960050; background-color: #1e0010">├──LICENSE                   EPL-2.0 license</span>
+<span style="color: #960050; background-color: #1e0010">└──README.html               A readme with starter information</span>
 </pre></div>
 </td></tr></table>
 
@@ -757,21 +759,21 @@
 </ol>
 <p>A plugin developer deployment contains the framework and the GUI in jars, the api in form of source code and sbt scripts (e.g. create and fetch) to be able to create and compile plugins.</p>
 <p>The folder-structure of the plugin-dev deployment is as follows:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span>1
 2
 3
 4
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">deployDev/</span>
-<span class="err">├──.idea/                    IntelliJ run configurations</span>
-<span class="err">├──api/                      The api project in source code</span>
-<span class="err">├──bin/                      Jars of the framework and the GUI</span>
-<span class="err">├──project/                  Contains a jar of the chatoverflow-build code</span>
-<span class="err">├──build.sbt                 Main sbt file, contains general settings and task definitons</span>
-<span class="err">├──dependencies.sbt          Imports all dependencies of the framework</span>
-<span class="err">└──LICENSE                   EPL-2.0 license</span>
+8</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #960050; background-color: #1e0010">deployDev/</span>
+<span style="color: #960050; background-color: #1e0010">├──.idea/                    IntelliJ run configurations</span>
+<span style="color: #960050; background-color: #1e0010">├──api/                      The api project in source code</span>
+<span style="color: #960050; background-color: #1e0010">├──bin/                      Jars of the framework and the GUI</span>
+<span style="color: #960050; background-color: #1e0010">├──project/                  Contains a jar of the chatoverflow-build code</span>
+<span style="color: #960050; background-color: #1e0010">├──build.sbt                 Main sbt file, contains general settings and task definitons</span>
+<span style="color: #960050; background-color: #1e0010">├──dependencies.sbt          Imports all dependencies of the framework</span>
+<span style="color: #960050; background-color: #1e0010">└──LICENSE                   EPL-2.0 license</span>
 </pre></div>
 </td></tr></table>
                 

@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -749,7 +751,7 @@ To keep you safe from malicious plugins all file operations are restricted to th
 <h2 id="plugin-development-with-file-input">Plugin development with File Input<a class="headerlink" href="#plugin-development-with-file-input" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that loads files from the data folder:</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/FileInput.html">javadoc</a>.
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -804,68 +806,68 @@ To keep you safe from malicious plugins all file operations are restricted to th
 53
 54
 55
-56</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Optional</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="p">;</span>
+56</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Optional;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.awt.image.BufferedImage;</span>
 
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.FileInput</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.input.FileInput;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginImpl;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginManager;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
-    <span class="c1">//require a new file input</span>
-    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">FileInput</span><span class="o">&gt;</span> <span class="n">fsi</span> <span class="o">=</span> 
-        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">file</span><span class="p">(</span><span class="s">&quot;fileInput&quot;</span><span class="p">,</span> <span class="s">&quot;Read data from the file system&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TestPlugin</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">PluginImpl</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">//require a new file input</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">FileInput</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">fsi</span> <span style="color: #f92672">=</span> 
+        <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">input</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">file</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;fileInput&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Read data from the file system&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
 
-    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TestPlugin</span><span style="color: #f8f8f2">(PluginManager</span> <span style="color: #f8f8f2">pluginManager)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">super</span><span style="color: #f8f8f2">(pluginManager);</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//read text from the test.txt file in the data folder to a string:</span>
-        <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="n">fsi</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getFile</span><span class="p">(</span><span class="s">&quot;test.txt&quot;</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">isPresent</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">log</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">get</span><span class="p">());</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">log</span><span class="p">(</span><span class="s">&quot;Couldn&#39;t read test.txt&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//read text from the test.txt file in the data folder to a string:</span>
+        <span style="color: #f8f8f2">Optional</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fsi.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getFile</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;test.txt&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(text.</span><span style="color: #a6e22e">isPresent</span><span style="color: #f8f8f2">())</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">log(text.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">());</span>
+        <span style="color: #f8f8f2">}</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Couldn&#39;t read test.txt&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">}</span>
 
-        <span class="c1">//read the content of a file into a byte array</span>
-        <span class="n">Optional</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[]&gt;</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">fsi</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getBinaryFile</span><span class="p">(</span><span class="s">&quot;test.bin&quot;</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">raw</span><span class="p">.</span><span class="na">isPresent</span><span class="p">())</span> <span class="p">{</span>
-            <span class="kt">byte</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="n">raw</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
-            <span class="c1">//...</span>
+        <span style="color: #75715e">//read the content of a file into a byte array</span>
+        <span style="color: #f8f8f2">Optional</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">[]&gt;</span> <span style="color: #f8f8f2">raw</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fsi.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getBinaryFile</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;test.bin&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(raw.</span><span style="color: #a6e22e">isPresent</span><span style="color: #f8f8f2">())</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">array</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">raw.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">();</span>
+            <span style="color: #75715e">//...</span>
 
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">log</span><span class="p">(</span><span class="s">&quot;Couldn&#39;t read test.bin&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
+        <span style="color: #f8f8f2">}</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Couldn&#39;t read test.bin&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">}</span>
 
-        <span class="c1">//load an image</span>
-        <span class="n">Optional</span><span class="o">&lt;</span><span class="n">BufferedImage</span><span class="o">&gt;</span> <span class="n">img</span> <span class="o">=</span> <span class="n">fsi</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getImage</span><span class="p">(</span><span class="s">&quot;test.png&quot;</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="na">isPresent</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">BufferedImage</span> <span class="n">image</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
-            <span class="c1">//...</span>
+        <span style="color: #75715e">//load an image</span>
+        <span style="color: #f8f8f2">Optional</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">BufferedImage</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">img</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fsi.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getImage</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;test.png&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(img.</span><span style="color: #a6e22e">isPresent</span><span style="color: #f8f8f2">())</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">BufferedImage</span> <span style="color: #f8f8f2">image</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">img.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">();</span>
+            <span style="color: #75715e">//...</span>
 
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">log</span><span class="p">(</span><span class="s">&quot;Couldn&#39;t load test.png&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+        <span style="color: #f8f8f2">}</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Couldn&#39;t load test.png&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{}</span>
 
-     <span class="nd">@Override</span> 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
- <span class="p">}</span>
+     <span style="color: #a6e22e">@Override</span> 
+     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">shutdown</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Shutdown!&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
+ <span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="plugin-development-with-file-output">Plugin development with File Output<a class="headerlink" href="#plugin-development-with-file-output" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that saves files and creates or deletes directories in the data folder.</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/output/FileOutput.html">javadoc</a>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -919,61 +921,61 @@ To keep you safe from malicious plugins all file operations are restricted to th
 52
 53
 54
-55</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.awt.Graphics2D</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.awt.Color</span><span class="p">;</span>
+55</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.awt.image.BufferedImage;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.awt.Graphics2D;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.awt.Color;</span>
 
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.output.FileOutput</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.output.FileOutput;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginImpl;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginManager;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
-    <span class="c1">//require a new file output</span>
-    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">FileOutput</span><span class="o">&gt;</span> <span class="n">fso</span> <span class="o">=</span> 
-        <span class="n">require</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">serial</span><span class="p">(</span><span class="s">&quot;fileOutput&quot;</span><span class="p">,</span> <span class="s">&quot;Interact with the file system&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TestPlugin</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">PluginImpl</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">//require a new file output</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">FileOutput</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">fso</span> <span style="color: #f92672">=</span> 
+        <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">output</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">serial</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;fileOutput&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Interact with the file system&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
 
-    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TestPlugin</span><span style="color: #f8f8f2">(PluginManager</span> <span style="color: #f8f8f2">pluginManager)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">super</span><span style="color: #f8f8f2">(pluginManager);</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//create a folder called &quot;test&quot; inside the data folder</span>
-        <span class="n">fso</span><span class="p">.</span><span class="na">createDirectory</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">);</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//create a folder called &quot;test&quot; inside the data folder</span>
+        <span style="color: #f8f8f2">fso.</span><span style="color: #a6e22e">createDirectory</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;test&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//create a sample file with a stupid swabian tongue twister</span>
-        <span class="n">fso</span><span class="p">.</span><span class="na">saveFile</span><span class="p">(</span><span class="s">&quot;Schellet&#39;s net an sellrer Schelle, selle Schelle schellet net.\n&quot;</span>
-            <span class="o">+</span> <span class="s">&quot;Schellet&#39;s an seller Schelle, selle Schelle schellet!&quot;</span><span class="p">,</span> 
-            <span class="s">&quot;test/tounge-twister.txt&quot;</span><span class="p">);</span>
+        <span style="color: #75715e">//create a sample file with a stupid swabian tongue twister</span>
+        <span style="color: #f8f8f2">fso.</span><span style="color: #a6e22e">saveFile</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Schellet&#39;s net an sellrer Schelle, selle Schelle schellet net.\n&quot;</span>
+            <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;Schellet&#39;s an seller Schelle, selle Schelle schellet!&quot;</span><span style="color: #f8f8f2">,</span> 
+            <span style="color: #e6db74">&quot;test/tounge-twister.txt&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//save some binary to a file</span>
-        <span class="kt">byte</span><span class="o">[]</span> <span class="n">binary</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x48</span><span class="p">,</span> <span class="mh">0x65</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0x6F</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span>
-                         <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6F</span><span class="p">,</span> <span class="mh">0x72</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0x64</span><span class="p">,</span> <span class="mh">0x21</span><span class="p">};</span>
-        <span class="n">fso</span><span class="p">.</span><span class="na">saveBinaryFile</span><span class="p">(</span><span class="n">binary</span><span class="p">,</span> <span class="s">&quot;test.bin&quot;</span><span class="p">);</span>
+        <span style="color: #75715e">//save some binary to a file</span>
+        <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">binary</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span><span style="color: #ae81ff">0x48</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x65</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x6C</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x6C</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x6F</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x20</span><span style="color: #f8f8f2">,</span>
+                         <span style="color: #ae81ff">0x57</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x6F</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x72</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x6C</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x64</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0x21</span><span style="color: #f8f8f2">};</span>
+        <span style="color: #f8f8f2">fso.</span><span style="color: #a6e22e">saveBinaryFile</span><span style="color: #f8f8f2">(binary,</span> <span style="color: #e6db74">&quot;test.bin&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//save an image</span>
-        <span class="n">BufferedImage</span> <span class="n">img</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedImage</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="n">BufferedImage</span><span class="p">.</span><span class="na">TYPE_INT_ARGB</span><span class="p">);</span>
-        <span class="n">Graphics2D</span> <span class="n">graphics</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="na">createGraphics</span><span class="p">();</span>
-        <span class="n">graphics</span><span class="p">.</span><span class="na">setPaint</span><span class="p">(</span><span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
-        <span class="n">graphics</span><span class="p">.</span><span class="na">fillRect</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="na">getWidth</span><span class="p">(),</span> <span class="n">img</span><span class="p">.</span><span class="na">getHeight</span><span class="p">()</span> <span class="p">);</span>
-        <span class="n">fso</span><span class="p">.</span><span class="na">saveImage</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="s">&quot;test.png&quot;</span><span class="p">);</span>
+        <span style="color: #75715e">//save an image</span>
+        <span style="color: #f8f8f2">BufferedImage</span> <span style="color: #f8f8f2">img</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">BufferedImage(</span><span style="color: #ae81ff">256</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">256</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">BufferedImage.</span><span style="color: #a6e22e">TYPE_INT_ARGB</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">Graphics2D</span> <span style="color: #f8f8f2">graphics</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">img.</span><span style="color: #a6e22e">createGraphics</span><span style="color: #f8f8f2">();</span>
+        <span style="color: #f8f8f2">graphics.</span><span style="color: #a6e22e">setPaint</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Color(</span><span style="color: #ae81ff">255</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">121</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">));</span>
+        <span style="color: #f8f8f2">graphics.</span><span style="color: #a6e22e">fillRect</span><span style="color: #f8f8f2">(</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">img.</span><span style="color: #a6e22e">getWidth</span><span style="color: #f8f8f2">(),</span> <span style="color: #f8f8f2">img.</span><span style="color: #a6e22e">getHeight</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">fso.</span><span style="color: #a6e22e">saveImage</span><span style="color: #f8f8f2">(img,</span> <span style="color: #e6db74">&quot;test.png&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//check if a file exists</span>
-        <span class="kt">boolean</span> <span class="n">exists</span> <span class="o">=</span> <span class="n">fso</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="s">&quot;test.txt&quot;</span><span class="p">);</span>
+        <span style="color: #75715e">//check if a file exists</span>
+        <span style="color: #66d9ef">boolean</span> <span style="color: #f8f8f2">exists</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fso.</span><span style="color: #a6e22e">exists</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;test.txt&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//delete a file </span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">exists</span><span class="p">)</span> <span class="n">fso</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="s">&quot;test.txt&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
+        <span style="color: #75715e">//delete a file </span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(exists)</span> <span style="color: #f8f8f2">fso.</span><span style="color: #a6e22e">delete</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;test.txt&quot;</span><span style="color: #f8f8f2">);</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{}</span>
 
-     <span class="nd">@Override</span> 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
-<span class="p">}</span>
+     <span style="color: #a6e22e">@Override</span> 
+     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">shutdown</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Shutdown!&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table>
                 

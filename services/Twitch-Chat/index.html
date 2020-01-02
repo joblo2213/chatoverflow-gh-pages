@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../extra/stylesheets/dark-theme.css">
+    
     
       
     
@@ -779,7 +781,7 @@ Then add it as a credentials value with the key <code>oauth</code> as described 
 <h2 id="plugin-development-with-twitch-chat-input">Plugin development with Twitch Chat Input<a class="headerlink" href="#plugin-development-with-twitch-chat-input" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that uses an event handler to log all messages and displays the amount of messages every 5 seconds:</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/input/chat/TwitchChatInput.html">javadoc</a>.
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -834,68 +836,68 @@ Then add it as a credentials value with the key <code>oauth</code> as described 
 53
 54
 55
-56</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+56</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.function.Consumer;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List;</span>
 
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.input.chat.TwitchChatInput</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.event.chat.twitch.TwitchChatMessageReceiveEvent</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.dto.chat.twitch.TwitchChatMessage</span><span class="p">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.input.chat.TwitchChatInput;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginImpl;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginManager;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.event.chat.twitch.TwitchChatMessageReceiveEvent;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.dto.chat.twitch.TwitchChatMessage;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
-    <span class="c1">//require a new Twitch chat input</span>
-    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">TwitchChatInput</span><span class="o">&gt;</span> <span class="n">twitchIn</span> <span class="o">=</span> 
-        <span class="n">require</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">twitchChat</span><span class="p">(</span><span class="s">&quot;twitchChat&quot;</span><span class="p">,</span> <span class="s">&quot;The Twitch chat&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TestPlugin</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">PluginImpl</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">//require a new Twitch chat input</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">TwitchChatInput</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">twitchIn</span> <span style="color: #f92672">=</span> 
+        <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">input</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">twitchChat</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;twitchChat&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;The Twitch chat&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
 
-    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
-        <span class="c1">//Set the loop to repeat every 5 seconds (default 1 second)</span>
-        <span class="n">loopInterval</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TestPlugin</span><span style="color: #f8f8f2">(PluginManager</span> <span style="color: #f8f8f2">pluginManager)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">super</span><span style="color: #f8f8f2">(pluginManager);</span>
+        <span style="color: #75715e">//Set the loop to repeat every 5 seconds (default 1 second)</span>
+        <span style="color: #f8f8f2">loopInterval</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5000</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//set the channel for which we want to get the messages</span>
-        <span class="n">twitchIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">setChannel</span><span class="p">(</span><span class="s">&quot;#skate702&quot;</span><span class="p">);</span>
-        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Connected to skate702s Twitch chat!&quot;</span><span class="p">);</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//set the channel for which we want to get the messages</span>
+        <span style="color: #f8f8f2">twitchIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">setChannel</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;#skate702&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Connected to skate702s Twitch chat!&quot;</span><span style="color: #f8f8f2">);</span>
 
-        <span class="c1">//register the message handler that reacts on incoming messages</span>
-        <span class="n">twitchIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">registerChatMessageReceiveEventHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">MessageHandler</span><span class="p">());</span>
-    <span class="p">}</span>
+        <span style="color: #75715e">//register the message handler that reacts on incoming messages</span>
+        <span style="color: #f8f8f2">twitchIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">registerChatMessageReceiveEventHandler</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">MessageHandler());</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//get the recent messages</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">TwitchChatMessage</span><span class="o">&gt;</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">twitchIn</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getLastMessages</span><span class="p">(</span><span class="n">getLoopInterval</span><span class="p">());</span>
-        <span class="c1">//calculate rate of messages per second</span>
-        <span class="kt">double</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">messages</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">loopInterval</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">);</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Users are chatting at a rate of &quot;</span> <span class="o">+</span> <span class="n">rate</span> <span class="o">+</span> <span class="s">&quot; messages per second&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//get the recent messages</span>
+        <span style="color: #f8f8f2">List</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">TwitchChatMessage</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">messages</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">twitchIn.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getLastMessages</span><span style="color: #f8f8f2">(getLoopInterval());</span>
+        <span style="color: #75715e">//calculate rate of messages per second</span>
+        <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">rate</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">messages.</span><span style="color: #a6e22e">size</span><span style="color: #f8f8f2">()</span> <span style="color: #f92672">/</span> <span style="color: #f8f8f2">(loopInterval</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">1000.0</span><span style="color: #f8f8f2">);</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Users are chatting at a rate of &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">rate</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; messages per second&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="nd">@Override</span> 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
+     <span style="color: #a6e22e">@Override</span> 
+     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">shutdown</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Shutdown!&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">MessageHandler</span> <span class="kd">implements</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">TwitchChatMessageReceiveEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">MessageHandler</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">Consumer</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">TwitchChatMessageReceiveEvent</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
 
-         <span class="nd">@Override</span>
-         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="p">(</span><span class="n">TwitchChatMessageReceiveEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-             <span class="n">TwitchChatMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getMessage</span><span class="p">();</span>
+         <span style="color: #a6e22e">@Override</span>
+         <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">accept</span><span style="color: #f8f8f2">(TwitchChatMessageReceiveEvent</span> <span style="color: #f8f8f2">event)</span> <span style="color: #f8f8f2">{</span>
+             <span style="color: #f8f8f2">TwitchChatMessage</span> <span style="color: #f8f8f2">message</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">event.</span><span style="color: #a6e22e">getMessage</span><span style="color: #f8f8f2">();</span>
 
-            <span class="c1">//print the incoming message to the log (including the author)</span>
-            <span class="n">log</span><span class="p">(</span><span class="s">&quot;[Twitch Chat]&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
-         <span class="p">}</span>
-     <span class="p">}</span>
- <span class="p">}</span>
+            <span style="color: #75715e">//print the incoming message to the log (including the author)</span>
+            <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;[Twitch Chat]&quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">message.</span><span style="color: #a6e22e">toString</span><span style="color: #f8f8f2">());</span>
+         <span style="color: #f8f8f2">}</span>
+     <span style="color: #f8f8f2">}</span>
+ <span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table></p>
 <h2 id="plugin-development-with-twitch-chat-output">Plugin development with Twitch Chat Output<a class="headerlink" href="#plugin-development-with-twitch-chat-output" title="Permanent link">&para;</a></h2>
 <p>Have a look at this simple example plugin that posts the current time to the chat every minute.</p>
 <p>For more information have a look at the <a href="http://docs.codeoverflow.org/chatoverflow-api/org/codeoverflow/chatoverflow/api/io/output/chat/TwitchChatOutput.html">javadoc</a>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"><span></span> 1
  2
  3
  4
@@ -937,49 +939,49 @@ Then add it as a credentials value with the key <code>oauth</code> as described 
 40
 41
 42
-43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
+43</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.function.Consumer;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.time.LocalTime;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.time.format.DateTimeFormatter;</span>
 
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.io.output.chat.TwitchChatOutput</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginImpl</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.codeoverflow.chatoverflow.api.plugin.PluginManager</span><span class="p">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.configuration.Requirement;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.io.output.chat.TwitchChatOutput;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginImpl;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.codeoverflow.chatoverflow.api.plugin.PluginManager;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPlugin</span> <span class="kd">extends</span> <span class="n">PluginImpl</span> <span class="p">{</span>
-    <span class="c1">//require a new Twitch chat output</span>
-    <span class="kd">private</span> <span class="n">Requirement</span><span class="o">&lt;</span><span class="n">TwitchChatOutput</span><span class="o">&gt;</span> <span class="n">twitchOut</span> <span class="o">=</span> 
-        <span class="n">require</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">twitchChat</span><span class="p">(</span><span class="s">&quot;twitchChat&quot;</span><span class="p">,</span> <span class="s">&quot;The Twitch chat&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TestPlugin</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">PluginImpl</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">//require a new Twitch chat output</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Requirement</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">TwitchChatOutput</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">twitchOut</span> <span style="color: #f92672">=</span> 
+        <span style="color: #f8f8f2">require.</span><span style="color: #a6e22e">output</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">twitchChat</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;twitchChat&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;The Twitch chat&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
 
-    <span class="kd">public</span> <span class="nf">TestPlugin</span><span class="p">(</span><span class="n">PluginManager</span> <span class="n">pluginManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pluginManager</span><span class="p">);</span>
-        <span class="c1">//Set the loop to repeat every 5 minutes (default 1 second)</span>
-        <span class="n">loopInterval</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TestPlugin</span><span style="color: #f8f8f2">(PluginManager</span> <span style="color: #f8f8f2">pluginManager)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">super</span><span style="color: #f8f8f2">(pluginManager);</span>
+        <span style="color: #75715e">//Set the loop to repeat every 5 minutes (default 1 second)</span>
+        <span style="color: #f8f8f2">loopInterval</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">60</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">1000</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//set the channel to which we want send the messages</span>
-        <span class="n">twitchOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">setChannel</span><span class="p">(</span><span class="s">&quot;#skate702&quot;</span><span class="p">);</span>
-        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Connected to skate702s Twitch chat!&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">//set the channel to which we want send the messages</span>
+        <span style="color: #f8f8f2">twitchOut.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">setChannel</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;#skate702&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Connected to skate702s Twitch chat!&quot;</span><span style="color: #f8f8f2">);</span>
+    <span style="color: #f8f8f2">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="n">timeMessage</span> <span class="o">=</span> <span class="s">&quot;Es ist &quot;</span> 
-            <span class="o">+</span> <span class="n">LocalTime</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">format</span><span class="p">(</span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ISO_LOCAL_TIME</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; Uhr!&quot;</span><span class="p">;</span>
-        <span class="n">log</span><span class="p">(</span><span class="n">timeMessage</span><span class="p">);</span>
+    <span style="color: #a6e22e">@Override</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">timeMessage</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Es ist &quot;</span> 
+            <span style="color: #f92672">+</span> <span style="color: #f8f8f2">LocalTime.</span><span style="color: #a6e22e">now</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">format</span><span style="color: #f8f8f2">(DateTimeFormatter.</span><span style="color: #a6e22e">ISO_LOCAL_TIME</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; Uhr!&quot;</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">log(timeMessage);</span>
 
-        <span class="c1">//Output the message to the Twitch chat</span>
-        <span class="n">twitchOut</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">sendChatMessage</span><span class="p">(</span><span class="n">timeMessage</span><span class="p">);</span>
-     <span class="p">}</span>
+        <span style="color: #75715e">//Output the message to the Twitch chat</span>
+        <span style="color: #f8f8f2">twitchOut.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">sendChatMessage</span><span style="color: #f8f8f2">(timeMessage);</span>
+     <span style="color: #f8f8f2">}</span>
 
-     <span class="nd">@Override</span> 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">()</span> <span class="p">{</span>
-         <span class="n">log</span><span class="p">(</span><span class="s">&quot;Shutdown!&quot;</span><span class="p">);</span>
-     <span class="p">}</span>
-<span class="p">}</span>
+     <span style="color: #a6e22e">@Override</span> 
+     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">shutdown</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+         <span style="color: #f8f8f2">log(</span><span style="color: #e6db74">&quot;Shutdown!&quot;</span><span style="color: #f8f8f2">);</span>
+     <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
 </pre></div>
 </td></tr></table>
                 
