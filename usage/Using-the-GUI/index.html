@@ -550,7 +550,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../development/Versioning.m" title="Versioning" class="md-nav__link">
+    <a href="../../development/Versioning/" title="Versioning" class="md-nav__link">
       Versioning
     </a>
   </li>
@@ -762,7 +762,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joblo2213/chatoverflow-wiki/blob/feature/162-mkdocs/docs/usage/Using-the-GUI.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joblo2213/chatoverflow-wiki/edit/feature/162-mkdocs/docs/usage/Using-the-GUI.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Using the GUI</h1>
@@ -773,7 +773,7 @@ That's why we have the <strong>Better REPL</strong>, an easy-to-use one-page das
 <p>When using the GUI for the first time use the <code>[Advanced]</code> run configuration that packages the gui. Make sure to reload sbt afterwards to make IntelliJ find and load the gui.</p>
 <p>For all further runs you may use the <code>[Simple]</code> run configuration which is way faster.  </p>
 <p>Once the framework is running open http://localhost:2400/ in a browser and wait for the server status to display <code>Connected!</code>. Now click on <code>OPEN BETTER REPL</code>. </p>
-<p><img alt="" src="/img/usage/login.png" /></p>
+<p><img alt="" src="/docs/img/usage/login.png" /></p>
 <p>When running for the first time enter a password that you want to use for securing your credentials and click on <code>REGISTER</code>.<br />
 If you are already registered, use your password to login.<br />
 If the login was successful the gui will display the authentication key for this session.  </p>
@@ -781,33 +781,33 @@ If the login was successful the gui will display the authentication key for this
 <p>Before running a plugin you have to create a plugin instance.<br />
 All available plugins are listed under <code>Plugin types</code>.<br />
 Add more plugins by putting the plugin <code>.jar</code> files into the plugins folder. If you are adding new plugins to the folder while the framework is still running, you need to restart the framework in order for it to load the newly added plugins.</p>
-<p><img alt="" src="/img/usage/plugin-types.png" /></p>
+<p><img alt="" src="/docs/img/usage/plugin-types.png" /></p>
 <p>Enter the plugin and author name of the plugin and give the instance a name (whatever you like), then click on <code>CREATE</code>: </p>
-<p><img alt="" src="/img/usage/create-plugin.png" /></p>
+<p><img alt="" src="/docs/img/usage/create-plugin.png" /></p>
 <p>The plugin instance should now be listed under <code>Plugin instances</code>: </p>
-<p><img alt="" src="/img/usage/plugin-instances.png" /></p>
+<p><img alt="" src="/docs/img/usage/plugin-instances.png" /></p>
 <p>You can use the pen to copy the name of an instance.<br />
 There are buttons that allow you to <code>START</code> / <code>STOP</code> an instance, to show its log (if running) or requirements and a button to <code>DELETE</code> the instance (just make sure to stop it before deleting it).</p>
 <h2 id="setting-plugin-requirements">Setting plugin requirements<a class="headerlink" href="#setting-plugin-requirements" title="Permanent link">&para;</a></h2>
 <p>Before you can start a plugin you need to set its requirements.
 A plugin can require a lot of things, for example Strings, Inputs or Outputs.
 To view all requirements of a plugin enter the instance name and click on <code>SHOW REQUIREMENTS</code>.  </p>
-<p><img alt="" src="/img/usage/plugin-requirements.png" />
+<p><img alt="" src="/docs/img/usage/plugin-requirements.png" />
 You see that each requirement has a type and needs a value.<br />
 You see which requirements are already set and which ones are optional.<br />
 To set or change the value click on the blue pen, enter the required value and click on <code>PUT</code>.  </p>
-<p><img alt="" src="/img/usage/change-requirement.png" /></p>
+<p><img alt="" src="/docs/img/usage/change-requirement.png" /></p>
 <p>For inputs and outputs the value should be the source identifier of a connector - which you first have to define.</p>
 <h2 id="adding-connectors">Adding connectors<a class="headerlink" href="#adding-connectors" title="Permanent link">&para;</a></h2>
 <p>To add a connector use whatever source identifier you like, specify the connector type (a list of all types can be found in the connector types box above) and click <code>ADD</code>.  It will then be displayed in the list on the left side.  </p>
-<p><img alt="" src="/img/usage/create-connector.png" /></p>
+<p><img alt="" src="/docs/img/usage/create-connector.png" /></p>
 <h2 id="set-credentials">Set credentials<a class="headerlink" href="#set-credentials" title="Permanent link">&para;</a></h2>
 <p>Every connector requires you to set the credentials for that service.<br />
 Some of them are required for the connector to work and some are optional.</p>
-<p><img alt="" src="/img/usage/connectors.png" /></p>
+<p><img alt="" src="/docs/img/usage/connectors.png" /></p>
 <p>Click on the <code>Request details...</code> link. Then the gui will display if the connector is running and which credentials should be set. Underlined ones are required, the plain ones are optional.<br />
 Use the blue pen to copy the key, the identifier and the type of the connector and then use the manage credentials field to add the value of the credentials.</p>
-<p><img alt="" src="/img/usage/credentials.png" /></p>
+<p><img alt="" src="/docs/img/usage/credentials.png" /></p>
 <p>If you are getting errors when adding credentials <a href="../Frequent-Issues/#Credentials-value-encrypted-with-wrong-auth-key">Frequent-Issues</a> might contain a solution.</p>
 <p><em>Please note: Added credentials are encrypted with AES 128/256. The password is not stored anywhere. If you loose your password, there will be no way to reuse your configured and saved credentials.</em></p>
                 

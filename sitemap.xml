@@ -2,117 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://codeoverflow.org/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/usage/Installation/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/usage/Using-the-GUI/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/usage/Using-Parameters/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/usage/Using-the-CLI/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/usage/Frequent-Issues/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/development/Setting-up-the-Build-Environment/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/development/Writing-a-plugin/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/development/Pluggable-migration-guide/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/development/Adding-a-new-platform-source/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/development/Structure/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/development/Deploy-ChatOverflow/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/development/Working-with-NPM/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>http://codeoverflow.org/development/Versioning/</loc>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/development/Release-ChatOverflow/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/services/Twitch-Chat/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/services/Discord/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/services/Serial/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/services/TipeeeStream/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/services/StreamElements/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/services/File/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/services/RCON/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://codeoverflow.org/services/Sample/</loc>
-     <lastmod>2020-01-01</lastmod>
+     <lastmod>2020-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
