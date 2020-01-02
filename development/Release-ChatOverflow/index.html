@@ -767,13 +767,13 @@
                 
                   <h1>Releasing</h1>
                 
-                <p>The scope of this article is to serve all Chat Overflow team members when releasing a new version. As stated in <a href="/docs/development/Versioning.md">the versioning article</a>, this might be the case for:</p>
+                <p>The scope of this article is to serve all Chat Overflow team members when releasing a new version. As stated in <a href="../Versioning/">the versioning article</a>, this might be the case for:</p>
 <ul>
 <li>New releases (<em>MAJOR</em>): New major feature releases with (breaking) API-Updates. New major releases are always documented in the <a href="https://github.com/codeoverflow-org/chatoverflow/milestones">milestone</a>-section of the github issue tracker.</li>
 <li>Feature-Upgrades (<em>MINOR</em>): Small feature upgrades, which do not require any breaking API-Updates and can be pushed earlier.</li>
 <li>Bugfixes / Hotfixes (<em>PATCH</em>): Updates to resolve bugs inside any part of the Chat Overflow project.</li>
 </ul>
-<p>This article guides you through the process of building, deploying and releasing new Chat Overflow versions. Please read <a href="/docs/development/Versioning.md">versioning</a>, <a href="/docs/development/Deploy-ChatOverflow.md">deploying</a>, and <a href="/docs/development/Working-with-NPM.md">working with npm</a> first and if there are any questions (or there is some information missing in the article), feel free to contact us.</p>
+<p>This article guides you through the process of building, deploying and releasing new Chat Overflow versions. Please read <a href="../docs/development/Versioning.md">versioning</a>, <a href="../docs/development/Deploy-ChatOverflow.md">deploying</a>, and <a href="../Working-with-NPM/">working with npm</a> first and if there are any questions (or there is some information missing in the article), feel free to contact us.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The (major) release of a new Chat Overflow version can be summarized in four steps:</p>
 <ol>
@@ -786,7 +786,7 @@
 <p>First, everything has to be prepared for a new release.</p>
 <ol>
 <li>Make sure, that all current <a href="https://github.com/codeoverflow-org/chatoverflow/issues">issues</a> are resolved (for a minor release) or all issues for a major milestone are done.</li>
-<li>Update (all) version numbers (have a look at the <a href="/docs/development/Versioning.md">versioning</a>-article). If this is a major release, this step has probably already been done (see chapter 4).</li>
+<li>Update (all) version numbers (have a look at the <a href="../Versioning/">versioning</a>-article). If this is a major release, this step has probably already been done (see chapter 4).</li>
 <li>Merge the <code>master</code> branches of the six sub-projects into the <code>develop</code> branches. Make sure, that all new features are now available in the <code>develop</code>-branch. Resolve all merge issues. This does apply to:</li>
 <li>Chat Overflow Framework (main repository)</li>
 <li>Chatoverflow-API</li>
@@ -796,15 +796,15 @@
 <li>Chatoverflow-Setup</li>
 <li>Chatoverflow-Wiki (make sure not to break things here!)</li>
 <li>Test the current version at least with the <code>testall</code>-plugin to make sure, that there are not major flaws left. Make sure to execute the <code>[Advanced]</code>-task this time to rebuild everything.</li>
-<li>Create a new version of the <a href="/docs/development/Working-with-NPM.md">npm-package</a> with the new version or at least a new build version.</li>
+<li>Create a new version of the <a href="../Working-with-NPM/">npm-package</a> with the new version or at least a new build version.</li>
 <li>Push your local, prepared version of all projects and mention the release state in the commit message.</li>
 </ol>
 <h2 id="2-deploy">2. Deploy<a class="headerlink" href="#2-deploy" title="Permanent link">&para;</a></h2>
-<p>After these steps, there is a merged and "tested" version of Chat Overflow available. Now, it's time to <a href="/docs/development/Deploy-ChatOverflow.md">deploy</a>:</p>
+<p>After these steps, there is a merged and "tested" version of Chat Overflow available. Now, it's time to <a href="../Deploy-ChatOverflow/">deploy</a>:</p>
 <ol>
 <li>Use the <code>[Deploy]</code>-task to create a deployed version of the Chat Overflow project. Copy these files to a different directory. Then use the <code>[DeployDev]</code>-task to create a version of Chat Overflow for plugin developers. Do also copy this files to a different folder.</li>
 <li>For both environments / deployed versions, execute your copied versions and make sure, that everything is downloaded and starts correctly and all runtime files (e.g. the <code>config</code>-files) are generated.</li>
-<li>Return to your original, deployed versions. Zip them in separate files. Make sure to include all needed files but <em>none</em> of the generated files of your runtime versions (see <a href="/docs/development/Deploy-ChatOverflow.md">deploying</a> for more information).</li>
+<li>Return to your original, deployed versions. Zip them in separate files. Make sure to include all needed files but <em>none</em> of the generated files of your runtime versions (see <a href="../Deploy-ChatOverflow/">deploying</a> for more information).</li>
 </ol>
 <h2 id="3-release">3. Release<a class="headerlink" href="#3-release" title="Permanent link">&para;</a></h2>
 <p>With the two deployed versions of Chat Overflow, we are now ready to release!</p>

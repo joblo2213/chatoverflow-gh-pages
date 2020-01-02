@@ -742,7 +742,7 @@
                 <h2 id="run-configuration-bug">Run Configuration Bug<a class="headerlink" href="#run-configuration-bug" title="Permanent link">&para;</a></h2>
 <p>Because of the differences in IntelliJ versions the run configurations could be broken. If they are broken, change the <code>classpath or module</code> setting in <code>Edit configurations...</code> to ChatOverflow root module (<code>chatoverflow</code>). Now everything should be working fine again.</p>
 <h2 id="credentials-value-encrypted-with-wrong-auth-key">Credentials value encrypted with wrong auth key<a class="headerlink" href="#credentials-value-encrypted-with-wrong-auth-key" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/docs/img/usage/value-encrypted-wrong-key.png" /><br />
+<p><img alt="" src="../docs/img/usage/value-encrypted-wrong-key.png" /><br />
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">ERROR configuration.CryptoUtil$  - Your environment does not work with AES256.Please update your Java runtime version to at least: 1.8.0_161</span>
 </pre></div>
 </td></tr></table>
@@ -752,7 +752,7 @@ More information about this issue can be found <a href="https://stackoverflow.co
 <h2 id="gui-not-found-error-message">"GUI not found" error message<a class="headerlink" href="#gui-not-found-error-message" title="Permanent link">&para;</a></h2>
 <p>A common problem is the message "GUI couldn't be found on the classpath! Has the GUI been built?" when building the gui or everything freshly, using the <code>[Advanced]</code>-configuration. This is due to a IntelliJ bug / problem.</p>
 <p>Solution: Use the <em>Refresh sbt project</em> button, inside IntelliJ. This should make IntelliJ find, load and start the GUI component. It can be found inside the sbt overlay window:</p>
-<p><img alt="" src="/docs/img/usage/refresh-sbt.png" />  </p>
+<p><img alt="" src="../docs/img/usage/refresh-sbt.png" />  </p>
                 
                   
                 
